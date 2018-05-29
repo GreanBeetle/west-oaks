@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+/* COLORS */
+.light-gray {
+  background-color: #b2bec3 !important;
+}
+
+.light-green {
+  background-color: #00b894 !important;
+}
