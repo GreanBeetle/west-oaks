@@ -5,6 +5,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DirectorsComponent } from './directors/directors.component';
 import { routing } from './app.routing';
+import { MinutesComponent } from './minutes/minutes.component';
+import { ManagementComponent } from './management/management.component';
+import { BudgetComponent } from './budget/budget.component';
+import { DocsComponent } from './docs/docs.component';
+import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component';
 
 
 @NgModule({
@@ -12,7 +17,12 @@ import { routing } from './app.routing';
     AppComponent,
     NavbarComponent,
     WelcomeComponent,
-    DirectorsComponent
+    DirectorsComponent,
+    MinutesComponent,
+    ManagementComponent,
+    BudgetComponent,
+    DocsComponent,
+    EncyclopediaComponent
   ],
   imports: [
     BrowserModule,
