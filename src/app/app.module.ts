@@ -10,7 +10,7 @@ import { ManagementComponent } from './management/management.component';
 import { BudgetComponent } from './budget/budget.component';
 import { DocsComponent } from './docs/docs.component';
 import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component';
-
+import { Ng4TwitterTimelineModule } from 'ng4-twitter-timeline/lib/index';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component';
   ],
   imports: [
     BrowserModule,
-    routing 
+    routing,
+    Ng4TwitterTimelineModule
   ],
   providers: [],
   bootstrap: [AppComponent]

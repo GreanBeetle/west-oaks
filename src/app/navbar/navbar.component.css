@@ -1,6 +1,22 @@
-
+nav {
+  background-color: rgba(255,255,255,0.97);
+}
 
 .logo {
   height: 75px;
   margin-top: 15px;
+}
+
+a {
+  font-weight: bold;
+}
+
+a:hover {
+  color: #0A6343 !important;
+  font-weight: bold;
+  background-color: rgba(255,255,255,0) !important;
+}
+
+.navbar-brand, img, .logo, .level, a {
+  background-color: rgba(255,255,255,0) !important;
 }
