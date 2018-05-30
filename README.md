@@ -1,31 +1,52 @@
-# Condos
+# West Oaks Condominium Association
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+## May 30, 2018
 
-## Development server
+#### John Rykken, Misha Petrov
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### Freelance project rebuilding a website for the board of directors of a condominium association. For the most part this is a static site consisting of about six pages. The only functionality is admin authentication and admin upload of PDF docs. Built with Angular5, Firebase (auth), and Firestore (PDF database).       
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Clone https://github.com/GreanBeetle/west-oaks to your desktop.
 
-## Build
+* In the root directory, run:  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+_`$ npm install`_
 
-## Running unit tests
+* Then:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+_`$ ng serve`_
 
-## Running end-to-end tests
+## Specifications
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Build the following pages. (1) Welcome page (2) Board of directors page (3) Minutes and resolutions page (4) Community management page (5) Budget page (6) Documents and insurance page (7) W.O.C. Encyclopedia page  
+* Link app with Firestore database.
+* Admin login, logout  functionality.
+* Allow admin to upload PDFs.
+* Organize, display PDFs by date, category.
 
-## Further help
+## Built With
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* HTML
+* CSS, Bulma
+* Javascript
+* Angular5
+* Firestore
+* Firebase
 
-<!-- REFERENCE SITE -->
+## Authors
 
-https://condoally.com/
+**John Rykken** **Misha Petrov**
+
+## Contact
+
+_john.rykken@gmail.com_
+
+## License
+
+Licensed under the MIT License.
+
+  <!-- ## Acknowledgments -->
+
+Copyright (c) 2018 **_John Rykken_** **Misha Petrov**
