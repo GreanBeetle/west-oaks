@@ -11,6 +11,21 @@ import { BudgetComponent } from './budget/budget.component';
 import { DocsComponent } from './docs/docs.component';
 import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component';
 import { Ng4TwitterTimelineModule } from 'ng4-twitter-timeline/lib/index';
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
+import { AuthenticationService } from './authentication.service';
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
 
 @NgModule({
   declarations: [
@@ -22,14 +37,22 @@ import { Ng4TwitterTimelineModule } from 'ng4-twitter-timeline/lib/index';
     ManagementComponent,
     BudgetComponent,
     DocsComponent,
-    EncyclopediaComponent
+    EncyclopediaComponent,
+    AdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     routing,
-    Ng4TwitterTimelineModule
+    FormsModule,
+    Ng4TwitterTimelineModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [
+    AuthenticationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

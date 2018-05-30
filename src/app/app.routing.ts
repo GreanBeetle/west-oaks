@@ -7,6 +7,8 @@ import { ManagementComponent } from './management/management.component'
 import { BudgetComponent } from './budget/budget.component'
 import { DocsComponent } from './docs/docs.component'
 import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component'
+import { AdminComponent } from './admin/admin.component'
+import { LoginComponent } from './login/login.component'
 
 const appRoutes: Routes = [
   {
@@ -36,6 +38,14 @@ const appRoutes: Routes = [
   {
     path: 'encyclopedia',
     component: EncyclopediaComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
   }
 
 ];
