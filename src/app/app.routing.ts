@@ -47,6 +47,10 @@ const appRoutes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
+  },
+  {
+    path: 'upload',
+    component: FileUploadComponent
   }
 
 ];
