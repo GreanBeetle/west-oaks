@@ -60,7 +60,9 @@ export const firebaseConfig = {
     Ng4TwitterTimelineModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule
   ],
   providers: [
     AuthenticationService
