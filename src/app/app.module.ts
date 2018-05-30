@@ -20,6 +20,7 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './authentication.service';
 import { FooterComponent } from './footer/footer.component';
+// for PDF storage
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
