@@ -6,7 +6,7 @@ import * as firebase from 'firebase/app';
 
 @Injectable()
 export class AuthenticationService {
-  private user: Observable<firebase.User>;
+  user: Observable<firebase.User>;
   private userDetails: firebase.User = null;
 
   constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
