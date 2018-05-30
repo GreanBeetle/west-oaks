@@ -1,5 +1,10 @@
 .hero {
-  background: url("/assets/img/hero-bg.png") #000;
-  background-position: center;
-  background-repeat: no-repeat;
+  width: 100%;
+  background: linear-gradient(45deg, #2C3E50 0%, #34495E 49%, #2C3E50 100%), url("/assets/img/hero-bg.png");
+  background-position: center center;
+  background-blend-mode: screen;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
