@@ -11,30 +11,31 @@ import { BudgetComponent } from './budget/budget.component';
 import { DocsComponent } from './docs/docs.component';
 import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component';
 import { Ng4TwitterTimelineModule } from 'ng4-twitter-timeline/lib/index';
-import { masterFirebaseConfig } from './api-keys';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+// import { masterFirebaseConfig } from './api-keys';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './authentication.service';
 import { FooterComponent } from './footer/footer.component';
-// for PDF storage
+// for PDF storage and Auth
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { environment } from '../environments/environment';
 import { DropZoneDirective } from './drop-zone.directive';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { FileSizePipe } from './file-size.pipe';
 
 
 
-export const firebaseConfig = {
-  apiKey: masterFirebaseConfig.apiKey,
-  authDomain: masterFirebaseConfig.authDomain,
-  databaseURL: masterFirebaseConfig.databaseURL,
-  storageBucket: masterFirebaseConfig.storageBucket
-};
+// export const firebaseConfig = {
+//   apiKey: masterFirebaseConfig.apiKey,
+//   authDomain: masterFirebaseConfig.authDomain,
+//   databaseURL: masterFirebaseConfig.databaseURL,
+//   storageBucket: masterFirebaseConfig.storageBucket
+// };
 
 @NgModule({
   declarations: [
@@ -51,14 +52,15 @@ export const firebaseConfig = {
     LoginComponent,
     FooterComponent,
     DropZoneDirective,
-    FileUploadComponent
+    FileUploadComponent,
+    FileSizePipe
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
     Ng4TwitterTimelineModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireStorageModule,

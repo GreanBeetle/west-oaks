@@ -21,17 +21,17 @@
     <progress [value]="pct" max="100"></progress>
   </div>
 
-  <!-- <div *ngIf="snapshot | async as snap">
+  <div *ngIf="snapshot | async as snap">
     {{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }}
-  </div> -->
+  </div>
 
   <div *ngIf="downloadUrl | async as url">
     <h3>Results!</h3>
     <a [href]="url">Download</a>
   </div>
 
-  <!-- <button (click)="task.pause()" [disabled]="!isActive(snap)">Pause</button>
+  <button (click)="task.pause()" [disabled]="!isActive(snap)">Pause</button>
   <button (click)="task.cancel()" [disabled]="!isActive(snap)">Cancel</button>
-  <button (click)="task.resume()" [disabled]="!(snap?.state === 'paused')">Resume</button> -->
+  <button (click)="task.resume()" [disabled]="!(snap?.state === 'paused')">Resume</button>
 
 </div>

@@ -3,6 +3,7 @@ import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage'
 import { AngularFirestore} from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { storage } from 'firebase/storage';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-file-upload',
@@ -24,7 +25,7 @@ export class FileUploadComponent implements OnInit {
   // state for dropzone CSS toggling
   isHovering: boolean;
 
-  constructor(private storage: AngularFireStorage) { }
+  constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
 
   toggleHover(event: boolean) {
     this.isHovering = true;
@@ -54,7 +55,15 @@ export class FileUploadComponent implements OnInit {
 
     // Progress monitoring
     this.percentage = this.task.percentageChanges();
-    this.snapshot = this.task.snapshotChanges();
+    this.snapshot   = this.task.snapshotChanges().pipe(
+      tap(snap => {
+        console.log(snap)
+        if (snap.bytesTransferred === snap.totalBytes) {
+          // Update firestore on completion
+          this.db.collection('meetings').add( { path, size: snap.totalBytes })
+        }
+      })
+    )
 
     // The file's download URL
     // CAUSING PROBLEMS
