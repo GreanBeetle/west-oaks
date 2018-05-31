@@ -12,7 +12,7 @@ import { tap } from 'rxjs/operators';
 })
 export class UploadBudgetComponent implements OnInit {
 
-  ctask: AngularFireUploadTask;
+  task: AngularFireUploadTask;
 
   percentage: Observable<number>;
 
@@ -41,23 +41,22 @@ export class UploadBudgetComponent implements OnInit {
 
     const uploadDate = new Date().getTime();
 
-    // ADDED FROM GITHUB
-    const fileRef = this.storage.ref(path) // Add this line to get the path as a ref
-
-    // optional metadata
-    const customMetadata = { app: 'West Oaks Condos Docs' };
-
     // The main task
-    this.task = this.storage.upload(path, file, {customMetadata})
+    this.task = this.storage.upload(path, file);
+
+    // ADDED FROM GITHUB
+    const fileRef = this.storage.ref(path); // Add this line to get the path as a ref
 
     // Progress monitoring
     this.percentage = this.task.percentageChanges();
-    this.snapshot   = this.task.snapshotChanges().pipe(
+    this.snapshot = this.task.snapshotChanges().pipe(
       tap(snap => {
         console.log(snap)
         if (snap.bytesTransferred === snap.totalBytes) {
+          const URL = this.downloadURL;
+          console.log("The URL:" + URL);
           // Update firestore on completion
-          this.db.collection('budget').add( { path, fileName, uploadDate, size: snap.totalBytes })
+          this.db.collection('budget').add( { path, fileName, uploadDate, size: snap.totalBytes, URL })
         }
       })
     )
@@ -65,6 +64,7 @@ export class UploadBudgetComponent implements OnInit {
     // The file's download URL
     // CAUSING PROBLEMS
     this.downloadURL = fileRef.getDownloadURL();
+
   }
 
   isActive(snapshot) {

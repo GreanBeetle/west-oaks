@@ -31,39 +31,34 @@ export class UploadMinutesComponent implements OnInit {
   }
 
   startUpload(event: FileList, fileType) {
-    //the file object
+    // file object
     const file = event.item(0)
 
-    // the storage path
+    // storage path
     const path = `minutes/${new Date().getTime()}_${file.name}`;
 
     const fileName = file.name.slice(0, (file.name.length - 4));
 
     const uploadDate = new Date().getTime();
 
-    // ADDED FROM GITHUB
+    // added from github
     const fileRef = this.storage.ref(path) // Add this line to get the path as a ref
 
-    // optional metadata
-    const customMetadata = { app: 'West Oaks Condos Docs' };
+    // main task
+    this.task = this.storage.upload(path, file)
 
-    // The main task
-    this.task = this.storage.upload(path, file, {customMetadata})
-
-    // Progress monitoring
+    // progress monitoring
     this.percentage = this.task.percentageChanges();
     this.snapshot   = this.task.snapshotChanges().pipe(
       tap(snap => {
-        console.log(snap)
         if (snap.bytesTransferred === snap.totalBytes) {
-          // Update firestore on completion
+          // update firestore on completion
           this.db.collection('minutes').add( { path, fileName, uploadDate, size: snap.totalBytes })
         }
       })
     )
 
-    // The file's download URL
-    // CAUSING PROBLEMS
+    // file's download URL
     this.downloadURL = fileRef.getDownloadURL();
   }
 

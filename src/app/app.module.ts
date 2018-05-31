@@ -11,7 +11,6 @@ import { BudgetComponent } from './budget/budget.component';
 import { DocsComponent } from './docs/docs.component';
 import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component';
 import { Ng4TwitterTimelineModule } from 'ng4-twitter-timeline/lib/index';
-// import { masterFirebaseConfig } from './api-keys';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
@@ -30,14 +29,6 @@ import { FileSizePipe } from './file-size.pipe';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 import { UploadMinutesComponent } from './upload-minutes/upload-minutes.component';
 import { UploadBudgetComponent } from './upload-budget/upload-budget.component';
-
-
-// export const firebaseConfig = {
-//   apiKey: masterFirebaseConfig.apiKey,
-//   authDomain: masterFirebaseConfig.authDomain,
-//   databaseURL: masterFirebaseConfig.databaseURL,
-//   storageBucket: masterFirebaseConfig.storageBucket
-// };
 
 @NgModule({
   declarations: [
