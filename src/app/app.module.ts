@@ -29,7 +29,6 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FileSizePipe } from './file-size.pipe';
 
 
-
 // export const firebaseConfig = {
 //   apiKey: masterFirebaseConfig.apiKey,
 //   authDomain: masterFirebaseConfig.authDomain,

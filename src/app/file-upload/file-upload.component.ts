@@ -31,18 +31,18 @@ export class FileUploadComponent implements OnInit {
     this.isHovering = true;
   }
 
-  startUpload(event: FileList) {
+  startUpload(event: FileList, fileType) {
     //the file object
     const file = event.item(0)
 
     // client-side validation
-    if (file.type.split('/')[0] !== 'image') {
-      console.error('unsupported file type')
-      return;
-    }
+    // if (file.type.split('/')[0] !== 'PDF') {
+    //   console.error('unsupported file type')
+    //   return;
+    // }
 
     // the storage path
-    const path = `test/${new Date().getTime()}_${file.name}`;
+    const path = `${fileType}/${new Date().getTime()}_${file.name}`;
 
     // ADDED FROM GITHUB
     const fileRef = this.storage.ref(path) // Add this line to get the path as a ref
