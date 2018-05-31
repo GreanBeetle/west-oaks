@@ -27,6 +27,9 @@ import { environment } from '../environments/environment';
 import { DropZoneDirective } from './drop-zone.directive';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FileSizePipe } from './file-size.pipe';
+import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
+import { UploadMinutesComponent } from './upload-minutes/upload-minutes.component';
+import { UploadBudgetComponent } from './upload-budget/upload-budget.component';
 
 
 // export const firebaseConfig = {
@@ -52,7 +55,10 @@ import { FileSizePipe } from './file-size.pipe';
     FooterComponent,
     DropZoneDirective,
     FileUploadComponent,
-    FileSizePipe
+    FileSizePipe,
+    UploadDocumentsComponent,
+    UploadMinutesComponent,
+    UploadBudgetComponent
   ],
   imports: [
     BrowserModule,

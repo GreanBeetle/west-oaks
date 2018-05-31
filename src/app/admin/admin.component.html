@@ -1,1 +1,31 @@
-<app-file-upload></app-file-upload>
+<div class="container">
+  <ul>
+    <li *ngFor="let minute of minutes | async">
+      <a href={{minute.path}}> {{ minute.fileName }} </a>
+    </li>
+  </ul>
+
+  <h1>Minutes</h1>
+  <upload-minutes></upload-minutes>
+  <hr>
+
+  <ul>
+    <li *ngFor="let budget of budgets | async">
+      <a href={{budget.path}}> {{ budget.fileName }} </a>
+    </li>
+  </ul>
+
+  <h1>Budget</h1>
+  <upload-budget></upload-budget>
+  <hr>
+
+  <ul>
+    <li *ngFor="let document of documents | async">
+      <a href={{document.path}}> {{ document.fileName }} </a>
+    </li>
+  </ul>
+
+  <h1>Documents</h1>
+  <upload-documents></upload-documents>
+  <hr>
+</div>
