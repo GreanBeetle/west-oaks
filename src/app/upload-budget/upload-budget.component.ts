@@ -11,16 +11,8 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./upload-budget.component.css']
 })
 export class UploadBudgetComponent implements OnInit {
-
+  // Main Task
   task: AngularFireUploadTask;
-
-  percentage: Observable<number>;
-
-  snapshot: Observable<any>;
-
-  // download URL
-  downloadURL: Observable<string>;
-
   // state for dropzone CSS toggling
   isHovering: boolean;
 
@@ -30,45 +22,21 @@ export class UploadBudgetComponent implements OnInit {
     this.isHovering = true;
   }
 
-  startUpload(event: FileList) {
-    //the file object
+  startUpload(event: FileList, fileType) {
+
     const file = event.item(0)
-
-    // the storage path
     const path = `budget/${new Date().getTime()}_${file.name}`;
-
     const fileName = file.name.slice(0, (file.name.length - 4));
-
     const uploadDate = new Date().getTime();
 
-    // The main task
-    this.task = this.storage.upload(path, file);
-
-    // ADDED FROM GITHUB
-    const fileRef = this.storage.ref(path); // Add this line to get the path as a ref
-
-    // Progress monitoring
-    this.percentage = this.task.percentageChanges();
-    this.snapshot = this.task.snapshotChanges().pipe(
-      tap(snap => {
-        console.log(snap)
-        if (snap.bytesTransferred === snap.totalBytes) {
-          const URL = this.downloadURL;
-          console.log("The URL:" + URL);
-          // Update firestore on completion
-          this.db.collection('budget').add( { path, fileName, uploadDate, size: snap.totalBytes, URL })
-        }
+    const task = this.storage.upload(path, file).then(() => {
+      const ref = this.storage.ref(path);
+      const downloadURL = ref.getDownloadURL().subscribe(url => {
+        const url = url
+        console.log(url)
+        this.db.collection('budget').add( { path, fileName, uploadDate, url })
       })
-    )
-
-    // The file's download URL
-    // CAUSING PROBLEMS
-    this.downloadURL = fileRef.getDownloadURL();
-
-  }
-
-  isActive(snapshot) {
-    return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes
+    }
   }
 
   ngOnInit() {

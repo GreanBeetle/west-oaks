@@ -1,7 +1,7 @@
 <div class="container">
   <ul>
     <li *ngFor="let minute of minutes | async">
-      <a href={{minute.downloadURL}}> {{ minute.fileName }} </a>
+      <a href={{minute.url}}> {{ minute.fileName }} </a>
     </li>
   </ul>
 
@@ -11,7 +11,7 @@
 
   <ul>
     <li *ngFor="let budget of budgets | async">
-      <a href={{budget.downloadURL}}> {{ budget.fileName }} </a>
+      <a href={{budget.url}}> {{ budget.fileName }} </a>
     </li>
   </ul>
 
@@ -21,7 +21,7 @@
 
   <ul>
     <li *ngFor="let document of documents | async">
-      <a href={{document.downloadURL}}> {{ document.fileName }} </a>
+      <a href={{document.url}}> {{ document.fileName }} </a>
     </li>
   </ul>
 

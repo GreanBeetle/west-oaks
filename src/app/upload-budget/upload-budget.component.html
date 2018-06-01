@@ -17,14 +17,6 @@
     </label>
   </div>
 
-  <div *ngIf="percentage | async as pct">
-    <progress [value]="pct" max="100"></progress>
-  </div>
-
-  <div *ngIf="snapshot | async as snap">
-    {{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }}
-  </div>
-
   <div *ngIf="downloadUrl | async as url">
     <h3>Results!</h3>
     <a [href]="url">Download</a>
