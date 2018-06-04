@@ -38,7 +38,6 @@ export class UploadMinutesComponent implements OnInit {
         this.db.collection('minutes').add( { path, fileName, uploadDate, url })
       })
     }
-
   }
 
   ngOnInit() {
