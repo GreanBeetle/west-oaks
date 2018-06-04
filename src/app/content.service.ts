@@ -7,8 +7,8 @@ export class ContentService {
 
   constructor() { }
 
-  getContents() {
-    return CONTENTS; 
+  getContent() {
+    return CONTENTS;
   }
 
 }
