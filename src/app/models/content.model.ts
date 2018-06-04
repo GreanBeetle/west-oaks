@@ -1,11 +1,9 @@
 export class Content {
   constructor(
-    public id: number,
+    public type: string,
     public title: string,
     public date: string,
-    public time: string,
-    public content: string,
-    public listItems: string
+    public mainContent: string
     )
   { }
 }
