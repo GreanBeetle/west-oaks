@@ -1,24 +1,18 @@
 
-{ "contents": [{
-    "title": "Who is on the Board?",
+{ "albums": [{
+    "title": "Who is on the board?",
     "type": "board",
-    "description": "The Board consists of three elected directors. Officer positions are chosen by the Board Members.
-   	VACANT (contact the Board of Directors if you are interested in serving in this position)	board@westoakscondos.org
-   	Chip Clough (through 2018)	board@westoakscondos.org
-   	Daniel Hough, President/Treasurer (through 2019)	daniel@westoakscondos.org
-   	Mitch Mannino (through 2018)	mitch@westoakscondos.org You also can e-mail the entire Board.",
+    "body": "The board consists of three elected directors. Officer positions are chosen by the board members. Vacant: Contact the board if you're interested in serving in this position. Chip Clough, through 2018, board@westoakscondos.org Daniel Hough President & Treasurer through 2019 daniel@westoakscondos.org Mitch Mannino through 2018 mitch@westoakscondos.org You may also email the entire board.",
     "id": "1"
     }, {
-    "title": "How do I contact the Board and Association?",
+    "title": "Dilate",
     "type": "board",
-    "description": "You can e-mail the Board using the addresses above. You can always find the Board at the regular meetings, too; you always are invited!",
+    "body": "Her highest-selling and most acclaimed album, released in 1996.",
     "id": "2"
       }, {
-    "title": "What does the board do?",
+    "title": "Axis Bold As Love",
     "type": "board",
-    "description": "The Board represents the owners and residents of the West Oaks Condos in all business dealings related to the running of the Community. The Board sets each year's budget, and approves expenditures for landscaping, utilities and maintenance for common areas, and business management services for the community. The Board also enforces the Conditions, Covenants and Restrictions (CC&Rs) that govern appearance and other characteristics of the West Oaks Condos community.
-    The Board meets regularly to conduct business. We encourage owners and residents to attend so they have a feel for how the community is run. The Board also hosts an annual meeting for the owners, at which important information is shared, and general decision-making and information is conducted.
-    The Board does not itself handle the day-to-day business of the community, such as billing owners for assessments, paying bills, liaising with landscapers and other contractors, and so on. For this, the Board has contracted with Sterling Management Group as our Community Management firm. For full details of what Sterling Management Group does and how to contact them, visit the Community Management Web page.",
+    "body": "Second studio album by the English-American band, released in 1967.",
     "id": "3"
   }]
 }
