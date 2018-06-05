@@ -10,12 +10,10 @@ import { ContentService } from '../content.service';
   providers: [ContentService]
 })
 export class WelcomeComponent implements OnInit {
-  contents: Content[];
-
-  constructor(private ng4TwitterTimelineService: Ng4TwitterTimelineService, private contentService: ContentService) { }
+  constructor(private ng4TwitterTimelineService: Ng4TwitterTimelineService) { }
 
   ngOnInit() {
-    this.content = this.contentService.getContent(); 
+
   }
 
 }
