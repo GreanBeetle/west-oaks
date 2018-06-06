@@ -24,11 +24,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { environment } from '../environments/environment';
 import { DropZoneDirective } from './drop-zone.directive';
-import { FileUploadComponent } from './file-upload/file-upload.component';
-import { FileSizePipe } from './file-size.pipe';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 import { UploadMinutesComponent } from './upload-minutes/upload-minutes.component';
 import { UploadBudgetComponent } from './upload-budget/upload-budget.component';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 @NgModule({
   declarations: [
@@ -45,8 +44,6 @@ import { UploadBudgetComponent } from './upload-budget/upload-budget.component';
     LoginComponent,
     FooterComponent,
     DropZoneDirective,
-    FileUploadComponent,
-    FileSizePipe,
     UploadDocumentsComponent,
     UploadMinutesComponent,
     UploadBudgetComponent
@@ -60,7 +57,9 @@ import { UploadBudgetComponent } from './upload-budget/upload-budget.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot()
   ],
   providers: [
     AuthenticationService

@@ -1,9 +1,7 @@
 <section class="section">
 
-  <div *ngFor="let content of contents | async">
-    <h1>{{ content.title }}</h1>
-    <p>{{ content.body }} </p>
-    <hr>
-  </div>
+    <div *ngFor="let content of contents | async">
+      <div [froalaEditor] [(froalaModel)]="content.body"></div>
+    </div>
 
 </section>

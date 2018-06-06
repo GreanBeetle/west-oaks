@@ -9,7 +9,6 @@ import { DocsComponent } from './docs/docs.component'
 import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component'
 import { AdminComponent } from './admin/admin.component'
 import { LoginComponent } from './login/login.component'
-import { FileUploadComponent } from './file-upload/file-upload.component'
 
 const appRoutes: Routes = [
   {
@@ -47,10 +46,6 @@ const appRoutes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
-  },
-  {
-    path: 'upload',
-    component: FileUploadComponent
   }
 
 ];

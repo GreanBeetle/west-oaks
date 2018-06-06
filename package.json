@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "@firebase/webchannel-wrapper": "0.2.8",
+    "angular-froala-wysiwyg": "^2.8.1",
     "angularfire2": "^5.0.0-rc.5.6-next",
     "bulma": "^0.7.1",
     "core-js": "^2.4.1",
