@@ -1,10 +1,12 @@
 <section class="section">
 
-  <div *ngFor="let content of contents | async" >
-    <h3><em>{{content.title}}</em> by {{content.body}}</h3>
-  </div>
+    <div *ngFor="let content of contents | async">
+       <h1>{{ content.title }}</h1>
+       <p>{{ content.body }} </p>
+       <hr>
+    </div>
 
-  Who is on the Board?
+  <!-- Who is on the Board?
   The Board consists of three elected directors. Officer positions are chosen by the Board Members.
    	VACANT (contact the Board of Directors if you are interested in serving in this position)	board@westoakscondos.org
    	Chip Clough (through 2018)	board@westoakscondos.org
@@ -41,6 +43,6 @@
   Help with disputes between neighbors.
 
   What's the budget — where does my assessment money go?
-  For a full breakdown of the budget and how your assessments are used, click on Budget in the left-hand menu, or <a href="/budget">click here</a>.
+  For a full breakdown of the budget and how your assessments are used, click on Budget in the left-hand menu, or <a href="/budget">click here</a>. -->
 
 </section>
