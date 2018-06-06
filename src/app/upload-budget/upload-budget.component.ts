@@ -23,19 +23,17 @@ export class UploadBudgetComponent implements OnInit {
   }
 
   startUpload(event: FileList, fileType) {
-
     const file = event.item(0)
     const path = `budget/${new Date().getTime()}_${file.name}`;
     const fileName = file.name.slice(0, (file.name.length - 4));
     const uploadDate = new Date().getTime();
-
     const task = this.storage.upload(path, file).then(() => {
       const ref = this.storage.ref(path);
       const downloadURL = ref.getDownloadURL().subscribe(url => {
         const url = url
         console.log(url)
         this.db.collection('budget').add( { path, fileName, uploadDate, url })
-      })
+      });
     }
   }
 

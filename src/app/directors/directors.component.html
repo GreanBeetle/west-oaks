@@ -1,4 +1,9 @@
 <section class="section">
+
+  <div *ngFor="let content of contents | async" >
+    <h3><em>{{content.title}}</em> by {{content.body}}</h3>
+  </div>
+
   Who is on the Board?
   The Board consists of three elected directors. Officer positions are chosen by the Board Members.
    	VACANT (contact the Board of Directors if you are interested in serving in this position)	board@westoakscondos.org

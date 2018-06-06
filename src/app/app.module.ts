@@ -29,6 +29,7 @@ import { FileSizePipe } from './file-size.pipe';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 import { UploadMinutesComponent } from './upload-minutes/upload-minutes.component';
 import { UploadBudgetComponent } from './upload-budget/upload-budget.component';
+import { ContentService } from './content.service'
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { UploadBudgetComponent } from './upload-budget/upload-budget.component';
     AngularFirestoreModule
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    ContentService
   ],
   bootstrap: [AppComponent]
 })

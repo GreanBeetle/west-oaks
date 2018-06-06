@@ -36,7 +36,7 @@ export class UploadDocumentsComponent implements OnInit {
         const url = url
         console.log(url)
         this.db.collection('documents').add( { path, fileName, uploadDate, url })
-      })
+      });
     }
   }
 

@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Content } from './models/content.model';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireList } from "angularfire2/database";
 
 
 @Injectable()
 export class ContentService {
-  contents: FirebaseListObservable<any[]>;
+  contents: AngularFireList<any[]>;
 
-  constructor(private database: AngularFireDatabase) {
-    this.contents = database.list('contents');
+  constructor(public db: AngularFireDatabase) {
+    this.contents = db.list('contents');
   }
 
   getContents() {
