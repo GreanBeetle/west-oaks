@@ -1,11 +1,7 @@
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <div class="navbar-item" *ngIf="isLoggedIn">
-        <span (click)="goToMyTrails(user.uid)" class="links">MY TRAILS</span>
-        <span (click)="signOut()" class="links">LOGOUT</span>
-        <span routerLink="auth" class="links">{{user?.email}}</span>
-      </div>
-    </div>
+<footer *ngIf="isLoggedIn" class="footer">
+  <div class="container has-text-centered">
+    <span (click)="signOut()" class="links level-item">LOGOUT</span>
+    <br>
+    <span routerLink="auth" class="links level-item">{{user?.email}}</span>
   </div>
 </footer>
