@@ -1,0 +1,13 @@
+.box {
+  margin: 0 auto;
+  height: 250px;
+  width: 250px;
+  text-align: center; 
+  border: 1px solid black;
+}
+
+input {
+  background-color: #E5E5E5;
+  border-radius: 3px;
+  margin: 5px;
+}
