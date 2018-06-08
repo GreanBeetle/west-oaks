@@ -33,9 +33,9 @@ export class UploadMinutesComponent implements OnInit {
     const task = this.storage.upload(path, file).then(() => {
       const ref = this.storage.ref(path);
       const downloadURL = ref.getDownloadURL().subscribe(url => {
-        const URL = url;
+        const url = url;
         console.log(url);
-        this.db.collection('minutes').add( { path, fileName, uploadDate, URL })
+        this.db.collection('minutes').add( { path, fileName, uploadDate, url });
       });
     })
   }
