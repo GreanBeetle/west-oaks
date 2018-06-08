@@ -1,32 +1,55 @@
 
 <div class="container">
-  <ul>
+  <!-- <ul>
     <li *ngFor="let minute of minutes | async">
       <a href={{minute.url}}> {{ minute.fileName }} </a>
     </li>
-  </ul>
+  </ul> -->
+  <div class="columns">
+    <div class="column">
+      <div class="box">
+        <span class="box_header">Upload Minutes</span>
+        <upload-minutes></upload-minutes>
+      </div>
+      <hr>
+    </div>
+    <div class="column">
+      <div class="box">
+        <span class="box_header">Upload Budget</span>
+        <upload-budget></upload-budget>
+      </div>
+      <hr>
+    </div>
+    <div class="column">
+      <div class="box">
+        <span class="box_header">Upload Documents</span>
+        <upload-documents></upload-documents>
+      </div>
+      <hr>
+    </div>
+  </div>
 
-  <h1>Minutes</h1>
-  <upload-minutes></upload-minutes>
-  <hr>
 
-  <ul>
+  <!-- <ul>
     <li *ngFor="let budget of budgets | async">
       <a href={{budget.url}}> {{ budget.fileName }} </a>
     </li>
-  </ul>
+  </ul> -->
 
-  <h1>Budget</h1>
-  <upload-budget></upload-budget>
-  <hr>
 
-  <ul>
+
+  <!-- <ul>
     <li *ngFor="let document of documents | async">
       <a href={{document.url}}> {{ document.fileName }} </a>
     </li>
-  </ul>
+  </ul> -->
 
-  <h1>Documents</h1>
-  <upload-documents></upload-documents>
-  <hr>
 </div>
+
+<!-- <section class="section">
+
+    <div *ngFor="let content of contents | async">
+      <div [froalaEditor] [(froalaModel)]="content.body"></div>
+    </div>
+
+</section> -->
