@@ -1,3 +1,21 @@
-<p>
-  edit-meeting works!
-</p>
+<!-- display meeting retrieved from firestore -->
+<ul *ngFor="let meeting of meetings | async">
+  <li>
+    <p>Time: {{meeting.time}}</p>
+    <br>
+    <p>Date: {{meeting.date}}</p>
+    <br>
+    <p>Where: {{meeting.placeName}}</p>
+    <p>{{meeting.streetAddress}}</p>
+    <p>{{meeting.cityState}}</p>
+    <p>{{meeting.notes}}</p>
+  </li>
+</ul>
+<br>
+<div class="box" style="text-align:center;">
+  <form>
+    <input #newTime>
+    <br>
+    <button (click)="update(newTime.value)">update</button>
+  </form>
+</div>

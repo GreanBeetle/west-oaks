@@ -54,28 +54,4 @@
       <div [froalaEditor] [(froalaModel)]="dsfsdfsdfs"></div>
     </div>
   </div>
-
-  <!-- display meeting collection retrieved from firestore -->
-  <ul *ngFor="let meeting of meetings | async">
-  <li>
-    <p>Time: {{meeting.time}}</p>
-    <br>
-    <p>Date: {{meeting.date}}</p>
-    <br>
-    <p>Where: {{meeting.placeName}}</p>
-    <p>{{meeting.streetAddress}}</p>
-    <p>{{meeting.cityState}}</p>
-    <p>{{meeting.notes}}</p>
-  </li>
-</ul>
-
-
 </div>
-
-<!-- <section class="section">
-
-    <div *ngFor="let content of contents | async">
-      <div [froalaEditor] [(froalaModel)]="content.body"></div>
-    </div>
-
-</section> -->

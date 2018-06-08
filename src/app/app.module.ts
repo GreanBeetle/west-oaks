@@ -57,6 +57,7 @@ import { EditMeetingComponent } from './edit-meeting/edit-meeting.component';
     FormsModule,
     Ng4TwitterTimelineModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireStorageModule,

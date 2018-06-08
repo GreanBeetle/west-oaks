@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
@@ -22,11 +22,22 @@ export class EditMeetingComponent implements OnInit {
   private isLoggedIn: boolean;
   meetingCollection: AngularFirestoreCollection<Meeting>;
   meetings: Observable<Meeting[]>;
+  meeting: AngularFirestoreDocument<Meeting>;
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) { }
+
+  update(newTime) {
+    this.meetingCollection.doc('1').update({
+      time: newTime
+    }).then(() => {
+      console.log('updated');
+    });
+  }
 
   ngOnInit() {
     this.meetingCollection = this.afs.collection('meeting');
     this.meetings = this.meetingCollection.valueChanges();
+    this.meeting = this.meetingCollection.doc('1');
+    console.log('Your meeting is: ' + this.meeting);
   }
 
 }

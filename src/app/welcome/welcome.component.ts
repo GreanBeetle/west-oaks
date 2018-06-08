@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Ng4TwitterTimelineService } from 'ng4-twitter-timeline/lib/index';
-import { Content } from '../models/content.model';
+
 
 
 @Component({
@@ -9,5 +9,7 @@ import { Content } from '../models/content.model';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent {
+  @Input() meeting;
+
   constructor(private ng4TwitterTimelineService: Ng4TwitterTimelineService) { }
 }
