@@ -18,8 +18,6 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
   private isLoggedIn: boolean;
-  minutesArray: AngularFirestoreCollection<any>;
-  minutes: Observable<any[]>;
   budgetsArray: AngularFirestoreCollection<any>;
   budgets: Observable<any[]>;
   documentsArray: AngularFirestoreCollection<any>;
@@ -31,11 +29,8 @@ export class AdminComponent implements OnInit {
       if (user == null) {
         this.isLoggedIn = false;
         this.router.navigate(['login']);
-      } 
+      }
     });
-
-    this.minutesArray = afs.collection<any>('minutes', ref => ref.orderBy('uploadDate', 'desc'));
-    this.minutes = this.minutesArray.valueChanges();
 
     this.budgetsArray = afs.collection<any>('budget', ref => ref.orderBy('uploadDate', 'desc'));
     this.budgets = this.budgetsArray.valueChanges();
