@@ -10,7 +10,7 @@
 
 * Clone https://github.com/GreanBeetle/west-oaks to your desktop.
 
-* In the root directory, run:  
+
 
 _`$ npm install`_
 
