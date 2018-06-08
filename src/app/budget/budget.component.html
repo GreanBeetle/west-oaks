@@ -1,3 +1,5 @@
-<p>
-  budget works!
-</p>
+  <ul>
+    <li *ngFor="let budget of budgets | async">
+      <a href={{budget.url}}> {{ budget.fileName }} </a>
+    </li>
+  </ul>
