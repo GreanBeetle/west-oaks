@@ -1,3 +1,5 @@
-<p>
-  minutes works!
-</p>
+<ul>
+  <li *ngFor="let minute of minutes | async">
+    <a href={{minute.url}}> {{ minute.fileName }} </a>
+  </li>
+</ul>
