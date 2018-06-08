@@ -7,13 +7,17 @@ import {
   AngularFirestoreDocument,
   AngularFirestoreCollection
 } from 'angularfire2/firestore';
+import { AuthenticationService } from '../authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  styleUrls: ['./admin.component.css'],
+  providers: [ AuthenticationService ]
 })
 export class AdminComponent implements OnInit {
+  private isLoggedIn: boolean;
   minutesArray: AngularFirestoreCollection<any>;
   minutes: Observable<any[]>;
   budgetsArray: AngularFirestoreCollection<any>;
@@ -21,7 +25,15 @@ export class AdminComponent implements OnInit {
   documentsArray: AngularFirestoreCollection<any>;
   documents: Observable<any[]>;
 
-  constructor(private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
+
+    this.authService.user.subscribe(user => {
+      if (user == null) {
+        this.isLoggedIn = false;
+        this.router.navigate(['login']);
+      } 
+    });
+
     this.minutesArray = afs.collection<any>('minutes', ref => ref.orderBy('uploadDate', 'desc'));
     this.minutes = this.minutesArray.valueChanges();
 
@@ -33,6 +45,7 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

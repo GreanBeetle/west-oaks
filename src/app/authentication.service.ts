@@ -37,6 +37,12 @@ export class AuthenticationService {
     }
   }
 
+  isLoggedOut() {
+    if (this.userDetails == null ) {
+      return true;
+    }
+  }
+
   logout() {
     this._firebaseAuth.auth.signOut()
     .then((res) => this.router.navigate(['/']));
