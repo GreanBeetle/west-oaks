@@ -18,10 +18,6 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
   private isLoggedIn: boolean;
-  budgetsArray: AngularFirestoreCollection<any>;
-  budgets: Observable<any[]>;
-  documentsArray: AngularFirestoreCollection<any>;
-  documents: Observable<any[]>;
 
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
 
@@ -32,15 +28,8 @@ export class AdminComponent implements OnInit {
       }
     });
 
-    this.budgetsArray = afs.collection<any>('budget', ref => ref.orderBy('uploadDate', 'desc'));
-    this.budgets = this.budgetsArray.valueChanges();
-
-    this.documentsArray = afs.collection<any>('documents', ref => ref.orderBy('uploadDate', 'desc'));
-    this.documents = this.documentsArray.valueChanges();
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
 }
