@@ -2,7 +2,7 @@
 
 .hero {
   width: 100%;
-  background: linear-gradient(45deg, #2C3E50 0%, #34495E 49%, #2C3E50 100%), url("/assets/img/hero-bg.png");
+  background: linear-gradient(45deg, #2C3E50 0%, #34495E 49%, #2C3E50 100%), url("/assets/img/coverMain.jpg");
   background-position: center center;
   background-blend-mode: screen;
   -webkit-background-size: cover;
