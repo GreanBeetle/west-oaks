@@ -1,21 +1,39 @@
-<!-- display meeting retrieved from firestore -->
-<ul *ngFor="let meeting of meetings | async">
-  <li>
-    <p>Time: {{meeting.time}}</p>
+<section class="section">
+  <div class="container">
+    <!-- display meeting retrieved from firestore -->
+    <div class="content" *ngFor="let meeting of meetings | async">
+      <h1>Next Board Meeting</h1>
+      <h3><b>{{meeting.time}}</b> on  <b>{{meeting.date}}</b></h3>
+      <div class="box">
+        <p class="place"><b>{{meeting.placeName}}</b></p>
+        <p class="place">{{meeting.streetAddress}}</p>
+        <p class="place">{{meeting.cityState}}</p><br>
+        <p class="notes">{{meeting.notes}}</p>
+      </div>
+    </div>
     <br>
-    <p>Date: {{meeting.date}}</p>
+    <!-- update meeting -->
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          Schedule Next Meeting
+        </p>
+      </header>
+      <form>
+        <div class="card-content">
+          <input #newTime placeholder="time">
+          <input #newDate placeholder="date">
+          <input #newPlace placeholder="place, e.g. 'Stormbreaker Brewery'">
+          <input #newAddress placeholder="street address, '123 W Elm'">
+          <input #newCityState placeholder="city and state">
+          <input #newNotes placeholder="notes">
+        </div>
+        <footer class="card-footer">
+          <a (click)="update(newTime.value, newDate.value, newPlace.value, newAddress.value, newCityState.value, newNotes.value)" class="card-footer-item">UPDATE</a>
+        </footer>
+      </form>
+    </div>
     <br>
-    <p>Where: {{meeting.placeName}}</p>
-    <p>{{meeting.streetAddress}}</p>
-    <p>{{meeting.cityState}}</p>
-    <p>{{meeting.notes}}</p>
-  </li>
-</ul>
-<br>
-<div class="box" style="text-align:center;">
-  <form>
-    <input #newTime>
-    <br>
-    <button (click)="update(newTime.value)">update</button>
-  </form>
-</div>
+    <a href="/encyclopedia">Make a suggestion</a> or find out <a href="/directors">why you should come to Board meetings</a>.
+  </div>
+</section>

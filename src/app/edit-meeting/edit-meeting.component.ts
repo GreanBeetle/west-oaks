@@ -25,9 +25,14 @@ export class EditMeetingComponent implements OnInit {
   meeting: AngularFirestoreDocument<Meeting>;
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) { }
 
-  update(newTime) {
+  update(newTime, newDate, newPlace, newAddress, newCityState, newNotes) {
     this.meetingCollection.doc('1').update({
-      time: newTime
+      time: newTime,
+      date: newDate,
+      placeName: newPlace,
+      streetAddress: newAddress,
+      cityState: newCityState,
+      notes: newNotes
     }).then(() => {
       console.log('updated');
     });
