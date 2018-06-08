@@ -1,48 +1,60 @@
+<section class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Admin Panel
+      </h1>
+      <h2 class="subtitle">
+        Edit information visible to users
+      </h2>
+    </div>
+  </div>
+</section>
 
 <div class="container">
-  <!-- <ul>
-    <li *ngFor="let minute of minutes | async">
-      <a href={{minute.url}}> {{ minute.fileName }} </a>
-    </li>
-  </ul> -->
-  <div class="columns">
+
+  <div class="columns top">
     <div class="column">
-      <div class="box">
-        <span class="box_header">Upload Minutes</span>
-        <upload-minutes></upload-minutes>
+      <div class="w3-card-4">
+        <header class="w3-container w3-dark-grey">
+          <div class="box_header">Upload Minutes</div>
+        </header>
+        <div class="w3-container">
+          <upload-minutes></upload-minutes>
+        </div>
       </div>
-      <hr>
     </div>
     <div class="column">
-      <div class="box">
-        <span class="box_header">Upload Budget</span>
-        <upload-budget></upload-budget>
+      <div class="w3-card-4">
+        <header class="w3-container w3-dark-grey">
+          <div class="box_header">Upload Budget</div>
+        </header>
+        <div class="w3-container">
+          <upload-budget></upload-budget>
+        </div>
       </div>
-      <hr>
     </div>
     <div class="column">
-      <div class="box">
-        <span class="box_header">Upload Documents</span>
-        <upload-documents></upload-documents>
+      <div class="w3-card-4">
+        <header class="w3-container w3-dark-grey">
+          <div class="box_header">Upload Documents</div>
+        </header>
+        <div class="w3-container">
+          <upload-documents></upload-documents>
+        </div>
       </div>
-      <hr>
     </div>
   </div>
 
+  <div class="w3-card-4 meetings">
+    <header class="w3-container w3-dark-grey">
+      <div class="box_header">Upcoming Meetings</div>
+    </header>
+    <div class="w3-container">
+      <div [froalaEditor] [(froalaModel)]="dsfsdfsdfs"></div>
+    </div>
+  </div>
 
-  <!-- <ul>
-    <li *ngFor="let budget of budgets | async">
-      <a href={{budget.url}}> {{ budget.fileName }} </a>
-    </li>
-  </ul> -->
-
-
-
-  <!-- <ul>
-    <li *ngFor="let document of documents | async">
-      <a href={{document.url}}> {{ document.fileName }} </a>
-    </li>
-  </ul> -->
 
 </div>
 
