@@ -28,6 +28,8 @@ import { UploadDocumentsComponent } from './upload-documents/upload-documents.co
 import { UploadMinutesComponent } from './upload-minutes/upload-minutes.component';
 import { UploadBudgetComponent } from './upload-budget/upload-budget.component';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { EditMeetingComponent } from './edit-meeting/edit-meeting.component';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
     DropZoneDirective,
     UploadDocumentsComponent,
     UploadMinutesComponent,
-    UploadBudgetComponent
+    UploadBudgetComponent,
+    EditMeetingComponent
   ],
   imports: [
     BrowserModule,
