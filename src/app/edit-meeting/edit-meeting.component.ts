@@ -23,6 +23,8 @@ export class EditMeetingComponent implements OnInit {
   meetingCollection: AngularFirestoreCollection<Meeting>;
   meetings: Observable<Meeting[]>;
   meeting: AngularFirestoreDocument<Meeting>;
+  currentRoute: string = this.router.url;
+
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) { }
 
   update(newTime, newDate, newPlace, newAddress, newCityState, newNotes) {

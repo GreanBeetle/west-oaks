@@ -1,59 +1,30 @@
 <section class="hero is-medium is-bold">
   <div class="hero-body">
     <div class="container">
-
-        <h1 class="title">West Oaks Condos</h1>
-
+      <h1 class="title">West Oaks Condos</h1>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="columns features">
-
-      <div class="column is-4">
-        <div class="card is-shady">
-          <div class="card-image has-text-centered">
-            <i class="fa fa-empire"></i>
-          </div>
-          <div class="card-content">
-            <div class="content">
-              <h4>Tempor orci dapibus ultrices in.</h4>
-              <p>Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non odio euismod lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue. Phasellus vestibulum lorem
-              sed risus.</p>
-              <p><a href="#">Learn more</a></p>
-            </div>
-          </div>
+  <div class="colorOverlay">
+    <div class="container">
+      <div class="columns features">
+        <div class="column is-6">
+          <!-- next meeting -->
+          <app-edit-meeting></app-edit-meeting>
         </div>
-
-      </div>
-      <div class="column is-4">
-        <div class="card is-shady">
-          <div class="card-image has-text-centered">
-            <i class="fa fa-empire"></i>
-          </div>
-          <div class="card-content">
-            <div class="content">
-              <h4>Tempor orci dapibus ultrices in.</h4>
-              <p>Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non odio euismod lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue. Phasellus vestibulum lorem
-              sed risus.</p>
-              <p><a href="#">Learn more</a></p>
-            </div>
+        <div class="column is-6">
+          <div class="card is-shady">
+            <ng4-twitter-timeline [dataSrc]="{sourceType: 'profile',screenName: 'WestOaksCondos'}" [opts]="{tweetLimit: 1}"></ng4-twitter-timeline>
           </div>
         </div>
       </div>
-      <div class="column is-4">
-        <div class="card is-shady">
-          <ng4-twitter-timeline [dataSrc]="{sourceType: 'profile',screenName: 'WestOaksCondos'}" [opts]="{tweetLimit: 1}"></ng4-twitter-timeline>
-        </div>
-      </div>
-    </div>
+    </div>  
   </div>
 </section>
 
-<!-- next meeting -->
-<app-edit-meeting></app-edit-meeting>
+
 
 <!-- maintenance projects -->
 <section class="section">
