@@ -2,7 +2,8 @@
 
 .hero {
   width: 100%;
-  background: linear-gradient(45deg, #2C3E50 0%, #34495E 49%, #2C3E50 100%), url("/assets/img/coverMain.jpg");
+  background-image: url('/assets/img/coverMain.jpg');
+  /* background: linear-gradient(45deg, #2C3E50 0%, #34495E 49%, #2C3E50 100%), url("/assets/img/coverMain.jpg"); */
   background-position: center center;
   background-blend-mode: screen;
   -webkit-background-size: cover;
@@ -14,8 +15,8 @@
 .title {
   color: #b2bec3 !important;
   display: block;
-  font-size: 3em !important;
+  font-size: 3.5em !important;
   max-width: 500px;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   /*text-shadow: -1px -1px 1px #111, 2px 2px 1px #363636;*/
 }

@@ -1,4 +1,13 @@
 /* COLORS */
+
+.raleway {
+  font-family: 'Raleway', sans-serif;
+}
+
+.montyFont {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .light-gray {
   background-color: #b2bec3 !important;
 }

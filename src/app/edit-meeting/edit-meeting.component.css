@@ -17,3 +17,7 @@
 ::placeholder {
   color: #8E8E8E;
 }
+
+.place {
+  margin-bottom: 0px !important;  
+}
