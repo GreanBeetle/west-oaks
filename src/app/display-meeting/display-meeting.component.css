@@ -1,7 +1,12 @@
 .card-header {
   height: 56px;
   padding: 10px;
-  text-align: center; 
+  text-align: center;
+}
+
+h1 {
+  font-size: 27px;
+  font-weight: 300; 
 }
 
 /* .card {
