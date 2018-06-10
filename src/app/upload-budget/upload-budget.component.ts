@@ -30,7 +30,7 @@ export class UploadBudgetComponent implements OnInit {
     const task = this.storage.upload(path, file).then(() => {
       const ref = this.storage.ref(path);
       const downloadURL = ref.getDownloadURL().subscribe(url => {
-        const url = url
+        // const url = url
         console.log(url)
         this.db.collection('budget').add( { path, fileName, uploadDate, url })
       });

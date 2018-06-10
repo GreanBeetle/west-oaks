@@ -2,3 +2,18 @@
   max-width: 500px;
   margin: 0 auto;
 }
+
+.card-header {
+  background-color: #616161;
+}
+
+.card-header-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+::placeholder {
+  color: #8E8E8E;
+}
