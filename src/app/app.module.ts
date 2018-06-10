@@ -29,6 +29,10 @@ import { UploadMinutesComponent } from './upload-minutes/upload-minutes.componen
 import { UploadBudgetComponent } from './upload-budget/upload-budget.component';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { EditMeetingComponent } from './edit-meeting/edit-meeting.component';
+import { EditHeadlineComponent } from './edit-headline/edit-headline.component';
+import { DisplayHeadlineComponent } from './display-headline/display-headline.component';
+import { DisplayMeetingComponent } from './display-meeting/display-meeting.component';
+
 
 
 @NgModule({
@@ -49,7 +53,10 @@ import { EditMeetingComponent } from './edit-meeting/edit-meeting.component';
     UploadDocumentsComponent,
     UploadMinutesComponent,
     UploadBudgetComponent,
-    EditMeetingComponent
+    EditMeetingComponent,
+    EditHeadlineComponent,
+    DisplayHeadlineComponent,
+    DisplayMeetingComponent
   ],
   imports: [
     BrowserModule,

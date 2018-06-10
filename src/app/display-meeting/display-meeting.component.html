@@ -1,0 +1,19 @@
+<div class="card" *ngFor="let meeting of meetings | async">
+  <header class="card-header">
+    <h1 class="card-header-title is-centered">Next Board Meeting</h1>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <h3 class="has-text-centered"><b>{{meeting.time}}</b> on <b>{{meeting.date}}</b></h3>
+      <p class="place"><b>{{meeting.placeName}}</b></p>
+      <p class="place">{{meeting.streetAddress}}</p>
+      <p class="place">{{meeting.cityState}}</p><br>
+      <p class="notes">{{meeting.notes}}</p>
+      <a href=""></a>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a href="/encyclopedia" class="nav-item montyFont">Make a suggestion</a>
+    <a href="/directors" class="nav-item">Why should you come to Board meetings?</a>
+  </footer>
+</div>
