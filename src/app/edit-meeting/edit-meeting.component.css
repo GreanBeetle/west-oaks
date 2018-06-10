@@ -5,6 +5,7 @@
 
 .card-header {
   background-color: #616161;
+  height: 60px; 
 }
 
 .card-header-title {
@@ -19,5 +20,5 @@
 }
 
 .place {
-  margin-bottom: 0px !important;  
+  margin-bottom: 0px !important;
 }
