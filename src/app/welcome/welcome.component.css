@@ -13,10 +13,17 @@
 }
 
 .title {
-  color: #b2bec3 !important;
+  color: #fff !important;
   display: block;
   font-size: 3.5em !important;
-  max-width: 500px;
+  max-width: 600px;
+  font-weight: 250 !important;
   /* font-family: 'Montserrat', sans-serif; */
   /*text-shadow: -1px -1px 1px #111, 2px 2px 1px #363636;*/
+}
+
+.box {
+  max-width: 600px;
+  background-color: rgba(192, 202, 205, 0.4);
+  border-radius: 2px;
 }
