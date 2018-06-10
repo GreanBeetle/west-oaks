@@ -28,7 +28,7 @@ export class EditMeetingComponent implements OnInit {
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) { }
 
   update(newTime, newDate, newPlace, newAddress, newCityState, newNotes) {
-    this.meetingCollection.doc('1').update({
+    this.meeting.update({
       time: newTime,
       date: newDate,
       placeName: newPlace,
@@ -36,7 +36,6 @@ export class EditMeetingComponent implements OnInit {
       cityState: newCityState,
       notes: newNotes
     }).then(() => {
-      console.log('YOUR AT THE ROUTER!');
       this.router.navigate(['/']);
     });
   }
