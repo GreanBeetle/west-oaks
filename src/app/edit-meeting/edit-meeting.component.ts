@@ -36,7 +36,8 @@ export class EditMeetingComponent implements OnInit {
       cityState: newCityState,
       notes: newNotes
     }).then(() => {
-      console.log('updated');
+      console.log('YOUR AT THE ROUTER!');
+      this.router.navigate(['/']);
     });
   }
 
