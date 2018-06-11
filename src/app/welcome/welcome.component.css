@@ -3,7 +3,6 @@
 .hero {
   width: 100%;
   background-image: url('/assets/img/coverMain.jpg');
-  /* background: linear-gradient(45deg, #2C3E50 0%, #34495E 49%, #2C3E50 100%), url("/assets/img/coverMain.jpg"); */
   background-position: center center;
   background-blend-mode: screen;
   -webkit-background-size: cover;
@@ -18,12 +17,10 @@
   font-size: 3.5em !important;
   max-width: 600px;
   font-weight: 250 !important;
-  /* font-family: 'Montserrat', sans-serif; */
-  /*text-shadow: -1px -1px 1px #111, 2px 2px 1px #363636;*/
 }
 
 .box {
   max-width: 600px;
   background-color: rgba(192, 202, 205, 0.4);
-  border-radius: 2px;
+  border-radius: 0px;
 }
