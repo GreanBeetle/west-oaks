@@ -4,8 +4,7 @@ export class Meeting {
     public date: string,
     public placeName: string,
     public streetAddress: string,
-    public cityState: string, 
+    public cityState: string,
     public notes: string
-    )
-  { }
+    ) {}
 }

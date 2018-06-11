@@ -1,7 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import * as firebase from 'firebase/app';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
