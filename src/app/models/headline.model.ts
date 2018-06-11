@@ -2,12 +2,12 @@ export class Headline {
   constructor(
     public headlineOne: string,
     public linkOneName: string,
-    public linkOneAddress: string,
+    public linkOneURL: string,
     public headlineTwo: string,
     public linkTwoName: string,
-    public linkTwoAddress: string,
+    public linkTwoURL: string,
     public headlineThree: string,
     public linkThreeName: string,
-    public linkThreeAddress: string
+    public linkThreeURL: string
   ) {}
 }

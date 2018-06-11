@@ -1,3 +1,43 @@
-<p>
-  edit-headline works!
-</p>
+<!-- admin edit-headlines -->
+<div class="card edit-headlines-card" *ngIf="currentRoute === '/admin'">
+  <header class="card-header">
+    <p class="card-header-title is-centered">
+      Write the Latest Headlines
+    </p>
+  </header>
+  <form>
+    <div class="card-content">
+
+    </div>
+    <footer class="card-footer">
+      <a (click)="update()" class="card-footer-item">UPDATE</a>
+    </footer>
+  </form>
+</div>
+
+
+<div class="card" *ngFor="let headline of headlines | async">
+  <header class="card-header">
+    <h1 class="card-header-title is-centered raleway">Latest Headlines</h1>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <!-- headline 1 -->
+      <h3 class="montyFont">{{headline.headlineOne}}</h3>
+      <h4><a href={{headline.linkOneURL}}>{{headline.linkOneName}}</a></h4>
+      <hr>
+      <!-- headline 2 -->
+      <h3 class="montyFont">{{headline.headlineTwo}}</h3>
+      <h4><a href={{headline.linkTwoURL}}>{{headline.linkTwoName}}</a></h4>
+      <hr>
+      <!-- headline 3 -->
+      <h3 class="montyFont">{{headline.headlineThree}}</h3>
+      <h4><a href={{headline.linkThreeURL}}>{{headline.linkThreeName}}</a></h4>
+      <hr>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a href="" class="card-footer-item montyFont">link?</a>
+    <a href="" class="card-footer-item montyFont">link?</a>
+  </footer>
+</div>
