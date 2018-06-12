@@ -16,7 +16,7 @@ export class UploadMinutesComponent implements OnInit {
   task: AngularFireUploadTask;
   // state for dropzone CSS toggling
   isHovering: boolean;
-  year: string = '2018';
+  year: number = 2018;
 
   constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
 
@@ -30,7 +30,7 @@ export class UploadMinutesComponent implements OnInit {
   }
 
   startUpload(event: FileList, fileType) {
-    const year = this.year
+    const year = +this.year
     console.log(year + "Uploadevent")
     const file = event.item(0)
     const path = `minutes/${new Date().getTime()}_${file.name}`;
