@@ -16,11 +16,5 @@
   display: block;
   font-size: 3.5em !important;
   max-width: 600px;
-  font-weight: 250 !important;
-}
-
-.box {
-  max-width: 600px;
-  background-color: rgba(192, 202, 205, 0.4);
-  border-radius: 0px;
+  font-weight: 350 !important;
 }

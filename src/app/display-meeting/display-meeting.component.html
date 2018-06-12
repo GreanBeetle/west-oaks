@@ -1,10 +1,14 @@
-<div class="card" *ngFor="let meeting of meetings | async">
-  <header class="card-header">
+<div class="w3-card-4" *ngFor="let meeting of meetings | async">
+  <header class="w3-container w3-light-grey">
     <h1 class="card-header-title is-centered raleway">Next Board Meeting</h1>
   </header>
   <div class="card-content">
-    <div class="content">
-      <h3 class="has-text-centered montyFont"><b>{{meeting.time}}</b> on <b>{{meeting.date}}</b></h3>
+    <div class="w3-container">
+      <div class="w3-tag w3-round w3-green" style="padding:3px">
+        <div class="w3-tag w3-round w3-green w3-border w3-border-white">
+          <b>{{meeting.time}}</b> on <b>{{meeting.date}}</b>
+        </div>
+      </div><hr>
       <p class="place montyFont"><b>{{meeting.placeName}}</b></p>
       <p class="place montyFont">{{meeting.streetAddress}}</p>
       <p class="place montyFont">{{meeting.cityState}}</p><br>
@@ -12,7 +16,6 @@
     </div>
   </div>
   <footer class="card-footer">
-    <a href="/encyclopedia" class="card-footer-item montyFont">Make a suggestion</a>
-    <a href="/directors" class="card-footer-item montyFont">Why should you come to Board meetings?</a>
+    <button class="w3-button w3-block w3-dark-grey">Make a suggestion</button>
   </footer>
 </div>
