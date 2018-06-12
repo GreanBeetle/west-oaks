@@ -10,11 +10,14 @@
   <div class="colorOverlay">
     <div class="container">
       <div class="columns features">
-        <div class="column is-6">
+        <div class="column is-4">
+          <app-display-headline></app-display-headline>
+        </div>
+        <div class="column is-4">
           <!-- next meeting -->
           <app-display-meeting></app-display-meeting>
         </div>
-        <div class="column is-6">
+        <div class="column is-4">
           <div class="card is-shady">
             <ng4-twitter-timeline [dataSrc]="{sourceType: 'profile',screenName: 'WestOaksCondos'}" [opts]="{tweetLimit: 1}"></ng4-twitter-timeline>
           </div>

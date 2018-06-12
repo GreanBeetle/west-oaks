@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+  AngularFirestoreCollection
+} from 'angularfire2/firestore';
+import { Headline } from '../models/headline.model';
 
 @Component({
   selector: 'app-display-headline',
@@ -6,10 +13,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display-headline.component.css']
 })
 export class DisplayHeadlineComponent implements OnInit {
+  headlineCollection: AngularFirestoreCollection<Headline>;
+  headlines: Observable<Headline[]>;
+  headline: AngularFirestoreDocument<Headline>;
 
-  constructor() { }
+  constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
+    this.headlineCollection = this.afs.collection('headlines');
+    this.headlines = this.headlineCollection.valueChanges();
+    this.headline = this.headlineCollection.doc('main-headlines');
+    console.log('Your meeting is: ' + this.headline);
   }
 
 }
