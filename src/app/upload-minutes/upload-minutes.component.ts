@@ -16,6 +16,7 @@ export class UploadMinutesComponent implements OnInit {
   task: AngularFireUploadTask;
   // state for dropzone CSS toggling
   isHovering: boolean;
+  year: string = '2018';
 
   constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
 
@@ -23,8 +24,14 @@ export class UploadMinutesComponent implements OnInit {
     this.isHovering = true;
   }
 
-  startUpload(event: FileList, fileType) {
+  setYear (event: any) {
+    this.year = event.target.value;
+    console.log("setYear function " + this.year);
+  }
 
+  startUpload(event: FileList, fileType) {
+    const year = this.year
+    console.log(year + "Uploadevent")
     const file = event.item(0)
     const path = `minutes/${new Date().getTime()}_${file.name}`;
     const fileName = file.name.slice(0, (file.name.length - 4));
@@ -35,7 +42,7 @@ export class UploadMinutesComponent implements OnInit {
       const downloadURL = ref.getDownloadURL().subscribe(url => {
         // const url = url;
         console.log(url);
-        this.db.collection('minutes').add( { path, fileName, uploadDate, url });
+        this.db.collection('minutes').add( { path, fileName, uploadDate, url, year });
       });
     })
   }

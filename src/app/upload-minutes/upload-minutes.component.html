@@ -1,14 +1,15 @@
 <!-- year selector drop menu -->
-<!-- <div class="field">
+<div class="field">
   <div class="control">
     <div class="select is-small">
-      <select>
-        <option #year>2019</option>
-        <option #year>2018</option>
+      <select (change)="setYear($event)">
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
       </select>
     </div>
   </div>
-</div> -->
+</div>
 
 <div class="dropzone" dropzone (hovered)="toggleHover($event)" (dropped)="startUpload($event)" [class.hovering]="isHovering">
 
@@ -17,7 +18,7 @@
   <div class="file">
     <label class="file-label">
 
-      <input class="file-input" type="file" (change)="startUpload($event.target.files)">
+      <input class="file-input" type="file" (change)="startUpload($event.target.files, year.value)">
 
       <span class="file-cta">
         <span class="file-icon">
