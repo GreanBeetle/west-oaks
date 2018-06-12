@@ -1,0 +1,18 @@
+h1 {
+  font-size: 27px;
+  font-weight: 300;
+}
+
+ul, li {
+  list-style: none;
+  margin-left: 0px;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+a {
+  margin-top: -10px;
+}

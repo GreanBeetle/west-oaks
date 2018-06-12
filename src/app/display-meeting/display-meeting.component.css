@@ -13,3 +13,7 @@ hr {
   margin-top: 10px;
   margin-bottom: 5px;
 }
+
+.time-tag {
+  font-size: 1.2em !important;
+}

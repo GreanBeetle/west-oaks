@@ -1,25 +1,25 @@
-<div class="card" *ngFor="let headline of headlines | async">
-  <header class="card-header">
+<div class="w3-card-4" *ngFor="let headline of headlines | async">
+  <header class="w3-container w3-light-grey">
     <h1 class="card-header-title is-centered raleway">Latest Headlines</h1>
   </header>
-  <div class="card-content">
+  <div class="w3-container">
     <div class="content">
       <!-- headline 1 -->
-      <h3 class="montyFont">{{headline.headlineOne}}</h3>
-      <h4><a href={{headline.linkOneURL}}>{{headline.linkOneName}}</a></h4>
-      <hr>
-      <!-- headline 2 -->
-      <h3 class="montyFont">{{headline.headlineTwo}}</h3>
-      <h4><a href={{headline.linkTwoURL}}>{{headline.linkTwoName}}</a></h4>
-      <hr>
-      <!-- headline 3 -->
-      <h3 class="montyFont">{{headline.headlineThree}}</h3>
-      <h4><a href={{headline.linkThreeURL}}>{{headline.linkThreeName}}</a></h4>
-      <hr>
+      <ul class="w3-ul">
+        <li>
+          <h3 class="montyFont">{{headline.headlineOne}}</h3>
+          <a href={{headline.linkOneURL}}>{{headline.linkOneName}}</a>
+        </li>
+        <li>
+          <h3 class="montyFont">{{headline.headlineTwo}}</h3>
+          <a href={{headline.linkTwoURL}}>{{headline.linkTwoName}}</a>
+        </li>
+        <li>
+          <h3 class="montyFont">{{headline.headlineThree}}</h3>
+          <a href={{headline.linkThreeURL}}>{{headline.linkThreeName}}</a>
+        </li>
+      </ul><br>
     </div>
   </div>
-  <footer class="card-footer">
-    <a href="" class="card-footer-item montyFont">link?</a>
-    <a href="" class="card-footer-item montyFont">link?</a>
-  </footer>
+
 </div>
