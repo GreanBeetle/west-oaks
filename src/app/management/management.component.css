@@ -1,0 +1,12 @@
+.bullets {
+  list-style: initial !important;
+  margin-left: 50px;
+}
+
+.noBullets {
+  margin-left: 30px; 
+}
+
+.contactIcon {
+  height: 20px;
+}

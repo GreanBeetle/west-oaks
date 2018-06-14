@@ -8,16 +8,11 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  user = {
-    email: '',
-    password: ''
-  };
+  user = { email: '', password: '' };
 
-  constructor(private authService: AuthenticationService, private router: Router) {
-  }
-
+  constructor(private authService: AuthenticationService, private router: Router) { }
 
   signIn() {
     this.authService.signIn(this.user.email, this.user.password)
@@ -28,6 +23,4 @@ export class LoginComponent implements OnInit {
     .catch((err) => console.log('error: ' + err));
   }
 
-  ngOnInit() {
-  }
 }
