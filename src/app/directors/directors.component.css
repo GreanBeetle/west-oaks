@@ -1,4 +1,8 @@
-ul {
+.bullets {
   list-style: initial !important;
-  margin-left: 50px; 
+  margin-left: 50px;
+}
+
+.noBullets {
+  list-style: none !important
 }

@@ -1,4 +1,4 @@
-/* COLORS */
+/* colors and fonts */
 
 .raleway {
   font-family: 'Raleway', sans-serif;
@@ -28,6 +28,8 @@
 .madfang {
   background-color: #03A678 !important;
 }
+
+/* app-wide styles and classes */
 
 .subtitles {
   font-family: 'Raleway', sans-serif;
