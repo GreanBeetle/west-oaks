@@ -24,6 +24,13 @@ iframe.map {
   height: 360px;
 }
 
-@media screen and (max-width: 768px) {
+.contact {
+  text-align: center;
+  font-weight: 500;
+  font-size: 3em;
+  margin-bottom: 30px;
+}
 
+section {
+  padding-top: 20px;
 }
