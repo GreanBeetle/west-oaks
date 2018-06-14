@@ -16,3 +16,11 @@ h4 {
 a {
   margin-top: -10px;
 }
+
+.content {
+  padding: 10px;
+}
+
+p.image {
+  padding-top: 10px;
+}

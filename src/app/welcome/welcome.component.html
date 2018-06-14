@@ -10,18 +10,18 @@
   <div class="colorOverlay">
     <div class="container">
       <div class="columns features">
-        <div class="column is-4">
+        <div class="column is-8">
           <app-display-headline></app-display-headline>
         </div>
         <div class="column is-4">
           <!-- next meeting -->
           <app-display-meeting></app-display-meeting>
         </div>
-        <div class="column is-4">
+        <!-- <div class="column is-4">
           <div class="card is-shady">
             <ng4-twitter-timeline [dataSrc]="{sourceType: 'profile',screenName: 'WestOaksCondos'}" [opts]="{tweetLimit: 1}"></ng4-twitter-timeline>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -37,16 +37,29 @@
 </section>
 
 <!-- contact -->
-<section class="section light-gray">
+<section class="section w3-light-grey">
+  <div class="contact">Contact Us</div>
   <div class="container">
-    If your bank requires contact information for automatic bill payment, or if you are a Title Company with inquiries, please contact Sterling Management Group via the following:
+    <div class="columns">
+      <div class="column">
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe class="map" id="gmap_canvas" src="https://maps.google.com/maps?q=west%20oaks%20condos&t=k&z=19&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+          </div>
+          <style>.mapouter{text-align:right; margin-right: 20px;}.gmap_canvas {overflow:hidden;background:none!important;}</style>
+        </div>
+      </div>
+      <div class="column">
+        If your bank requires contact information for automatic bill payment, or if you are a Title Company with inquiries, please contact Sterling Management Group via the following:
 
-    - E-mail at liz@sterlingmanagement.net
-    Mail to 200 SW 4th Street Ste 102 Corvallis, OR 97333
-    - Telephone at 541-757-1290
+        - E-mail at liz@sterlingmanagement.net
+        Mail to 200 SW 4th Street Ste 102 Corvallis, OR 97333
+        - Telephone at 541-757-1290
 
-    Note to escrow officers: some units' garages require separate titles. Please research each case individually.
+        Note to escrow officers: some units' garages require separate titles. Please research each case individually.
 
-    Note to Realtors: West Oaks Condos does not have a pool or rec center. The nearby apartment facilities are NOT available for WOC residents.
+        Note to Realtors: West Oaks Condos does not have a pool or rec center. The nearby apartment facilities are NOT available for WOC residents.
+      </div>
+    </div>
   </div>
 </section>

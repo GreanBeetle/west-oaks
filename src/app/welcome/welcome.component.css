@@ -18,3 +18,12 @@
   max-width: 600px;
   font-weight: 350 !important;
 }
+
+iframe.map {
+  width: 100%;
+  height: 360px;
+}
+
+@media screen and (max-width: 768px) {
+
+}
