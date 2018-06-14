@@ -6,3 +6,7 @@
 .noBullets {
   list-style: none !important
 }
+
+.boardMembers {
+  margin-left: 50px; 
+}

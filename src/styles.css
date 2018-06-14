@@ -29,7 +29,10 @@
   background-color: #03A678 !important;
 }
 
-/* app-wide styles and classes */
+/* the hero panel at the top of every page except the home page */
+.pageHero {
+  background-color: #b2bec3 !important;
+}
 
 .subtitles {
   font-family: 'Raleway', sans-serif;
