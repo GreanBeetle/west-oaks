@@ -8,6 +8,11 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.latoFont {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+}
+
 .light-gray {
   background-color: #b2bec3 !important;
 }
@@ -22,6 +27,12 @@
 
 .madfang {
   background-color: #03A678 !important;
+}
+
+.subtitles {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 body {
