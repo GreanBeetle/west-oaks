@@ -1,0 +1,25 @@
+
+.main-content {
+  padding-right: 50px;
+}
+
+.justified {
+  text-align: justify;
+}
+
+a {
+  color: #0984e3;
+  color: #74b9ff;
+}
+
+/* sidebar */
+.noBullets {
+  list-style: none !important;
+  margin-left: 30px;
+
+}
+
+.detailBudgetsSubtitle {
+  margin-left: 30px;
+  margin-top: 20px;
+}

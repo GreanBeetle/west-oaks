@@ -1,5 +1,44 @@
-  <ul>
-    <li *ngFor="let budget of budgets | async">
-      <a href={{budget.url}}> {{ budget.fileName }} </a>
-    </li>
-  </ul>
+<section class="hero pageHero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title montyFont">
+        Budget
+      </h1>
+      <h2 class="subtitle montyFont">
+        <!-- intentionally blank -->
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-9 main-content">
+        <h3 class="subtitles">How are my assessments calculated?</h3>
+        <br>
+        <p class="latoFont justified">
+          Owners pay assessments based on the square footage of their units (see fee schedule <a href="#"> here</a>) and whether they have garages. The total annual budget is divided up among the units based on that formula, and then each unit's annual assessment is divided into 12 monthly payments.
+        </p>
+        <hr>
+        <br>
+        <h3 class="subtitles">What are the Reserves for?</h3>
+        <br>
+        <p class="latoFont justified">
+          The Board is required by Oregon state law to establish and fund a Reserve account. This "banks" money for the eventual replacement of Association property that is likely to wear out or require refurbishment: things like exterior paint, roofs, parking lot paving, sidewalks, etc. The original developers of the West Oaks Condos hired a consultant to create a Reserve Study document, determining which items should be included, what their projected lifespan is, and how much it will cost to replace/repair them. The amount required to be put into the Reserves every year is determined by dividing each items' replacement costs by their lifetimes. Read the Reserve Study document.
+        </p>
+        <hr>
+        <br>
+      </div>
+      <div class="column is-3 dark-gray">
+        <h3 class="subtitles detailBudgetsSubtitle">Detailed Budgets</h3>
+        <br>
+        <ul>
+          <li *ngFor="let budget of budgets | async" class="noBullets">
+            <a href={{budget.url}}> {{ budget.fileName }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
