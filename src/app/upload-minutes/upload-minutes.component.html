@@ -1,8 +1,8 @@
-<nav class="level">
+
   <!-- month selector drop menu -->
-  <div class="field level-item level-left">
+  <div class="field is-inline-block">
     <div class="control">
-      <div class="select is-small is-info">
+      <div class="select is-small dark-gray">
         <select (change)="setMonth($event)">
           <option value='jan'>January</option>
           <option value='feb'>February</option>
@@ -21,9 +21,9 @@
     </div>
   </div>
   <!-- year selector drop menu -->
-  <div class="field level-item level-left">
+  <div class="field is-inline-block">
     <div class="control">
-      <div class="select is-small is-info">
+      <div class="select is-small dark-gray">
         <select (change)="setYear($event)">
           <option value=2025>2025</option>
           <option value=2024>2024</option>
@@ -43,8 +43,6 @@
       </div>
     </div>
   </div>
-
-</nav>
 
 <div class="dropzone"
   dropzone
