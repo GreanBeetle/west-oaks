@@ -8,5 +8,9 @@
 }
 
 .boardMembers {
-  margin-left: 50px; 
+  margin-left: 50px;
+}
+
+.justified {
+  text-align: justify; 
 }

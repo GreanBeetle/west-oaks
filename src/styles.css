@@ -29,10 +29,7 @@
   background-color: #03A678 !important;
 }
 
-/* the hero panel at the top of every page except the home page */
-.pageHero {
-  background-color: #fff !important;
-}
+/* other classes */
 
 .subtitles {
   font-family: 'Raleway', sans-serif;
@@ -40,6 +37,13 @@
   font-weight: 600;
   color: #03A678;
 }
+
+/* the hero panel at the top of every page except the home page */
+
+.pageHero {
+  background-color: #fff !important;
+}
+
 
 body {
   margin-top: 115px !important;

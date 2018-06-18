@@ -14,3 +14,11 @@ a {
   margin-left: 20px;
   color: #2d3436;
 }
+
+.justified {
+  text-align: justify;
+}
+
+.main-content {
+  padding-right: 50px;
+}
