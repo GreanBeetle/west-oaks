@@ -1,0 +1,16 @@
+
+a {
+  color: #74b9ff;
+}
+
+/* sidebar */
+.noBullets {
+  list-style: none !important;
+  margin-left: 20px;
+
+}
+
+.detailBudgetsSubtitle {
+  margin-left: 20px;
+  color: #2d3436;
+}

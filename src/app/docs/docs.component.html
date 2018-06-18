@@ -1,69 +1,78 @@
 <ul>
-  <li *ngFor="let document of documents | async">
-    <a href={{document.url}}> {{ document.fileName }} </a>
-  </li>
 </ul>
 
 <section class="hero pageHero">
   <div class="hero-body">
     <div class="container">
       <h1 class="title montyFont">
-        Documents
+        Governing Documents
       </h1>
       <h2 class="subtitle montyFont">
-        House Rules, Bylaws, & Declarations 
+        House Rules, Bylaws, & Declarations
       </h2>
     </div>
   </div>
 </section>
 <section class="section">
   <div class="container">
+    <div class="columns">
+      <div class="column is-9">
+        <!-- house rules -->
+        <h3 class="subtitles">House Rules of West Oaks Condos</h3>
+        <br>
+        <p class="latoFont">
+          The WOC board has adopted a set of "house rules". These are interpretations and clarifications of the more formal governing documents, and also add some additional points intended to make living at West Oaks Condos even more enjoyable for all. (The provisions in the House Rules are just as enforceable as the more formal conditions.)
+        </p>
+        <br>
+        <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/WOC%20House%20Rules.pdf?alt=media&token=f8b9efb5-d2f4-4e2f-8994-334dd82ba448">Read the WOC House Rules</a></p>
+        <hr>
+        <br>
 
-    <!-- house rules -->
-    <h3 class="subtitles">House Rules of West Oaks Condos</h3>
-    <br>
-    <p class="latoFont">
-      The WOC board has adopted a set of "house rules". These are interpretations and clarifications of the more formal governing documents, and also add some additional points intended to make living at West Oaks Condos even more enjoyable for all. (The provisions in the House Rules are just as enforceable as the more formal conditions.)
-    </p>
-    <br>
-    <p class="latoFont"><a href="#">Read the WOC House Rules</a></p>
-    <hr>
-    <br>
+        <!-- WOC bylaws -->
+        <h3 class="subtitles">Bylaws of WOC</h3>
+        <br>
+        <p class="latoFont">
+          The Bylaws govern the operation of the West Oaks Condos Owners Association. Topics include elections, meetings, budgeting, reporting requirements, and so on.
+        </p>
+        <br>
+        <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/WOC%20Bylaws.pdf?alt=media&token=0587cf35-40bd-40ac-8ed7-bca280ecaea9">Read the WOC Bylaws</a></p>
+        <hr>
+        <br>
 
-    <!-- WOC bylaws -->
-    <h3 class="subtitles">Bylaws of WOC</h3>
-    <br>
-    <p class="latoFont">
-      The Bylaws govern the operation of the West Oaks Condos Owners Association. Topics include elections, meetings, budgeting, reporting requirements, and so on.
-    </p>
-    <br>
-    <p class="latoFont"><a href="#">Read the WOC Bylaws</a></p>
-    <hr>
-    <br>
+        <!-- WOC declaration and supplemental declaration -->
+        <h3 class="subtitles">WOC Declaration and Supplemental Declaration</h3>
+        <br>
+        <p class="latoFont">
+          These documents were filed with the State when West Oaks Condos were first proposed. In addition to describing the project, both documents set out the rules under which WOC runs. This document is equivalent to the "Conditions, Covenents, and Restrictions," i.e. CC&Rs, that govern planned communities.
+        </p>
+        <br>
+        <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/WOC%20Declaration.pdf?alt=media&token=d9dc8ccd-d222-4944-a6bf-0c89b7722cc8">Read the WOC Declaration</a></p>
+        <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/WOC%20Supplemental%20Declaration.pdf?alt=media&token=eb8a0bc6-c225-4eb2-9175-5e3b8df0faf9">Read the WOC Supplemental Declaration</a></p>
+        <hr>
+        <br>
 
-    <!-- WOC declaration and supplemental declaration -->
-    <h3 class="subtitles">WOC Declaration and Supplemental Declaration</h3>
-    <br>
-    <p class="latoFont">
-      These documents were filed with the State when West Oaks Condos were first proposed. In addition to describing the project, both documents set out the rules under which WOC runs. This document is equivalent to the "Conditions, Covenents, and Restrictions," i.e. CC&Rs, that govern planned communities.
-    </p>
-    <br>
-    <p class="latoFont"><a href="#">Read the WOC Declaration</a></p>
-    <p class="latoFont"><a href="#">Read the WOC Supplemental Declaration</a></p>
-    <hr>
-    <br>
+        <!-- insurance policies for WOC -->
+        <h3 class="subtitles">Insurance Policies for WOC</h3>
+        <br>
+        <p class="latoFont">
+          The HOA is required to maintain hazard insurance for the structures and common areas.
+        </p>
+        <br>
+        <p class="latoFont">
+          The HOA also requires Directors and Officers (D&O) insurance for the Board of Directors. Owners wishing to review this policy should <a href="mailto:liz@sterlingmanagement.net">contact Sterling Management Group</a>. A photocopy charge may be assessed for any hard copies.
+        </p>
+        <br>
+      </div>
+      <div class="column is-3 dark-gray">
+        <h3 class="subtitles detailBudgetsSubtitle">Resolutions</h3>
+        <br>
+        <li *ngFor="let document of documents | async" class="noBullets">
+          <a href={{document.url}}> {{ document.fileName }} </a>
+        </li>
+      </div>
 
-    <!-- insurance policies for WOC -->
-    <h3 class="subtitles">Insurance Policies for WOC</h3>
-    <br>
-    <p class="latoFont">
-      The HOA is required to maintain hazard insurance for the structures and common areas.
-    </p>
-    <br>
-    <p class="latoFont">
-      The HOA also requires Directors and Officers (D&O) insurance for the Board of Directors. Owners wishing to review this policy should <a href="mailto:liz@sterlingmanagement.net">contact Sterling Management Group</a>. A photocopy charge may be assessed for any hard copies.
-    </p>
-    <br>
+    </div>
+
 
   </div>
 </section>
