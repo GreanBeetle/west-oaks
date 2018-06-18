@@ -3,6 +3,7 @@ import { Directive, HostListener, HostBinding, Output, EventEmitter } from '@ang
 @Directive({
   selector: '[dropzone]'
 })
+
 export class DropZoneDirective {
 
   @Output() dropped = new EventEmitter<FileList>();

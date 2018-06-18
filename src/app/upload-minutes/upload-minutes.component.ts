@@ -11,12 +11,13 @@ import { finalize } from 'rxjs/operators';
   templateUrl: './upload-minutes.component.html',
   styleUrls: ['./upload-minutes.component.css']
 })
+
 export class UploadMinutesComponent implements OnInit {
   // Main Task
   task: AngularFireUploadTask;
-  // state for dropzone CSS toggling
   isHovering: boolean;
   year: number = 2018;
+  month: string = 'January';
 
   constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
 
@@ -26,13 +27,18 @@ export class UploadMinutesComponent implements OnInit {
 
   setYear (event: any) {
     this.year = event.target.value;
-    console.log("setYear function " + this.year);
+    console.log('setYear function'  + this.year);
+  }
+
+  setMonth (event: any) {
+    this.month = event.target.value;
   }
 
   startUpload(event: FileList, fileType) {
-    const year = +this.year
-    console.log(year + "Uploadevent")
-    const file = event.item(0)
+    const month = this.month;
+    const year = +this.year;
+    console.log(year + 'Uploadevent');
+    const file = event.item(0);
     const path = `minutes/${new Date().getTime()}_${file.name}`;
     const fileName = file.name.slice(0, (file.name.length - 4));
     const uploadDate = new Date().getTime();
@@ -42,7 +48,7 @@ export class UploadMinutesComponent implements OnInit {
       const downloadURL = ref.getDownloadURL().subscribe(url => {
         // const url = url;
         console.log(url);
-        this.db.collection('minutes').add( { path, fileName, uploadDate, url, year });
+        this.db.collection('minutes').add( { path, fileName, uploadDate, url, month, year });
       });
     })
   }

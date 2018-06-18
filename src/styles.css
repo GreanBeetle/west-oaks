@@ -50,6 +50,8 @@ body {
   min-height: 60% !important;
 }
 
+/* dropzone */
+
 .dropzone {
   display: flex;
   align-items: center;
@@ -65,6 +67,11 @@ body {
     border: 2px solid #f16624;
     color: #dadada !important;
   }
+}
+
+.dropzone.hovering {
+  border: 2px solid #00CEA9;
+  color: #dadada !important;
 }
 
 progress::-webkit-progress-value {

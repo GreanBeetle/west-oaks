@@ -1,24 +1,63 @@
-<!-- year selector drop menu -->
-<div class="field">
-  <div class="control">
-    <div class="select is-small">
-      <select (change)="setYear($event)">
-        <option value=2019>2019</option>
-        <option value=2018>2018</option>
-        <option value=2017>2017</option>
-      </select>
+<nav class="level">
+  <!-- month selector drop menu -->
+  <div class="field level-item level-left">
+    <div class="control">
+      <div class="select is-small is-info">
+        <select (change)="setMonth($event)">
+          <option value='jan'>January</option>
+          <option value='feb'>February</option>
+          <option value='mar'>March</option>
+          <option value='apr'>April</option>
+          <option value='may'>May</option>
+          <option value='jun'>June</option>
+          <option value='jul'>July</option>
+          <option value='aug'>August</option>
+          <option value='sep'>September</option>
+          <option value='oct'>October</option>
+          <option value='nov'>November</option>
+          <option value='dec'>December</option>
+        </select>
+      </div>
     </div>
   </div>
-</div>
+  <!-- year selector drop menu -->
+  <div class="field level-item level-left">
+    <div class="control">
+      <div class="select is-small is-info">
+        <select (change)="setYear($event)">
+          <option value=2025>2025</option>
+          <option value=2024>2024</option>
+          <option value=2023>2023</option>
+          <option value=2022>2022</option>
+          <option value=2021>2021</option>
+          <option value=2020>2020</option>
+          <option value=2019>2019</option>
+          <option value=2018>2018</option>
+          <option value=2017>2017</option>
+          <option value=2016>2016</option>
+          <option value=2015>2015</option>
+          <option value=2014>2014</option>
+          <option value=2013>2013</option>
+          <option value=2012>2012</option>
+        </select>
+      </div>
+    </div>
+  </div>
 
-<div class="dropzone" dropzone (hovered)="toggleHover($event)" (dropped)="startUpload($event)" [class.hovering]="isHovering">
+</nav>
+
+<div class="dropzone"
+  dropzone
+  (hovered)="toggleHover($event)"
+  (dropped)="startUpload($event)"
+  [class.hovering]="isHovering">
 
   <p>drag and drop a PDF file</p>
 
   <div class="file">
     <label class="file-label">
 
-      <input class="file-input" type="file" (change)="startUpload($event.target.files, year.value)">
+      <input class="file-input" type="file" (change)="startUpload($event.target.files, year.value, month.value)">
 
       <span class="file-cta">
         <span class="file-icon">
