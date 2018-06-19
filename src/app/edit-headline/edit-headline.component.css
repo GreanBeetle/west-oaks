@@ -1,0 +1,24 @@
+.box_header {
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.box {
+  background-color: #E5E5E5;
+}
+
+input {
+  background-color: #E5E5E5;
+  border-radius: 3px;
+  margin: 5px;
+  min-width: 50%;
+  max-width: 70%;
+  height: 40px;
+  box-shadow: 0px 0px !important;
+}
+
+
+::placeholder {
+  color: #000;
+}
