@@ -17,6 +17,10 @@ import { Router } from '@angular/router';
 export class MinutesComponent implements OnInit {
   minutesArray: AngularFirestoreCollection<any>;
   minutes: Observable<any[]>;
+  array2017: AngularFirestoreCollection<any>;
+  arr2017: Observable<any[]>;
+  array2016: AngularFirestoreCollection<any>;
+  arr2016: Observable<any[]>;
 
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
     this.minutesArray = afs.collection<any>('minutes', ref => ref.orderBy('uploadDate', 'desc'));
