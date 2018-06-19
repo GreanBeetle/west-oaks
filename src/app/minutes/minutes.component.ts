@@ -23,9 +23,15 @@ export class MinutesComponent implements OnInit {
   arr2016: Observable<any[]>;
 
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
-    this.minutesArray = afs.collection<any>('minutes', ref => ref.orderBy('uploadDate', 'desc'));
+    this.minutesArray = afs.collection<any>('minutes', ref => ref.orderBy('year', 'desc'));
     this.minutes = this.minutesArray.valueChanges();
 
+    this.itemCollection = this.afs.collection<any>('minutes', ref => {
+     // Compose a query using multiple .where() methods
+     return ref
+             .where('year', '==', '2017');
+    });
+    this.items = this.itemCollection.valueChanges();
   }
 
   ngOnInit() {
