@@ -44,10 +44,13 @@
   background-color: #fff !important;
 }
 
+html, body {
+  min-height: 100%;
+}
 
 body {
   margin-top: 115px !important;
-  min-height: 60% !important;
+  position: relative;
 }
 
 /* dropzone */

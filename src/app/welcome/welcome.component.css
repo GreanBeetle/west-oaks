@@ -34,3 +34,17 @@ iframe.map {
 section {
   padding-top: 20px;
 }
+
+.contact-us {
+  background-color: #fff;
+}
+
+.details-box {
+  padding: 30px;
+}
+
+.contacts-list {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
