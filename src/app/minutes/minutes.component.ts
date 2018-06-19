@@ -32,7 +32,43 @@ export class MinutesComponent implements OnInit {
     this.months2016 = this.monthsArray2016.valueChanges();
     console.log('2016 is this: ' + this.months2016);
 
+    this.minutes.subscribe(minutes => {
+      minutes.forEach(minute => {
+        // retrieve individual object from database
+        const minuteRef = this.afs.doc(`minutes/${minute.id}`);
+        console.log('Minute year: ' + minute.year + '  Minute month: ' + minute.month);
+        console.log('Here is a minuteRef: ', minuteRef);
+        if (minute.month === 'January') {
+          minuteRef.update({'month': 1 });
+        } else if (minute.month === 'jan') {
+          minuteRef.update({'month': 1 });
+        } else if (minute.month === 'feb') {
+          minuteRef.update({'month': 2 });
+        } else if (minute.month === 'mar') {
+          minuteRef.update({'month': 3 });
+        } else if (minute.month === 'apr') {
+          minuteRef.update({'month': 4 });
+        } else if (minute.month === 'may') {
+          minuteRef.update({'month': 5 });
+        } else if (minute.month === 'jun') {
+          minuteRef.update({'month': 6 });
+        } else if (minute.month === 'jul') {
+          minuteRef.update({'month': 7 });
+        } else if (minute.month === 'aug') {
+          minuteRef.update({'month': 8 });
+        } else if (minute.month === 'sep') {
+          minuteRef.update({'month': 9 });
+        } else if (minute.month === 'oct') {
+          minuteRef.update({'month': 10 });
+        } else if (minute.month === 'nov') {
+          minuteRef.update({'month': 11 });
+        } else {
+          minuteRef.update({'month': 12 });
+        }
+      });
+    });
   }
+
 
   ngOnInit() {
   }

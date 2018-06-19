@@ -17,7 +17,7 @@ export class UploadMinutesComponent implements OnInit {
   task: AngularFireUploadTask;
   isHovering: boolean;
   year: number = 2018;
-  month: string = 'January';
+  month: string = 'jan';
 
   constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
 
