@@ -6,48 +6,39 @@
   <div class="w3-container">
     <form>
       <div class="card-content">
-        <div class="form-group">
-          <label for="h1">Headline text</label>
-          <input id="h1" #h1 placeholder="{{headline.headlineOne}}">
-        </div>
-        <div class="form-group">
-          <label for="h1un">URL name</label>
-          <input id="h1un" #h1URLName placeholder="{{headline.linkOneName}}">
-        </div>
-        <div class="form-group">
-          <label for="h1u">Headline URL</label>
-          <input id="h1u" #h1URL placeholder="{{headline.linkOneURL}}">
-        </div>
+        <table>
+          <tbody>
+            <tr><td><label for="h1">Headline text</label></td><td><input id="h1" #h1 placeholder="{{headline.headlineOne}}"></td></tr>
+            <tr><td><label for="h1un">URL name</label></td><td><input id="h1un" #h1URLName placeholder="{{headline.linkOneName}}"></td></tr>
+            <tr><td><label for="h1u">Headline URL</label></td><td><input id="h1u" #h1URL placeholder="{{headline.linkOneURL}}"></td></tr>
+          </tbody>
+        </table>
+
         <hr>
-        <div class="form-group">
-          <label for="h2">Headline text</label>
-          <input id="h2" #h1 placeholder="{{headline.headlineTwo}}">
-        </div>
-        <div class="form-group">
-          <label for="h2un">URL name</label>
-          <input id="h2un" #h1URLName placeholder="{{headline.linkTwoName}}">
-        </div>
-        <div class="form-group">
-          <label for="h2u">Headline URL</label>
-          <input id="h2u" #h1URL placeholder="{{headline.linkTwoURL}}">
-        </div>
+
+        <table>
+          <tbody>
+            <tr><td><label for="h2">Headline text</label></td><td><input id="h2" #h1 placeholder="{{headline.headlineTwo}}"></td></tr>
+            <tr><td><label for="h2un">URL name</label></td><td><input id="h2un" #h1URLName placeholder="{{headline.linkTwoName}}"></td></tr>
+            <tr><td><label for="h2u">Headline URL</label></td><td><input id="h2u" #h1URL placeholder="{{headline.linkTwoURL}}"></td></tr>
+          </tbody>
+        </table>
+
         <hr>
-        <div class="form-group">
-          <label for="h3">Headline text</label>
-          <input id="h3" #h1 placeholder="{{headline.headlineThree}}">
-        </div>
-        <div class="form-group">
-          <label for="h3un">URL name</label>
-          <input id="h3un" #h1URLName placeholder="{{headline.linkThreeName}}">
-        </div>
-        <div class="form-group">
-          <label for="3u">Headline URL</label>
-          <input id="h3u" #h1URL placeholder="{{headline.linkThreeURL}}">
-        </div>
+
+        <table>
+          <tbody>
+            <tr><td><label for="h3">Headline text</label></td><td><input id="h3" #h1 placeholder="{{headline.headlineThree}}"></td></tr>
+            <tr><td><label for="h3un">URL name</label></td><td>  <input id="h3un" #h1URLName placeholder="{{headline.linkThreeName}}"></td></tr>
+            <tr><td><label for="3u">Headline URL</label></td><td><input id="h3u" #h1URL placeholder="{{headline.linkThreeURL}}"></td></tr>
+          </tbody>
+        </table>
+
       </div>
       <footer class="card-footer">
-        <a (click)="update(h1.value, h1URLName.value, h1URL.value, h2.value, h2URLName.value, h2URL.value, h3.value, h3URLName.value, h3URL.value)" class="card-footer-item">UPDATE</a>
+        <button (click)="update(h1.value, h1URLName.value, h1URL.value, h2.value, h2URLName.value, h2URL.value, h3.value, h3URLName.value, h3URL.value)" class="w3-button w3-block w3-dark-grey">UPDATE</button>
       </footer>
+      <br>
     </form>
   </div>
 </div>
