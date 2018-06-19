@@ -18,11 +18,22 @@
 <section>
   <div class="container">
     <div class="card">
-      <ul>
-        <li *ngFor="let minute of minutes | async">
-          <a href={{minute.url}}> {{ minute.fileName }} </a>
-        </li>
-      </ul>
+      <div class="columns">
+        <div class="column">
+          <ul>
+            <li *ngFor="let minute of minutes | async">
+              <a href={{minute.url}}> {{ minute.fileName }} </a>
+            </li>
+          </ul>
+        </div>
+        <div class="column">
+          <ul>
+            <li *ngFor="let year of items | async">
+              <a href={{year.url}}> {{ year.fileName }} </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -17,12 +17,21 @@ import { Router } from '@angular/router';
 export class MinutesComponent implements OnInit {
   minutesArray: AngularFirestoreCollection<any>;
   minutes: Observable<any[]>;
+  itemCollection: AngularFirestoreCollection<Item>;
+  items: Observable<Item[]>
   months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'nov', 'dec'];
   years = [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006];
 
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
     this.minutesArray = afs.collection<any>('minutes', ref => ref.orderBy('year', 'desc'));
     this.minutes = this.minutesArray.valueChanges();
+
+    this.itemCollection = this.afs.collection<any>('minutes', ref => {
+     // Compose a query using multiple .where() methods
+     return ref
+             .where('year', '==', '2017');
+    });
+    this.items = this.itemCollection.valueChanges();
   }
 
   ngOnInit() {
