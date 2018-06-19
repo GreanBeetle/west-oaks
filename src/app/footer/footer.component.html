@@ -1,7 +1,6 @@
-<footer *ngIf="isLoggedIn" class="footer">
-  <div class="container has-text-centered">
-    <span (click)="signOut()" class="links level-item">LOGOUT</span>
-    <br>
-    <span routerLink="auth" class="links level-item">{{user?.email}}</span>
+<footer class="footer w3-dark-grey">
+  <div *ngIf="isLoggedIn" class="container has-text-centered">
+    <p>You are logged in as <b>{{user?.email}}</b></p>
+    <a (click)="signOut()" class="button is-primary is-inverted is-rounded">Log Out</a>
   </div>
 </footer>
