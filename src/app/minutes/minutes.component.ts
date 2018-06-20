@@ -27,14 +27,14 @@ export class MinutesComponent implements OnInit {
     this.minutesArray = afs.collection<any>('minutes', ref => ref.orderBy('year', 'desc'));
     this.minutes = this.minutesArray.snapshotChanges().map(actions =>
       actions.map(a => {
-            const data = a.payload.doc.data();
-            const id = a.payload.doc.id;
-            console.log('Payload id is: ', id);
-            return { id, ...data };
-        }))
-      );
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        console.log('Payload id is: ', id);
+        return { id, ...data };
+      }))
+    );
 
-    this.monthsArray2017 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2017));
+    this.monthsArray2017 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2017).orderBy('month', 'desc'));
     this.months2017 = this.monthsArray2017.valueChanges();
     this.monthsArray2016 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2016));
     this.months2016 = this.monthsArray2016.valueChanges();
@@ -43,34 +43,35 @@ export class MinutesComponent implements OnInit {
       minutes.forEach(minute => {
         // retrieve individual object from database
         const minuteRef = this.minutesArray.doc(minute.id);
-        console.log('Minute year: ' + minute.year + '  Minute month: ' + minute.month + ' Filename is: ' + minute.Filename);
-        console.log('Here is a minuteRef: ', minuteRef);
-        if (minute.month === 'January') {
+        console.log('Minute year: ' + minute.year + '  Minute month: ' + minute.month);
+        console.log(/January/.test(minute.fileName));
+
+        if (/January/.test(minute.fileName)) {
           minuteRef.update({'month': 1 });
-        } else if (minute.month === 'jan') {
-          minuteRef.update({'month': 1 });
-        } else if (minute.month === 'feb') {
+        } else if (/February/.test(minute.fileName)) {
           minuteRef.update({'month': 2 });
-        } else if (minute.month === 'mar') {
+        } else if (/March/.test(minute.fileName)) {
           minuteRef.update({'month': 3 });
-        } else if (minute.month === 'apr') {
+        } else if (/April/.test(minute.fileName)) {
           minuteRef.update({'month': 4 });
-        } else if (minute.month === 'may') {
+        } else if (/May/.test(minute.fileName)) {
           minuteRef.update({'month': 5 });
-        } else if (minute.month === 'jun') {
+        } else if (/June/.test(minute.fileName)) {
           minuteRef.update({'month': 6 });
-        } else if (minute.month === 'jul') {
+        } else if (/July/.test(minute.fileName)) {
           minuteRef.update({'month': 7 });
-        } else if (minute.month === 'aug') {
+        } else if (/August/.test(minute.fileName)) {
           minuteRef.update({'month': 8 });
-        } else if (minute.month === 'sep') {
+        } else if (/September/.test(minute.fileName)) {
           minuteRef.update({'month': 9 });
-        } else if (minute.month === 'oct') {
+        } else if (/October/.test(minute.fileName)) {
           minuteRef.update({'month': 10 });
-        } else if (minute.month === 'nov') {
+        } else if (/November/.test(minute.fileName)) {
           minuteRef.update({'month': 11 });
-        } else {
+        } else if (/December/.test(minute.fileName)) {
           minuteRef.update({'month': 12 });
+        } else {
+          console.log('You hit the Else condition');
         }
       });
     });
