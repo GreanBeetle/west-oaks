@@ -15,6 +15,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./minutes.component.css'],
   providers: [ AuthenticationService ]
 })
+
 export class MinutesComponent implements OnInit {
 
   // these yield every single PDF in the minutes collection
@@ -74,12 +75,14 @@ export class MinutesComponent implements OnInit {
       }))
     );
 
+
+
     // allows changes to every document in the minutes collection
     this.minutes.subscribe(minutes => {
       minutes.forEach(minute => {
         // retrieve individual document from database
         const minuteRef = this.minutesArray.doc(minute.id);
-        // ensure minute.month values are converted to integer
+        // ensures minute.month values are converted to integer
         if (/January/.test(minute.fileName)) {
           minuteRef.update({'month': 1 });
         } else if (/February/.test(minute.fileName)) {
@@ -111,11 +114,48 @@ export class MinutesComponent implements OnInit {
     });
 
     // these populate the months arrays with actual documents
+    this.monthsArray2025 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2025).orderBy('month', 'desc'));
+    this.months2025 = this.monthsArray2025.valueChanges();
+    this.monthsArray2024 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2024).orderBy('month', 'desc'));
+    this.months2024 = this.monthsArray2024.valueChanges();
+    this.monthsArray2023 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2023).orderBy('month', 'desc'));
+    this.months2023 = this.monthsArray2023.valueChanges();
+    this.monthsArray2022 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2022).orderBy('month', 'desc'));
+    this.months2022 = this.monthsArray2022.valueChanges();
+    this.monthsArray2021 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2021).orderBy('month', 'desc'));
+    this.months2021 = this.monthsArray2021.valueChanges();
+    this.monthsArray2020 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2020).orderBy('month', 'desc'));
+    this.months2020 = this.monthsArray2020.valueChanges();
+    this.monthsArray2019 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2019).orderBy('month', 'desc'));
+    this.months2019 = this.monthsArray2019.valueChanges();
+    this.monthsArray2018 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2018).orderBy('month', 'desc'));
+    this.months2018 = this.monthsArray2018.valueChanges();
     this.monthsArray2017 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2017).orderBy('month', 'desc'));
     this.months2017 = this.monthsArray2017.valueChanges();
     this.monthsArray2016 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2016).orderBy('month', 'desc'));
     this.months2016 = this.monthsArray2016.valueChanges();
+    this.monthsArray2015 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2015).orderBy('month', 'desc'));
+    this.months2015 = this.monthsArray2015.valueChanges();
+    this.monthsArray2014 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2014).orderBy('month', 'desc'));
+    this.months2014 = this.monthsArray2014.valueChanges();
+    this.monthsArray2013 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2013).orderBy('month', 'desc'));
+    this.months2013 = this.monthsArray2013.valueChanges();
+    this.monthsArray2012 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2012).orderBy('month', 'desc'));
+    this.months2012 = this.monthsArray2012.valueChanges();
+    this.monthsArray2011 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2011).orderBy('month', 'desc'));
+    this.months2011 = this.monthsArray2011.valueChanges();
+    this.monthsArray2010 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2010).orderBy('month', 'desc'));
+    this.months2010 = this.monthsArray2010.valueChanges();
+    this.monthsArray2009 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2009).orderBy('month', 'desc'));
+    this.months2009 = this.monthsArray2009.valueChanges();
+    this.monthsArray2008 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2008).orderBy('month', 'desc'));
+    this.months2008 = this.monthsArray2008.valueChanges();
+    this.monthsArray2007 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2007).orderBy('month', 'desc'));
+    this.months2007 = this.monthsArray2007.valueChanges();
+    this.monthsArray2006 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2006).orderBy('month', 'desc'));
+    this.months2006 = this.monthsArray2006.valueChanges();
 
+    console.log('Here is 2023 collection: ', this.months2023, ' And here is 2008: ', this.months2008)
 
   }
 
