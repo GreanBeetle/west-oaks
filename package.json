@@ -21,6 +21,8 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@firebase/firestore": "^0.5.4",
+    "@firebase/firestore-types": "^0.4.3",
     "@firebase/webchannel-wrapper": "0.2.8",
     "angular-froala-wysiwyg": "^2.8.1",
     "angular2-flash-messages": "^2.0.5",
