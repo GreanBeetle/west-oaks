@@ -25,12 +25,12 @@ export class MinutesComponent implements OnInit {
 
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
     this.minutesArray = afs.collection<any>('minutes', ref => ref.orderBy('year', 'desc'));
-    this.minutes = this.minutesArray.snapshotChanges().pipe
-        (map(actions => actions.map(a => {
+    this.minutes = this.minutesArray.snapshotChanges().map(actions =>
+      actions.map(a => {
             const data = a.payload.doc.data();
-            console.log('Here is the data: ' + data);
-            // const id = a.payload.doc.id;
-            return { ...data };
+            const id = a.payload.doc.id;
+            console.log('Payload id is: ', id);
+            return { id, ...data };
         }))
       );
 
@@ -42,8 +42,8 @@ export class MinutesComponent implements OnInit {
     this.minutes.subscribe(minutes => {
       minutes.forEach(minute => {
         // retrieve individual object from database
-        const minuteRef = this.afs.doc(`minutes/${minute.id}`);
-        console.log('Minute year: ' + minute.year + '  Minute month: ' + minute.month);
+        const minuteRef = this.minutesArray.doc(minute.id);
+        console.log('Minute year: ' + minute.year + '  Minute month: ' + minute.month + ' Filename is: ' + minute.Filename);
         console.log('Here is a minuteRef: ', minuteRef);
         if (minute.month === 'January') {
           minuteRef.update({'month': 1 });
