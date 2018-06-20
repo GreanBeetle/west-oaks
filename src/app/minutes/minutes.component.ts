@@ -7,6 +7,7 @@ import {
 import { Observable } from 'rxjs/Observable';
 import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-minutes',
@@ -24,13 +25,19 @@ export class MinutesComponent implements OnInit {
 
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
     this.minutesArray = afs.collection<any>('minutes', ref => ref.orderBy('year', 'desc'));
-    this.minutes = this.minutesArray.valueChanges();
+    this.minutes = this.minutesArray.snapshotChanges().pipe
+        (map(actions => actions.map(a => {
+            const data = a.payload.doc.data();
+            console.log('Here is the data: ' + data);
+            // const id = a.payload.doc.id;
+            return { ...data };
+        }))
+      );
+
     this.monthsArray2017 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2017));
     this.months2017 = this.monthsArray2017.valueChanges();
-    console.log('2017 is this: ' + this.months2017);
     this.monthsArray2016 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2016));
     this.months2016 = this.monthsArray2016.valueChanges();
-    console.log('2016 is this: ' + this.months2016);
 
     this.minutes.subscribe(minutes => {
       minutes.forEach(minute => {
