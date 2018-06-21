@@ -1,14 +1,42 @@
+/* john styling */
+
+/* media queries test code */
+
+@media screen and (min-width: 320px) and (max-width: 480px){
+  .headlineInput {
+    min-width: 100px !important;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1024px){
+  .headlineInput {
+    min-width: 225px !important;
+  }
+}
+
 form {
-  padding: 10px;
+  padding: 20px;
 }
 
 input {
   background-color: #E5E5E5;
   border-radius: 3px;
   margin: 5px;
-  max-width: 150px;
+  max-width: 225px;
   padding: 5px;
 }
+
+.headlineInput {
+  min-width: 465px !important;
+}
+
+/*  */
+@media screen and (max-width: 1100px) {
+  .headlineInput {
+    min-width: 200px !important;
+  }
+}
+
 
 .card-header {
   background-color: #616161;
@@ -29,8 +57,12 @@ input {
 button {
   width: 250px;
   max-width: 250px;
-  margin: 0 auto;
   color: black;
+  margin: 0 auto;
+}
+
+hr {
+  margin: 10px !important;
 }
 
 
