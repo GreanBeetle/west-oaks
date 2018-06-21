@@ -76,7 +76,6 @@ export class MinutesComponent implements OnInit {
     );
 
 
-
     // allows changes to every document in the minutes collection
     this.minutes.subscribe(minutes => {
       minutes.forEach(minute => {
@@ -155,7 +154,7 @@ export class MinutesComponent implements OnInit {
     this.monthsArray2006 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2006).orderBy('month', 'desc'));
     this.months2006 = this.monthsArray2006.valueChanges();
 
-    console.log('Here is 2023 collection: ', this.months2023, ' And here is 2008: ', this.months2008)
+    console.log('Here is 2023 collection: ', this.months2023.forEach(minute => { minute.Filename}), ' And here is 2008: ', this.months2008.forEach(minute => { minute.Filename}))
 
   }
 
