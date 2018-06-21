@@ -10,7 +10,11 @@
   </div>
 </div>
 
-<div class="dropzone" dropzone (hovered)="toggleHover($event)" (dropped)="startUpload($event)" [class.hovering]="isHovering">
+<div class="dropzone"
+     dropzone
+     (hovered)="toggleHover($event)"
+     (dropped)="startUpload($event)"
+     [class.hovering]="isHovering">
 
   <p>drag and drop a PDF file</p>
 
