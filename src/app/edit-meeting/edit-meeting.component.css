@@ -1,11 +1,18 @@
-.edit-meeting-card {
-  max-width: 500px;
-  margin: 0 auto;
+form {
+  padding: 10px;
+}
+
+input {
+  background-color: #E5E5E5;
+  border-radius: 3px;
+  margin: 5px;
+  max-width: 150px;
+  padding: 5px;
 }
 
 .card-header {
   background-color: #616161;
-  height: 60px; 
+  height: 60px;
 }
 
 .card-header-title {
@@ -15,10 +22,14 @@
   line-height: 1.4;
 }
 
+
 ::placeholder {
-  color: #8E8E8E;
+  color: #958FA2;
 }
 
-.place {
-  margin-bottom: 0px !important;
+button {
+  width: 250px;
+  max-width: 250px;
+  margin: 0 auto;
+  color: black;
 }

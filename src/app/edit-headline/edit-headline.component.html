@@ -7,14 +7,15 @@
   </header>
   <form>
     <div class="card-content">
-      <input id="h1" #h1 placeholder='Example: Please review the new pet policy'>
-      <input id="h3un" #h1URLName placeholder='Example: "Pet link"'>
-      <input id="h2u" #h1URL placeholder='Example: "https://www.zenithpro.com/pet-policy"'>
+      <input class="is inline" #h1 placeholder='Example: Please review the new pet policy'>
+      <input class="is inline" #h1URLName placeholder='Example: "Pet link"'>
+      <input class="is inline" #h1URL placeholder='Example: "https://www.zenithpro.com/pet-policy"'>
       <hr>
 
     </div>
 
     <button (click)="update(h1.value, h1URLName.value, h1URL.value, h2.value, h2URLName.value, h2URL.value, h3.value, h3URLName.value, h3URL.value)" class="w3-button w3-block w3-dark-grey">UPDATE</button>
+
   </form>
 </div>
 

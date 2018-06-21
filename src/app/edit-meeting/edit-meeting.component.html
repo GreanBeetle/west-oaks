@@ -14,8 +14,8 @@
       <input #newCityState placeholder="city and state"><br><br>
       <textarea #newNotes class="textarea" placeholder="new notes"></textarea>
     </div>
-    <footer class="card-footer">
-      <a (click)="update(newTime.value, newDate.value, newPlace.value, newAddress.value, newCityState.value, newNotes.value)" class="card-footer-item">UPDATE</a>
-    </footer>
+
+    <button (click)="update(newTime.value, newDate.value, newPlace.value, newAddress.value, newCityState.value, newNotes.value)" class="card-footer-item">UPDATE</button>
+
   </form>
 </div>
