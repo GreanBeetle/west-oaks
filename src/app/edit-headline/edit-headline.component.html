@@ -1,5 +1,27 @@
 <!-- admin edit-headlines -->
-<div class="w3-card-4" *ngFor="let headline of headlines | async">
+<div class="card edit-headline-card" *ngIf="currentRoute === '/admin'">
+  <header class="card-header">
+    <p class="card-header-title is-centered">
+      Write New Headlines
+    </p>
+  </header>
+  <form>
+    <div class="card-content">
+      <input id="h1" #h1 placeholder='Example: Please review the new pet policy'>
+      <input id="h3un" #h1URLName placeholder='Example: "Pet link"'>
+      <input id="h2u" #h1URL placeholder='Example: "https://www.zenithpro.com/pet-policy"'>
+      <hr>
+
+    </div>
+
+    <button (click)="update(h1.value, h1URLName.value, h1URL.value, h2.value, h2URLName.value, h2URL.value, h3.value, h3URLName.value, h3URL.value)" class="w3-button w3-block w3-dark-grey">UPDATE</button>
+  </form>
+</div>
+
+
+
+<!-- misha's version -->
+<!-- <div class="w3-card-4" *ngFor="let headline of headlines | async">
   <header class="w3-container w3-dark-grey">
     <div class="box_header">Edit the Latest Headlines</div>
   </header>
@@ -18,7 +40,7 @@
 
         <table>
           <tbody>
-            <tr><td><label for="h2">Headline text</label></td><td><input id="h2" #h1 placeholder="{{headline.headlineTwo}}"></td></tr>
+            <tr><td><label for="h2">Headline text</label></td><td></td></tr>
             <tr><td><label for="h2un">URL name</label></td><td><input id="h2un" #h1URLName placeholder="{{headline.linkTwoName}}"></td></tr>
             <tr><td><label for="h2u">Headline URL</label></td><td><input id="h2u" #h1URL placeholder="{{headline.linkTwoURL}}"></td></tr>
           </tbody>
@@ -41,4 +63,4 @@
       <br>
     </form>
   </div>
-</div>
+</div> -->

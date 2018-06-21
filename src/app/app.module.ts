@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './authentication.service';
 import { FooterComponent } from './footer/footer.component';
 // for PDF storage and Auth
+import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -65,7 +66,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     FormsModule,
     Ng4TwitterTimelineModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule.enablePersistence(),
+    // AngularFirestoreModule.enablePersistence(),
+    AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
@@ -79,4 +81,9 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private afs: AngularFirestore) {
+    afs.firestore.settings({ timestampsInSnapshots: true });
+    afs.firestore.enablePersistence();
+  }
+}
