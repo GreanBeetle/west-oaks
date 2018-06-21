@@ -1,13 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
+  providers: [AuthenticationService]
 })
 export class NavbarComponent implements OnInit {
+  private isLoggedIn: boolean;
 
-  constructor() { }
+  constructor(public authService: AuthenticationService) {
+    this.authService.user.subscribe(theUser => {
+      if (theUser == null) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = true;
+      }
+    });
+  }
 
   ngOnInit() {
   }

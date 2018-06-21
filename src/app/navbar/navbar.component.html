@@ -17,6 +17,9 @@
 
     <div class="navbar-menu">
       <div class="navbar-end">
+        <a *ngIf="isLoggedIn" routerLink="admin" class="navbar-item montyFont adminLink">
+          Admin
+        </a>
         <a routerLink="directors" class="navbar-item montyFont">
           Board of Directors
         </a>

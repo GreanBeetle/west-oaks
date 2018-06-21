@@ -20,3 +20,7 @@ a:hover {
 .navbar-brand, img, .logo, .level, a {
   background-color: rgba(255,255,255,0) !important;
 }
+
+.adminLink {
+  color: #00CEA9 !important;
+}
