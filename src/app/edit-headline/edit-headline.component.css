@@ -10,8 +10,13 @@
 
 @media screen and (min-width: 481px) and (max-width: 1024px){
   .headlineInput {
-    min-width: 225px !important;
+    min-width: 215px !important;
   }
+}
+
+.card {
+  height: 550px;
+  overflow: scroll;
 }
 
 form {
@@ -22,12 +27,12 @@ input {
   background-color: #E5E5E5;
   border-radius: 3px;
   margin: 5px;
-  max-width: 225px;
+  max-width: 215px;
   padding: 5px;
 }
 
 .headlineInput {
-  min-width: 465px !important;
+  min-width: 445px !important;
 }
 
 /*  */

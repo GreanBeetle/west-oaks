@@ -7,15 +7,17 @@
   </header>
   <form>
     <div class="card-content">
-      <input #newTime placeholder="time" class="is inline">
-      <input #newDate placeholder="date" class="is inline">
-      <input #newPlace placeholder="place, e.g. 'Stormbreaker Brewery'" class="is inline"><br><br>
-      <input #newAddress placeholder="street address, '123 W Elm'" class="is inline">
-      <input #newCityState placeholder="city and state" class="is inline"><br><br>
+      <input #newTime placeholder="time" class="is inline smallInputs">
+      <input #newDate placeholder="date" class="is inline smallInputs">
+      <input #newPlace placeholder="place, e.g. 'Stormbreaker Brewery'" class="is inline smallInputs">
+      <br>
+      <br>
+      <input #newAddress placeholder="street address, '123 W Elm'" class="is inline" id="largeInputs">
+      <input #newCityState placeholder="city and state" class="is inline" id="largeInputs"><br><br>
       <textarea #newNotes class="textarea" placeholder="new notes"></textarea>
     </div>
 
-    <div style="text-align:center;">
+    <div class="foot" style="text-align:center;">
       <button (click)="update(newTime.value, newDate.value, newPlace.value, newAddress.value, newCityState.value, newNotes.value)" class="button is-dark is-text-centered">UPDATE</button>
     </div>
 
