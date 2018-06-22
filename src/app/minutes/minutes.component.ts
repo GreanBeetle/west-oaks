@@ -70,9 +70,9 @@ export class MinutesComponent implements OnInit {
     this.minutes = this.minutesArray.snapshotChanges().map(actions =>
       actions.map(a => {
         const data = a.payload.doc.data();
-        const id = a.payload.doc.id;
-        return { id, ...data };
-      }))
+        // const id = a.payload.doc.id;
+        return { ...data };
+      })
     );
 
 
@@ -153,8 +153,6 @@ export class MinutesComponent implements OnInit {
     this.months2007 = this.monthsArray2007.valueChanges();
     this.monthsArray2006 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2006).orderBy('month', 'desc'));
     this.months2006 = this.monthsArray2006.valueChanges();
-
-    console.log('Here is 2023 collection: ', this.months2023.forEach(minute => { minute.Filename}), ' And here is 2008: ', this.months2008.forEach(minute => { minute.Filename}))
 
   }
 
