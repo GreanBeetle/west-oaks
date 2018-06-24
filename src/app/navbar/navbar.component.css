@@ -24,3 +24,16 @@ a:hover {
 .adminLink {
   color: #00CEA9 !important;
 }
+
+@media screen and (min-width: 0px) and (max-width: 1087px) {
+  .anchor-logo { display: none; }
+  .anchor-burger {
+    display: block;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1088px) {
+  .anchor-logo { display: block; }
+  .anchor-burger { display: none; }
+}

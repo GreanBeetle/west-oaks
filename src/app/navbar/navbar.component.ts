@@ -21,6 +21,10 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  toggleNavMenu() {
+    alert('You clicked a button! Great work, big guy.');
+  }
+
   ngOnInit() {
   }
 
