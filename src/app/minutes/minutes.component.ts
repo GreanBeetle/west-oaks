@@ -127,7 +127,7 @@ export class MinutesComponent implements OnInit {
     // these populate the months arrays with actual documents
     this.monthsArray2025 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2025).orderBy('month', 'desc'));
     this.months2025 = this.monthsArray2025.valueChanges();
-    console.log('Months 2025: ', this.months2025);
+    console.log('Months 2025 length: ', this.months2025 );
     this.monthsArray2024 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2024).orderBy('month', 'desc'));
     this.months2024 = this.monthsArray2024.valueChanges();
     this.monthsArray2023 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2023).orderBy('month', 'desc'));
