@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Observable';
 import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { Minute } from '../models/minute.model';
 
 @Component({
   selector: 'app-minutes',
@@ -18,9 +19,11 @@ import { map } from 'rxjs/operators';
 
 export class MinutesComponent implements OnInit {
 
+  private isLoggedIn: boolean;
+
   // these yield every single PDF in the minutes collection
-  minutesArray: AngularFirestoreCollection<any>;
-  minutes: Observable<any[]>;
+  minutesArray: AngularFirestoreCollection<Minute>;
+  minutes: Observable<Minute[]>;
 
   // these group minutes PDFs by year
   monthsArray2025: AngularFirestoreCollection<any>;
@@ -66,7 +69,16 @@ export class MinutesComponent implements OnInit {
   // end yearly arrays
 
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
-    this.minutesArray = afs.collection<any>('minutes', ref => ref.orderBy('year', 'desc'));
+    this.minutesArray = afs.collection<Minute>('minutes', ref => ref.orderBy('year', 'desc'));
+
+    this.authService.user.subscribe(theUser => {
+      if (theUser == null) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = true;
+      }
+    });
+
     this.minutes = this.minutesArray.snapshotChanges().map(actions =>
       actions.map(a => {
         const data = a.payload.doc.data();
@@ -154,6 +166,15 @@ export class MinutesComponent implements OnInit {
     this.monthsArray2006 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2006).orderBy('month', 'desc'));
     this.months2006 = this.monthsArray2006.valueChanges();
 
+  }
+
+  deleteMinute(month) {
+    let minuteId = month.id;
+    console.log(month);
+    console.log(minuteId);
+    let minute = this.minutesArray.doc(minuteId);
+    console.log(minute);
+    minute.delete();
   }
 
   ngOnInit() {

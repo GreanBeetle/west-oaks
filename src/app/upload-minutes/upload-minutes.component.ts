@@ -48,7 +48,10 @@ export class UploadMinutesComponent implements OnInit {
       const downloadURL = ref.getDownloadURL().subscribe(url => {
         // const url = url;
         console.log(url);
-        this.db.collection('minutes').add( { path, fileName, uploadDate, url, month, year });
+        let idBefore = this.db.createId();
+        console.log(idBefore);
+        let id = idBefore;
+        this.db.collection('minutes').doc(idBefore).set( { id, path, fileName, uploadDate, url, month, year });
       });
     })
   }

@@ -24,78 +24,526 @@
 
       <ng-container *ngIf="months2025 | async; let months; else nocontent">
         <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2025</b></span>
+          </div>
           <ul>
             <li *ngFor="let month of months">
-              <a href={{month.url}}> {{ month.fileName }} </a>
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
       </ng-container>
 
+      <ng-container *ngIf="months2024 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2024</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
 
       <ng-container *ngIf="months2023 | async; let months; else nocontent">
         <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2023</b></span>
+          </div>
           <ul>
             <li *ngFor="let month of months">
-              <a href={{month.url}}> {{ month.fileName }} </a>
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2022 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2022</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2021 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2021</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2020 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2020</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2019 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2019</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2018 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2018</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2017 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2017</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2016 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2016</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2015 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2015</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2014 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2014</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2013 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2013</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2012 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2012</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2011 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2011</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2010 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2010</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2009 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2009</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2008 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2008</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2007 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2007</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="months2006 | async; let months; else nocontent">
+        <div class="column is-one-third">
+          <div class="tags has-addons">
+            <span class="tag">Year</span>
+            <span class="tag is-primary"><b>2006</b></span>
+          </div>
+          <ul>
+            <li *ngFor="let month of months">
+              <div class="columns">
+                <div class="column">
+                  <a href={{month.url}}> {{ month.fileName }} </a>
+                </div>
+                <div *ngIf="isLoggedIn" class="column">
+                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
       </ng-container>
 
 
-
-      <div class="column is-one-third">
-        <ul>
-          <li *ngFor="let month of months2016 | async">
-            <a href={{month.url}}> {{ month.fileName }} </a>
-          </li>
-        </ul>
-      </div>
-      <div class="column is-one-third">
-        <ul>
-          <li *ngFor="let month of months2014 | async">
-            <a href={{month.url}}> {{ month.fileName }} </a>
-          </li>
-        </ul>
-      </div>
-      <div class="column is-one-third">
-        <ul>
-          <li *ngFor="let month of months2013 | async">
-            <a href={{month.url}}> {{ month.fileName }} </a>
-          </li>
-        </ul>
-      </div>
-      <div class="column is-one-third">
-        <ul>
-          <li *ngFor="let month of months2009 | async">
-            <a href={{month.url}}> {{ month.fileName }} </a>
-          </li>
-        </ul>
-      </div>
-      <div class="column is-one-third">
-        <ul>
-          <li *ngFor="let month of months2008 | async">
-            <a href={{month.url}}> {{ month.fileName }} </a>
-          </li>
-        </ul>
-      </div>
-      <div class="column is-one-third">
-        <ul>
-          <li *ngFor="let month of months2007 | async">
-            <a href={{month.url}}> {{ month.fileName }} </a>
-          </li>
-        </ul>
-      </div>
-      <div class="column is-one-third">
-        <ul>
-          <li *ngFor="let month of months2006 | async">
-            <a href={{month.url}}> {{ month.fileName }} </a>
-          </li>
-        </ul>
-      </div>
-
-      <ng-template #nocontent2025>
+      <ng-template #nocontent>
       </ng-template>
 
     </div>
