@@ -22,14 +22,15 @@
     <!-- display this observable months2025 only if there are objects in the observable -->
     <div class="columns is-multiline">
 
-      <ng-container *ngIf="months2025 | async; let months; else nocontent">
+      <ng-container *ngIf="months2025 | async as months25; else nocontent25">
+
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
             <span class="tag is-primary"><b>2025</b></span>
           </div>
           <ul>
-            <li *ngFor="let month of months">
+            <li *ngFor="let month of months25">
               <div class="columns">
                 <div class="column">
                   <a href={{month.url}}> {{ month.fileName }} </a>
@@ -46,9 +47,14 @@
             </li>
           </ul>
         </div>
+
       </ng-container>
 
-      <ng-container *ngIf="months2024 | async; let months; else nocontent">
+      <ng-template #nocontent25>
+      </ng-template>
+
+      <ng-container *ngIf="months2024 | async as months; else nocontent24">
+
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -72,7 +78,11 @@
             </li>
           </ul>
         </div>
+
       </ng-container>
+
+      <ng-template #nocontent24>
+      </ng-template>
 
       <ng-container *ngIf="months2023 | async; let months; else nocontent">
         <div class="column is-one-third">
