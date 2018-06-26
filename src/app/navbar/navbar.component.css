@@ -25,15 +25,18 @@ a:hover {
   color: #00CEA9 !important;
 }
 
+/* display mobile menu */
 @media screen and (min-width: 0px) and (max-width: 1087px) {
   .anchor-logo { display: none; }
+  .mobile-menu { display: block; }
   .anchor-burger {
-    display: block;
-    margin-left: 20px;
+    margin-left: 15px;
+    margin-top: 10px;
   }
 }
 
+/* display desktop navbar */
 @media screen and (min-width: 1088px) {
   .anchor-logo { display: block; }
-  .anchor-burger { display: none; }
+  .mobile-menu { display: none; }
 }

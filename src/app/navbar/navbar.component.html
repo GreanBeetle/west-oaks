@@ -1,15 +1,51 @@
 <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
+
+      <!-- screen >= 1088px -->
       <nav class="level">
         <a href="/" class="anchor-logo">
           <img src="/assets/img/logo1.2.png" class="logo">
         </a>
-        <a class="anchor-burger" (click)="toggleNavMenu()">
-          <img src="/assets/img/burger-icon-gray.png" style="height:30px;">
-        </a>
-
       </nav>
+
+      <!-- mobile menu -->
+      <div class="mobile-menu">
+        <a (click)="toggleMiniMenu()">
+          <img src="/assets/img/burger-icon-gray.png" class="anchor-burger" style="height:30px;">
+        </a>
+        <nav class="level MiniMenu" style="display: none;">
+          <a *ngIf="isLoggedIn" routerLink="admin" class="navbar-item montyFont adminLink">
+            Admin
+          </a>
+          <a routerLink="/" class="navbar-item montyFont">
+            Home
+          </a>
+          <a routerLink="directors" class="navbar-item montyFont">
+            Board of Directors
+          </a>
+          <a routerLink="minutes" class="navbar-item montyFont">
+            Minutes
+          </a>
+          <a routerLink="management" class="navbar-item montyFont">
+            Management
+          </a>
+          <a routerLink="budget" class="navbar-item montyFont">
+            Budget
+          </a>
+          <a routerLink="docs" class="navbar-item montyFont">
+            Documents
+          </a>
+          <a routerLink="encyclopedia" class="navbar-item montyFont">
+            W.O.C. Encyclopedia
+          </a>
+        </nav>
+      </div>
+
+      <!-- mobile and tablet menu -->
+      <div class="mobile-menu">
+
+      </div>
 
 
 
@@ -19,6 +55,9 @@
       <div class="navbar-end">
         <a *ngIf="isLoggedIn" routerLink="admin" class="navbar-item montyFont adminLink">
           Admin
+        </a>
+        <a routerLink="/" class="navbar-item montyFont">
+          Home
         </a>
         <a routerLink="directors" class="navbar-item montyFont">
           Board of Directors
