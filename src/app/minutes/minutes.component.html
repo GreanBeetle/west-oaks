@@ -1,95 +1,94 @@
-<section class="hero pageHero">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-8">
-          <h1 class="title montyFont">
-            Board Meeting Minutes
-          </h1>
-        </div>
-        <div class="column is-4">
-          <!-- insert image here, perhaps? -->
+"<section class="hero pageHero">
+
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-8">"
+            <h1 class="title montyFont">
+              Board Meeting Minutes
+            </h1>
+          </div>
+          <div class="column is-4">
+            <!-- insert image here, perhaps? -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<section>
-  <div class="container">
+  <section>
+    <div class="container">
 
-    <!-- display this observable months2025 only if there are objects in the observable -->
-    <div class="columns is-multiline">
-
-
-
-      <ng-container *ngIf="months2025 | async as months && months.length > 0; else nocontent25">
+      <!-- display this observable months2025 only if there are objects in the observable -->
+      <div class="columns is-multiline">
 
 
-        <div class="column is-one-third">
-          <div class="tags has-addons">
+      <ng-container *ngIf="months2025 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
 
-            <span class="tag">Year</span>
-            <span class="tag is-primary"><b>2025</b></span>
+          <div class="column is-one-third">
+            <div class="tags has-addons">
+              <span class="tag">Year</span>
+              <span class="tag is-primary"><b>2025</b></span>
+            </div>
+            <ul>
+              <li *ngFor="let month of months">
+                <div class="columns">
+                  <div class="column">
+                    <a href={{month.url}}> {{ month.fileName }} </a>
+                  </div>
+                  <div *ngIf="isLoggedIn" class="column">
+                    <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                      <span>Delete</span>
+                      <span class="icon is-small">
+                        <i class="fas fa-times"></i>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
-          <ul>
-            <li *ngFor="let month of months">
-              <div class="columns">
-                <div class="column">
-                  <a href={{month.url}}> {{ month.fileName }} </a>
-                </div>
-                <div *ngIf="isLoggedIn" class="column">
-                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
-                    <span>Delete</span>
-                    <span class="icon is-small">
-                      <i class="fas fa-times"></i>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
 
-
+        </ng-container>
       </ng-container>
 
-      <ng-template #nocontent25>
-      </ng-template>
 
-      <ng-container *ngIf="months2024 | async as months; else nocontent24">
+      <ng-container *ngIf="months2024 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
 
-        <div class="column is-one-third">
-          <div class="tags has-addons">
-            <span class="tag">Year</span>
-            <span class="tag is-primary"><b>2024</b></span>
+          <div class="column is-one-third">
+            <div class="tags has-addons">
+              <span class="tag">Year</span>
+              <span class="tag is-primary"><b>2024</b></span>
+            </div>
+            <ul>
+              <li *ngFor="let month of months">
+                <div class="columns">
+                  <div class="column">
+                    <a href={{month.url}}> {{ month.fileName }} </a>
+                  </div>
+                  <div *ngIf="isLoggedIn" class="column">
+                    <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
+                      <span>Delete</span>
+                      <span class="icon is-small">
+                        <i class="fas fa-times"></i>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
-          <ul>
-            <li *ngFor="let month of months">
-              <div class="columns">
-                <div class="column">
-                  <a href={{month.url}}> {{ month.fileName }} </a>
-                </div>
-                <div *ngIf="isLoggedIn" class="column">
-                  <a class="button is-danger is-outlined" (click)="deleteMinute(month)">
-                    <span>Delete</span>
-                    <span class="icon is-small">
-                      <i class="fas fa-times"></i>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
 
+        </ng-container>
       </ng-container>
 
-      <ng-template #nocontent24>
-      </ng-template>
 
-      <ng-container *ngIf="months2023 | async; let months; else nocontent">
+
+      <ng-container *ngIf="months2023 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -114,8 +113,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2022 | async; let months; else nocontent">
+      <ng-container *ngIf="months2022 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -140,8 +141,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2021 | async; let months; else nocontent">
+      <ng-container *ngIf="months2021 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -166,8 +169,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2020 | async; let months; else nocontent">
+      <ng-container *ngIf="months2020 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -192,8 +197,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2019 | async; let months; else nocontent">
+      <ng-container *ngIf="months2019 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -218,8 +225,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2018 | async; let months; else nocontent">
+      <ng-container *ngIf="months2018 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -244,8 +253,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2017 | async; let months; else nocontent">
+      <ng-container *ngIf="months2017 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -270,8 +281,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2016 | async; let months; else nocontent">
+      <ng-container *ngIf="months2016 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -296,8 +309,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2015 | async; let months; else nocontent">
+      <ng-container *ngIf="months2015 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -322,8 +337,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2014 | async; let months; else nocontent">
+      <ng-container *ngIf="months2014 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -348,8 +365,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2013 | async; let months; else nocontent">
+      <ng-container *ngIf="months2013 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -374,8 +393,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2012 | async; let months; else nocontent">
+      <ng-container *ngIf="months2012 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -400,8 +421,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2011 | async; let months; else nocontent">
+      <ng-container *ngIf="months2011 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -426,8 +449,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2010 | async; let months; else nocontent">
+      <ng-container *ngIf="months2010 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -452,8 +477,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2009 | async; let months; else nocontent">
+      <ng-container *ngIf="months2009 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -478,8 +505,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2008 | async; let months; else nocontent">
+      <ng-container *ngIf="months2008 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -504,8 +533,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2007 | async; let months; else nocontent">
+      <ng-container *ngIf="months2007 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -530,8 +561,10 @@
           </ul>
         </div>
       </ng-container>
+      </ng-container>
 
-      <ng-container *ngIf="months2006 | async; let months; else nocontent">
+      <ng-container *ngIf="months2006 | async as months">
+        <ng-container *ngIf="months.length > 0; else nocontent">
         <div class="column is-one-third">
           <div class="tags has-addons">
             <span class="tag">Year</span>
@@ -556,7 +589,7 @@
           </ul>
         </div>
       </ng-container>
-
+      </ng-container>
 
       <ng-template #nocontent>
       </ng-template>
