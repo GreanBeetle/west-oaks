@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   private isLoggedIn: boolean;
+  private mobileMenuHidden: boolean;
+  private burgerHidden = false;
 
   constructor(public authService: AuthenticationService) {
     this.authService.user.subscribe(theUser => {
@@ -22,7 +24,19 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleNavMenu() {
-    alert('You clicked a button! Great work, big guy.');
+    if (this.mobileMenuHidden === true) {
+      this.mobileMenuHidden = false;
+    } else {
+      this.mobileMenuHidden = true;
+    }
+  }
+
+  toggleBurger() {
+    if (this.burgerHidden === true) {
+      this.burgerHidden = false;
+    } else {
+      this.burgerHidden = true;
+    }
   }
 
   ngOnInit() {

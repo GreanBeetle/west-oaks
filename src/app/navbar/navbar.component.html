@@ -11,10 +11,10 @@
 
       <!-- mobile menu -->
       <div class="mobile-menu">
-        <a (click)="toggleMiniMenu()">
+        <a (click)="toggleNavMenu(); toggleBurger()" *ngIf="burgerHidden == false" >
           <img src="/assets/img/burger-icon-gray.png" class="anchor-burger" style="height:30px;">
         </a>
-        <nav class="level MiniMenu" style="display: none;">
+        <nav class="level MiniMenu" *ngIf="mobileMenuHidden">
           <a *ngIf="isLoggedIn" routerLink="admin" class="navbar-item montyFont adminLink">
             Admin
           </a>
@@ -39,7 +39,10 @@
           <a routerLink="encyclopedia" class="navbar-item montyFont">
             W.O.C. Encyclopedia
           </a>
+
+          <p (click)="toggleNavMenu(); toggleBurger();">CLOSE MENU</p>
         </nav>
+
       </div>
 
       <!-- mobile and tablet menu -->
