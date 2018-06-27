@@ -6,26 +6,25 @@
     <div class="content">
 
       <ng-container *ngFor="let headline of headlines | async">
-      <article class="media">
-        <figure class="media-left">
-          <p class="image is-64x64">
-            <img src="/assets/img/profile.jpg" class="w3-circle">
-          </p>
-        </figure>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <strong>West Oaks Condos</strong> <small>@westoakscondos</small>
-              <br>
-              <span class="w3-large">{{headline.headline}}</span><br>
-              <span><a href={{headline.linkURL}}>{{headline.linkName}}</a></span>
+        <article class="media">
+          <figure class="media-left">
+            <p class="image is-64x64">
+              <img src="/assets/img/profile.jpg" class="w3-circle">
             </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>West Oaks Condos</strong> <small>@westoakscondos</small>
+                <br>
+                <span class="w3-large">{{headline.headline}}</span><br>
+                <span><a href={{headline.linkURL}}>{{headline.linkName}}</a></span>
+              </p>
+            </div>
           </div>
-        </div>
-      </article>
-    </ng-container>
+        </article>
+      </ng-container>
 
     </div>
   </div>
-
 </div>
