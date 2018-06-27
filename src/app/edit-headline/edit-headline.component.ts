@@ -33,8 +33,22 @@ export class EditHeadlineComponent implements OnInit {
       headline: newHeadline,
       linkName: newLinkName,
       linkURL: newLinkURL
-    }).then(() => {
-      this.router.navigate(['/']);
+    });
+  }
+
+  update2(newHeadline, newLinkName, newLinkURL) {
+    this.headline2.update({
+      headline: newHeadline,
+      linkName: newLinkName,
+      linkURL: newLinkURL
+    });
+  }
+
+  update3(newHeadline, newLinkName, newLinkURL) {
+    this.headline3.update({
+      headline: newHeadline,
+      linkName: newLinkName,
+      linkURL: newLinkURL
     });
   }
 
