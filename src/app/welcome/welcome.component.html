@@ -10,35 +10,31 @@
   <div class="colorOverlay">
     <div class="container">
       <div class="columns features">
-        <div class="column is-8">
+        <div class="column">
           <app-display-headline></app-display-headline>
         </div>
-        <div class="column is-4">
-          <!-- next meeting -->
-          <app-display-meeting></app-display-meeting>
-        </div>
-        <!-- <div class="column is-4">
-          <div class="card is-shady">
-            <ng4-twitter-timeline [dataSrc]="{sourceType: 'profile',screenName: 'WestOaksCondos'}" [opts]="{tweetLimit: 1}"></ng4-twitter-timeline>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
 </section>
 
-
-
-<!-- maintenance projects -->
 <section class="section">
   <div class="container">
-    <!-- NO CONTENT ON ORIGINAL SITE -->
+    <div class="columns">
+      <div class="column">
+        <app-display-meeting></app-display-meeting>
+      </div>
+      <div class="column">
+        <ng4-twitter-timeline [dataSrc]="{sourceType: 'profile',screenName: 'WestOaksCondos'}" [opts]="{tweetLimit: 2}"></ng4-twitter-timeline>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- contact -->
 <section class="section w3-light-grey">
-  <div class="contact raleway">Contact Us</div>
+  <div class="contact montyFont">Contact Us</div>
   <div class="container">
     <div class="columns contact-us">
       <div class="column">
@@ -51,14 +47,14 @@
       </div>
       <div class="column latoFont details-box">
 
-          <p class="w3-medium ">If your bank requires contact information for automatic bill payment, or if you are a Title Company with inquiries, please contact <i>Sterling Management Group</i> via the following:</p>
+          <p class="latoFontSmall">If your bank requires contact information for automatic bill payment, or if you are a Title Company with inquiries, please contact <i>Sterling Management Group</i> via the following:</p>
           <ul class="w3-ul w3-padding-medium w3-border contacts-list">
-            <li><i class="fa fa-phone w3-large" style="margin-right: 10px;"></i> <span class="w3-large">541-757-1290</span></li>
-            <li><i class="fa fa-at w3-large" style="margin-right: 10px;"></i> <a class="w3-large" href="mailto:liz@sterlingmanagement.net">liz@sterlingmanagement.net</a></li>
-            <li><i class="fa fa-envelope w3-large" style="margin-right: 10px;"></i> <span class="w3-large">200 SW 4th Street Ste 102 Corvallis, OR 97333</span></li>
+            <li class="latoFont"><i class="fa fa-phone w3-large" style="margin-right: 10px;"></i> <span>541-757-1290</span></li>
+            <li class="latoFont"><i class="fa fa-at w3-large" style="margin-right: 10px;"></i> <a class="w3-large" href="mailto:liz@sterlingmanagement.net">liz@sterlingmanagement.net</a></li>
+            <li class="latoFont"><i class="fa fa-envelope w3-large" style="margin-right: 10px;"></i> <span class="w3-large">200 SW 4th Street Ste 102 Corvallis, OR 97333</span></li>
           </ul>
-          <p class="w3-medium"><b>Note to escrow officers:</b> some units' garages require separate titles. Please research each case individually.</p>
-          <p class="w3-medium"><b>Note to Realtors:</b> West Oaks Condos does not have a pool or rec center. The nearby apartment facilities are NOT available for WOC residents.</p>
+          <p class="latoFontSmall"><b>Note to escrow officers:</b> some units' garages require separate titles. Please research each case individually.</p>
+          <p class="latoFontSmall"><b>Note to Realtors:</b> West Oaks Condos does not have a pool or rec center. The nearby apartment facilities are NOT available for WOC residents.</p>
 
       </div>
     </div>

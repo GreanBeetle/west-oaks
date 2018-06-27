@@ -13,6 +13,11 @@
   font-size: 18px;
 }
 
+.latoFontSmall {
+  font-family: 'Lato', sans-serif;
+  font-size: 12pt;
+}
+
 .light-gray {
   background-color: #b2bec3 !important;
 }
@@ -38,8 +43,7 @@
   color: #03A678;
 }
 
-/* the hero panel at the top of every page except the home page */
-
+/* hero panel on every page except home page */
 .pageHero {
   background-color: #fff !important;
 }
@@ -54,7 +58,6 @@ body {
 }
 
 /* dropzone */
-
 .dropzone {
   display: flex;
   align-items: center;
