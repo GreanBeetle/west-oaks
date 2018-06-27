@@ -174,12 +174,14 @@ export class MinutesComponent implements OnInit {
   }
 
   deleteMinute(month) {
-    const minuteId = month.id;
-    console.log('Month: ', month);
-    console.log('Minute ID: ', minuteId);
-    const minute = this.minutesArray.doc(minuteId);
-    console.log('Minute doc: ', minute);
-    minute.delete();
+    if(confirm("Are you sure you want to delete this? ")) {
+      const minuteId = month.id;
+      console.log('Month: ', month);
+      console.log('Minute ID: ', minuteId);
+      const minute = this.minutesArray.doc(minuteId);
+      console.log('Minute doc: ', minute);
+      minute.delete();
+    }
   }
 
   show() {

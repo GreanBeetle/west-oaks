@@ -24,22 +24,11 @@ form {
 }
 
 input {
+  width: 100%;
   background-color: #E5E5E5;
   border-radius: 3px;
   margin: 5px;
-  max-width: 215px;
   padding: 5px;
-}
-
-.headlineInput {
-  min-width: 445px !important;
-}
-
-/*  */
-@media screen and (max-width: 1100px) {
-  .headlineInput {
-    min-width: 200px !important;
-  }
 }
 
 
@@ -60,53 +49,14 @@ input {
 }
 
 button {
-  width: 250px;
-  max-width: 250px;
-  color: black;
+  width: 100%;
+  background-color: #00CEA9 !important;
   margin: 0 auto;
+  margin-top: 54px;
 }
+
+
 
 hr {
   margin: 10px !important;
 }
-
-
-/* misha's styling */
-
-/* .box_header {
-  text-align: center;
-  font-size: 20px;
-  padding: 15px;
-}
-
-.box {
-  background-color: #E5E5E5;
-}
-
-input {
-  display: inline-block;
-  float: left;
-  background-color: #E5E5E5;
-  border-radius: 3px;
-  margin: 5px;
-  width: 350px;
-  height: 40px;
-  box-shadow: 0px 0px !important;
-  padding: 5px;
-}
-
-label{
-  display: inline-block;
-  float: left;
-  clear: left;
-  width: 200px;
-  margin: 5px;
-  height: 40px;
-  text-align: left;
-  padding: 5px;
-}
-
-
-::placeholder {
-  color: #000;
-} */
