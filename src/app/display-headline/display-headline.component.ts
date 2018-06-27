@@ -15,14 +15,13 @@ import { Headline } from '../models/headline.model';
 export class DisplayHeadlineComponent implements OnInit {
   headlineCollection: AngularFirestoreCollection<Headline>;
   headlines: Observable<Headline[]>;
-  headline: AngularFirestoreDocument<Headline>;
+
 
   constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
     this.headlineCollection = this.afs.collection('headlines');
     this.headlines = this.headlineCollection.valueChanges();
-    this.headline = this.headlineCollection.doc('main-headlines');
     console.log('Your meeting is: ' + this.headline);
   }
 

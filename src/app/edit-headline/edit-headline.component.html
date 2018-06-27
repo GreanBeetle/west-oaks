@@ -7,73 +7,15 @@
   </header>
   <form>
     <div class="card-content">
-      <input class="headlineInput" #h1 placeholder='Headline 1 goes here'>
+      <input class="headlineInput" #headline placeholder='First headline goes here'>
       <br>
-      <input class="is inline" #h1URLName placeholder='Name of URL'>
-      <input class="is inline" #h1URL placeholder='Actual URL, e.g. http://website.com'>
-      <hr>
-      <input class="headlineInput" #h2 placeholder='Headline 2 goes here'>
-      <br>
-      <input class="is inline" #h2URLName placeholder='Name of URL'>
-      <input class="is inline" #h2URL placeholder='Actual URL, e.g. http://website.com'>
-      <hr>
-      <input class="headlineInput" #h3 placeholder='Headline 3 goes here'>
-      <br>
-      <input class="is inline" #h3URLName placeholder='Name of URL'>
-      <input class="is inline" #h3URL placeholder='Actual URL, e.g. http://website.com'>
-
+      <input class="is inline" #linkName placeholder='Name of URL'>
+      <input class="is inline" #linkURL placeholder='Actual URL, e.g. https://www.website.com'>
     </div>
 
     <div style="text-align:center;">
-      <button (click)="update(h1.value, h1URLName.value, h1URL.value, h2.value, h2URLName.value, h2URL.value, h3.value, h3URLName.value, h3URL.value)" class="button is-dark">UPDATE</button>
+      <button (click)="update1(headline.value, linkName.value, linkURL.value)" class="button is-dark">UPDATE</button>
     </div>
 
   </form>
 </div>
-
-
-
-<!-- misha's version -->
-<!-- <div class="w3-card-4" *ngFor="let headline of headlines | async">
-  <header class="w3-container w3-dark-grey">
-    <div class="box_header">Edit the Latest Headlines</div>
-  </header>
-  <div class="w3-container">
-    <form>
-      <div class="card-content">
-        <table>
-          <tbody>
-            <tr><td><label for="h1">Headline text</label></td><td><input id="h1" #h1 placeholder="{{headline.headlineOne}}"></td></tr>
-            <tr><td><label for="h1un">URL name</label></td><td><input id="h1un" #h1URLName placeholder="{{headline.linkOneName}}"></td></tr>
-            <tr><td><label for="h1u">Headline URL</label></td><td><input id="h1u" #h1URL placeholder="{{headline.linkOneURL}}"></td></tr>
-          </tbody>
-        </table>
-
-        <hr>
-
-        <table>
-          <tbody>
-            <tr><td><label for="h2">Headline text</label></td><td></td></tr>
-            <tr><td><label for="h2un">URL name</label></td><td><input id="h2un" #h1URLName placeholder="{{headline.linkTwoName}}"></td></tr>
-            <tr><td><label for="h2u">Headline URL</label></td><td><input id="h2u" #h1URL placeholder="{{headline.linkTwoURL}}"></td></tr>
-          </tbody>
-        </table>
-
-        <hr>
-
-        <table>
-          <tbody>
-            <tr><td><label for="h3">Headline text</label></td><td><input id="h3" #h1 placeholder="{{headline.headlineThree}}"></td></tr>
-            <tr><td><label for="h3un">URL name</label></td><td>  <input id="h3un" #h1URLName placeholder="{{headline.linkThreeName}}"></td></tr>
-            <tr><td><label for="3u">Headline URL</label></td><td><input id="h3u" #h1URL placeholder="{{headline.linkThreeURL}}"></td></tr>
-          </tbody>
-        </table>
-
-      </div>
-      <footer class="card-footer">
-        <button (click)="update(h1.value, h1URLName.value, h1URL.value, h2.value, h2URLName.value, h2URL.value, h3.value, h3URLName.value, h3URL.value)" class="w3-button w3-block w3-dark-grey">UPDATE</button>
-      </footer>
-      <br>
-    </form>
-  </div>
-</div> -->
