@@ -21,7 +21,6 @@ export class DisplayHeadlineComponent implements OnInit {
   ngOnInit() {
     this.headlineCollection = this.afs.collection('headlines');
     this.headlines = this.headlineCollection.valueChanges();
-    console.log('Your meeting is: ' + this.headline);
   }
 
 }
