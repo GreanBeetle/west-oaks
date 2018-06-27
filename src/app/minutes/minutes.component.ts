@@ -9,6 +9,7 @@ import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Minute } from '../models/minute.model';
+import {Message} from 'primeng/components/common/api';
 
 @Component({
   selector: 'app-minutes',
@@ -20,6 +21,7 @@ import { Minute } from '../models/minute.model';
 export class MinutesComponent implements OnInit {
 
   private isLoggedIn: boolean;
+  msgs: Message[] = [];
 
   // these yield every single PDF in the minutes collection
   minutesArray: AngularFirestoreCollection<Minute>;
@@ -69,6 +71,7 @@ export class MinutesComponent implements OnInit {
   // end yearly arrays
 
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
+
     this.minutesArray = afs.collection<Minute>('minutes', ref => ref.orderBy('year', 'desc'));
 
     this.authService.user.subscribe(theUser => {
@@ -167,6 +170,7 @@ export class MinutesComponent implements OnInit {
     this.monthsArray2006 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2006).orderBy('month', 'desc'));
     this.months2006 = this.monthsArray2006.valueChanges();
 
+
   }
 
   deleteMinute(month) {
@@ -177,6 +181,15 @@ export class MinutesComponent implements OnInit {
     console.log('Minute doc: ', minute);
     minute.delete();
   }
+
+  show() {
+      this.msgs.push({severity:'info', summary:'Success Message', detail:'PrimeNG rocks'});
+  }
+
+  clear() {
+      this.msgs = [];
+  }
+
 
   ngOnInit() {
   }

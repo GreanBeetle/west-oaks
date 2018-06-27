@@ -9,17 +9,20 @@ import {
 } from 'angularfire2/firestore';
 import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
+import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
-  providers: [ AuthenticationService ]
+  providers: [ AuthenticationService, MessageService ]
 })
 export class AdminComponent implements OnInit {
   private isLoggedIn: boolean;
+  msgs: Message[] = [];
 
-  constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
+  constructor(private messageService: MessageService, private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
 
     this.authService.user.subscribe(user => {
       if (user == null) {

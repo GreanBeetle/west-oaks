@@ -34,6 +34,7 @@ import { EditHeadlineComponent } from './edit-headline/edit-headline.component';
 import { DisplayHeadlineComponent } from './display-headline/display-headline.component';
 import { DisplayMeetingComponent } from './display-meeting/display-meeting.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { GrowlModule } from 'primeng/primeng';
 
 
 
@@ -75,6 +76,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
     FlashMessagesModule.forRoot(),
+    GrowlModule
   ],
   providers: [
     AuthenticationService
