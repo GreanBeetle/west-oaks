@@ -16,7 +16,6 @@ export class DisplayHeadlineComponent implements OnInit {
   headlineCollection: AngularFirestoreCollection<Headline>;
   headlines: Observable<Headline[]>;
 
-
   constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
