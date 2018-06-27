@@ -14,44 +14,38 @@
         <a (click)="toggleNavMenu(); toggleBurger()" *ngIf="burgerHidden == false" >
           <img src="/assets/img/burger-icon-gray.png" class="anchor-burger" style="height:30px;">
         </a>
-        <nav class="level MiniMenu" *ngIf="mobileMenuHidden">
-          <a *ngIf="isLoggedIn" routerLink="admin" class="navbar-item montyFont adminLink">
-            Admin
-          </a>
-          <a routerLink="/" class="navbar-item montyFont">
-            Home
-          </a>
-          <a routerLink="directors" class="navbar-item montyFont">
-            Board of Directors
-          </a>
-          <a routerLink="minutes" class="navbar-item montyFont">
-            Minutes
-          </a>
-          <a routerLink="management" class="navbar-item montyFont">
-            Management
-          </a>
-          <a routerLink="budget" class="navbar-item montyFont">
-            Budget
-          </a>
-          <a routerLink="docs" class="navbar-item montyFont">
-            Documents
-          </a>
-          <a routerLink="encyclopedia" class="navbar-item montyFont">
-            W.O.C. Encyclopedia
-          </a>
-
-          <p (click)="toggleNavMenu(); toggleBurger();">CLOSE MENU</p>
-        </nav>
-
+        <div *ngIf="mobileMenuHidden">
+          <nav class="level mini-menu">
+            <a *ngIf="isLoggedIn" routerLink="admin" class="navbar-item montyFont adminLink">
+              Admin
+            </a>
+            <a routerLink="/" class="navbar-item montyFont dark-gray">
+              Home
+            </a>
+            <a routerLink="directors" class="navbar-item montyFont">
+              Board of Directors
+            </a>
+            <a routerLink="minutes" class="navbar-item montyFont">
+              Minutes
+            </a>
+            <a routerLink="management" class="navbar-item montyFont">
+              Management
+            </a>
+            <a routerLink="budget" class="navbar-item montyFont">
+              Budget
+            </a>
+            <a routerLink="docs" class="navbar-item montyFont">
+              Documents
+            </a>
+            <a routerLink="encyclopedia" class="navbar-item montyFont">
+              W.O.C. Encyclopedia
+            </a>
+          </nav>
+          <div class="closeNavMenu">
+            <small class="montyFont" (click)="toggleNavMenu(); toggleBurger();">close menu</small>  
+          </div>
+        </div>
       </div>
-
-      <!-- mobile and tablet menu -->
-      <div class="mobile-menu">
-
-      </div>
-
-
-
     </div>
 
     <div class="navbar-menu">
@@ -59,7 +53,7 @@
         <a *ngIf="isLoggedIn" routerLink="admin" class="navbar-item montyFont adminLink">
           Admin
         </a>
-        <a routerLink="/" class="navbar-item montyFont">
+        <a routerLink="/" class="navbar-item montyFont dark-gray">
           Home
         </a>
         <a routerLink="directors" class="navbar-item montyFont">

@@ -40,3 +40,20 @@ a:hover {
   .anchor-logo { display: block; }
   .mobile-menu { display: none; }
 }
+
+/* mobile menu */
+.mini-menu {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .closeNavMenu {
+    margin-left: 15px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .closeNavMenu {
+    text-align: center;
+  }
+}

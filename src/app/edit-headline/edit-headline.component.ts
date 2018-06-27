@@ -58,7 +58,6 @@ export class EditHeadlineComponent implements OnInit {
     this.headline1 = this.headlineCollection.doc('headline1');
     this.headline2 = this.headlineCollection.doc('headline2');
     this.headline3 = this.headlineCollection.doc('headline3');
-    console.log('Your meeting is: ' + this.headline);
   }
 
 }
