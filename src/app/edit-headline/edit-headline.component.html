@@ -5,50 +5,46 @@
       Write New Headlines
     </p>
   </header>
+  <div class="card-content">
+    <form>
+      <div class="columns">
+        <div class="column is-10">
+          <input #headline placeholder='First headline goes here'>
+          <input #linkName placeholder='Name of URL'>
+          <input #linkURL placeholder='Actual URL, e.g. http://website.com'>
+        </div>
+        <div class="column">
+          <button class="level-item" (click)="update1(headline.value, linkName.value, linkURL.value)" class="button is-dark">UPDATE</button>
+        </div>
+      </div>
+    </form>
 
-  <!-- one -->
-  <form>
-    <div class="card-content">
-      <input class="headlineInput" #headline placeholder='First headline goes here'>
-      <br>
-      <input class="is inline" #linkName placeholder='Name of URL'>
-      <input class="is inline" #linkURL placeholder='Actual URL, e.g. http://website.com'>
-    </div>
+    <!-- two -->
+    <form>
+      <div class="columns">
+        <div class="column is-10">
+          <input #headline placeholder='Second headline goes here'>
+          <input #linkName placeholder='Name of URL'>
+          <input #linkURL placeholder='Actual URL, e.g. http://website.com'>
+        </div>
+        <div class="column">
+          <button (click)="update2(headline.value, linkName.value, linkURL.value)" class="button is-dark">UPDATE</button>
+        </div>
+      </div>
+    </form>
 
-    <div style="text-align:center;">
-      <button (click)="update1(headline.value, linkName.value, linkURL.value)" class="button is-dark">UPDATE</button>
-    </div>
-
-  </form>
-
-  <!-- two -->
-  <form>
-    <div class="card-content">
-      <input class="headlineInput" #headline placeholder='First headline goes here'>
-      <br>
-      <input class="is inline" #linkName placeholder='Name of URL'>
-      <input class="is inline" #linkURL placeholder='Actual URL, e.g. http://website.com'>
-    </div>
-
-    <div style="text-align:center;">
-      <button (click)="update2(headline.value, linkName.value, linkURL.value)" class="button is-dark">UPDATE</button>
-    </div>
-
-  </form>
-
-  <!-- three -->
-  <form>
-    <div class="card-content">
-      <input class="headlineInput" #headline placeholder='First headline goes here'>
-      <br>
-      <input class="is inline" #linkName placeholder='Name of URL'>
-      <input class="is inline" #linkURL placeholder='Actual URL, e.g. http://website.com'>
-    </div>
-
-    <div style="text-align:center;">
-      <button (click)="update3(headline.value, linkName.value, linkURL.value)" class="button is-dark">UPDATE</button>
-    </div>
-
-  </form>
-
+    <!-- three -->
+    <form>
+      <div class="columns">
+        <div class="column is-10">
+          <input #headline placeholder='Third headline goes here'>
+          <input #linkName placeholder='Name of URL'>
+          <input #linkURL placeholder='Actual URL, e.g. http://website.com'>
+        </div>
+        <div class="column">
+          <button (click)="update3(headline.value, linkName.value, linkURL.value)" class="button is-dark">UPDATE</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

@@ -24,22 +24,11 @@ form {
 }
 
 input {
+  width: 100%;
   background-color: #E5E5E5;
   border-radius: 3px;
   margin: 5px;
-  max-width: 215px;
   padding: 5px;
-}
-
-.headlineInput {
-  min-width: 445px !important;
-}
-
-/*  */
-@media screen and (max-width: 1100px) {
-  .headlineInput {
-    min-width: 200px !important;
-  }
 }
 
 
@@ -60,11 +49,13 @@ input {
 }
 
 button {
-  width: 250px;
-  max-width: 250px;
-  color: black;
+  width: 100%;
+  background-color: #00CEA9 !important;
   margin: 0 auto;
+  margin-top: 54px;
 }
+
+
 
 hr {
   margin: 10px !important;
