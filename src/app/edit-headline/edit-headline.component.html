@@ -9,12 +9,12 @@
     <form>
       <div class="columns">
         <div class="column is-10">
-          <input #headline placeholder='First headline goes here'>
-          <input #linkName placeholder='Name of URL'>
-          <input #linkURL placeholder='Actual URL, e.g. http://website.com'>
+          <input #headline1 placeholder='First headline goes here'>
+          <input #linkName1 placeholder='Name of URL'>
+          <input #linkURL1 placeholder='Actual URL, e.g. http://website.com'>
         </div>
         <div class="column">
-          <button class="level-item" (click)="update1(headline.value, linkName.value, linkURL.value)" class="button is-dark">UPDATE</button>
+          <button class="level-item" (click)="update1(headline1.value, linkName1.value, linkURL1.value)" class="button is-dark">UPDATE</button>
         </div>
       </div>
     </form>
@@ -23,12 +23,12 @@
     <form>
       <div class="columns">
         <div class="column is-10">
-          <input #headline placeholder='Second headline goes here'>
-          <input #linkName placeholder='Name of URL'>
-          <input #linkURL placeholder='Actual URL, e.g. http://website.com'>
+          <input #headline2 placeholder='Second headline goes here'>
+          <input #linkName2 placeholder='Name of URL'>
+          <input #linkURL2 placeholder='Actual URL, e.g. http://website.com'>
         </div>
         <div class="column">
-          <button (click)="update2(headline.value, linkName.value, linkURL.value)" class="button is-dark">UPDATE</button>
+          <button (click)="update2(headline2.value, linkName2.value, linkURL2.value)" class="button is-dark">UPDATE</button>
         </div>
       </div>
     </form>
@@ -37,14 +37,15 @@
     <form>
       <div class="columns">
         <div class="column is-10">
-          <input #headline placeholder='Third headline goes here'>
-          <input #linkName placeholder='Name of URL'>
-          <input #linkURL placeholder='Actual URL, e.g. http://website.com'>
+          <input #headline3 placeholder='Third headline goes here'>
+          <input #linkName3 placeholder='Name of URL'>
+          <input #linkURL3 placeholder='Actual URL, e.g. http://website.com'>
         </div>
         <div class="column">
-          <button (click)="update3(headline.value, linkName.value, linkURL.value)" class="button is-dark">UPDATE</button>
+          <button (click)="update3(headline3.value, linkName3.value, linkURL3.value)" class="button is-dark">UPDATE</button>
         </div>
       </div>
     </form>
+
   </div>
 </div>
