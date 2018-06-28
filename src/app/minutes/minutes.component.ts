@@ -9,7 +9,7 @@ import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Minute } from '../models/minute.model';
-import {Message} from 'primeng/components/common/api';
+import { Message } from 'primeng/components/common/api';
 
 @Component({
   selector: 'app-minutes',
@@ -18,16 +18,15 @@ import {Message} from 'primeng/components/common/api';
   providers: [ AuthenticationService ]
 })
 
-export class MinutesComponent implements OnInit {
+export class MinutesComponent {
 
   private isLoggedIn: boolean;
   msgs: Message[] = [];
 
-  // these yield every single PDF in the minutes collection
   minutesArray: AngularFirestoreCollection<Minute>;
   minutes: Observable<Minute[]>;
 
-  // these group minutes PDFs by year
+  // PDFs by year
   monthsArray2025: AngularFirestoreCollection<any>;
   months2025: Observable<any[]>;
   monthsArray2024: AngularFirestoreCollection<any>;
@@ -68,7 +67,6 @@ export class MinutesComponent implements OnInit {
   months2007: Observable<any[]>;
   monthsArray2006: AngularFirestoreCollection<any>;
   months2006: Observable<any[]>;
-  // end yearly arrays
 
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
 
@@ -89,7 +87,6 @@ export class MinutesComponent implements OnInit {
         return { ...data };
       })
     );
-
 
     // allows changes to every document in the minutes collection
     this.minutes.subscribe(minutes => {
@@ -130,7 +127,6 @@ export class MinutesComponent implements OnInit {
     // these populate the months arrays with actual documents
     this.monthsArray2025 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2025).orderBy('month', 'desc'));
     this.months2025 = this.monthsArray2025.valueChanges();
-    console.log('Months 2025 length: ', this.months2025 );
     this.monthsArray2024 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2024).orderBy('month', 'desc'));
     this.months2024 = this.monthsArray2024.valueChanges();
     this.monthsArray2023 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2023).orderBy('month', 'desc'));
@@ -174,26 +170,19 @@ export class MinutesComponent implements OnInit {
   }
 
   deleteMinute(month) {
-    if(confirm("Are you sure you want to delete this? ")) {
+    if (confirm('Are you sure you want to delete this?')) {
       const minuteId = month.id;
-      console.log('Month: ', month);
-      console.log('Minute ID: ', minuteId);
       const minute = this.minutesArray.doc(minuteId);
-      console.log('Minute doc: ', minute);
       minute.delete();
     }
   }
 
   show() {
-      this.msgs.push({severity:'info', summary:'Success Message', detail:'PrimeNG rocks'});
+    this.msgs.push({severity: 'info', summary: 'Success Message', detail: 'PrimeNG rocks'});
   }
 
   clear() {
-      this.msgs = [];
-  }
-
-
-  ngOnInit() {
+    this.msgs = [];
   }
 
 }

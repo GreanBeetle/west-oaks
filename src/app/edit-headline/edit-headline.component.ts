@@ -8,6 +8,7 @@ import {
 import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 import { Headline } from '../models/headline.model';
 
 @Component({
@@ -26,7 +27,37 @@ export class EditHeadlineComponent implements OnInit {
   headline3: AngularFirestoreDocument<Headline>;
   currentRoute: string = this.router.url;
 
-  constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) { }
+  // experimental
+  headlineToUpdate;
+  experimentalHeadlines: Observable<Headline[]>;
+  // experimental
+
+  constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
+
+    // experimental
+    this.experimentalHeadlines = this.headlineCollection.snapshotChanges().map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        console.log('Id is: ', id);
+        return { id, ...data};
+      });
+    })
+    // experimental
+
+  }
+
+
+ // experimental
+  updateHeadline(newH) {
+    alert('You clicked updateHeadline');
+  }
+
+  newHeadlineToUpdate(headline) {
+    alert(headline.id);
+  }
+  // experimental
+
 
   update1(newHeadline, newLinkName, newLinkURL) {
     this.headline1.update({

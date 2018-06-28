@@ -1,3 +1,26 @@
+<!-- EXPERIMENTAL CODE -->
+<div class="card" style="height:500px;">
+  <ng-container *ngFor="let headline of headlines | async">
+    <div class="columns">
+      <div class="column">
+        <form>
+          <input [(ngModel)]="headline.headline" #h type="text" name="user">
+          <button (click)="updateHeadline(h.value); newHeadlineToUpdate(headline);" class="button is-dark">UPDATE</button>
+        </form>
+
+      </div>
+      <div class="column">
+        {{headline.headline}}
+        <br>
+        {{headline.linkName}}
+        <br>
+        {{headline.linkURL}}
+      </div>
+    </div>
+  </ng-container>
+</div>
+<!-- EXPERIMENTAL CODE -->
+
 <!-- admin edit-headlines -->
 <div class="card edit-headline-card" *ngIf="currentRoute === '/admin'">
   <header class="card-header">
