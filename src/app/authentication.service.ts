@@ -15,9 +15,7 @@ export class AuthenticationService {
       (user) => {
         if (user) {
           this.userDetails = user;
-          console.log("Here", this.userDetails);
-        }
-        else {
+        } else {
           this.userDetails = null;
         }
       }
@@ -26,7 +24,7 @@ export class AuthenticationService {
 
   signIn(email, password) {
     const credential = firebase.auth.EmailAuthProvider.credential( email, password );
-    return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password)
+    return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
   isLoggedIn() {

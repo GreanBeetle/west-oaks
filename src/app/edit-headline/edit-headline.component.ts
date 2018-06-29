@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {
   AngularFirestore,
@@ -18,7 +18,7 @@ import { Headline } from '../models/headline.model';
   providers: [ AuthenticationService ]
 })
 
-export class EditHeadlineComponent implements OnInit {
+export class EditHeadlineComponent {
   private isLoggedIn: boolean;
   headlineCollection: AngularFirestoreCollection<Headline>;
   headlines: Observable<Headline[]>;
@@ -26,38 +26,50 @@ export class EditHeadlineComponent implements OnInit {
   headline2: AngularFirestoreDocument<Headline>;
   headline3: AngularFirestoreDocument<Headline>;
   currentRoute: string = this.router.url;
-
-  // experimental
-  headlineToUpdate;
-  experimentalHeadlines: Observable<Headline[]>;
-  // experimental
+  num;
 
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
 
-    // experimental
-    this.experimentalHeadlines = this.headlineCollection.snapshotChanges().map(actions => {
-      return actions.map(a => {
-        const data = a.payload.doc.data();
-        const id = a.payload.doc.id;
-        console.log('Id is: ', id);
-        return { id, ...data};
+    this.headlineCollection = this.afs.collection('headlines');
+    this.headlines = this.headlineCollection.valueChanges();
+    this.headline1 = this.headlineCollection.doc('headline1');
+    this.headline2 = this.headlineCollection.doc('headline2');
+    this.headline3 = this.headlineCollection.doc('headline3');
+
+  }
+
+  updateNum(num) {
+    if (num === 1) {
+      this.num = 1;
+    } else if (num === 2) {
+      this.num = 2;
+    } else {
+      this.num = 3;
+    }
+    console.log('num is ', num);
+  }
+
+  update(newheadline, linkname, url) {
+    if (this.num === 1) {
+      this.headline1.update({
+        headline: newheadline,
+        linkName: linkname,
+        linkURL: url
       });
-    })
-    // experimental
-
+    } else if (this.num === 2) {
+      this.headline2.update({
+        headline: newheadline,
+        linkName: linkname,
+        linkURL: url
+      });
+    } else {
+      this.headline3.update({
+        headline: newheadline,
+        linkName: linkname,
+        linkURL: url
+      });
+    }
   }
-
-
- // experimental
-  updateHeadline(newH) {
-    alert('You clicked updateHeadline');
-  }
-
-  newHeadlineToUpdate(headline) {
-    alert(headline.id);
-  }
-  // experimental
-
 
   update1(newHeadline, newLinkName, newLinkURL) {
     this.headline1.update({
@@ -81,14 +93,6 @@ export class EditHeadlineComponent implements OnInit {
       linkName: newLinkName,
       linkURL: newLinkURL
     });
-  }
-
-  ngOnInit() {
-    this.headlineCollection = this.afs.collection('headlines');
-    this.headlines = this.headlineCollection.valueChanges();
-    this.headline1 = this.headlineCollection.doc('headline1');
-    this.headline2 = this.headlineCollection.doc('headline2');
-    this.headline3 = this.headlineCollection.doc('headline3');
   }
 
 }

@@ -12,6 +12,7 @@ import { Headline } from '../models/headline.model';
   templateUrl: './display-headline.component.html',
   styleUrls: ['./display-headline.component.css']
 })
+
 export class DisplayHeadlineComponent implements OnInit {
   headlineCollection: AngularFirestoreCollection<Headline>;
   headlines: Observable<Headline[]>;

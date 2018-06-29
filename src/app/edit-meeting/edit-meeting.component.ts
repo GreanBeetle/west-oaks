@@ -42,7 +42,6 @@ export class EditMeetingComponent implements OnInit {
     this.meetingCollection = this.afs.collection('meeting');
     this.meetings = this.meetingCollection.valueChanges();
     this.meeting = this.meetingCollection.doc('1');
-    console.log('Your meeting is: ' + this.meeting);
   }
 
 }

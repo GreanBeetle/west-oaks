@@ -1,20 +1,24 @@
 <!-- EXPERIMENTAL CODE -->
 <div class="card" style="height:500px;">
-  <ng-container *ngFor="let headline of headlines | async">
+  <ng-container *ngFor="let h of headlines | async">
     <div class="columns">
       <div class="column">
+
         <form>
-          <input [(ngModel)]="headline.headline" #h type="text" name="user">
-          <button (click)="updateHeadline(h.value); newHeadlineToUpdate(headline);" class="button is-dark">UPDATE</button>
+          <input [(ngModel)]="h.headline" #newheadline type="text" name="user">
+          <input [(ngModel)]="h.linkName" #newlinkurl type="text" name="user">
+          <input [(ngModel)]="h.linkURL" #newurl type="text" name="user">
+          <button (click)="updateNum(h.num); update(newheadline.value, newlinkurl.value, newurl.value)" class="button is-dark">UPDATE</button>
         </form>
 
       </div>
+
       <div class="column">
-        {{headline.headline}}
+        {{h.headline}}
         <br>
-        {{headline.linkName}}
+        {{h.linkName}}
         <br>
-        {{headline.linkURL}}
+        {{h.linkURL}}
       </div>
     </div>
   </ng-container>

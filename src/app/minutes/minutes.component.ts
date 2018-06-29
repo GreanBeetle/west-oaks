@@ -26,7 +26,6 @@ export class MinutesComponent {
   minutesArray: AngularFirestoreCollection<Minute>;
   minutes: Observable<Minute[]>;
 
-  // PDFs by year
   monthsArray2025: AngularFirestoreCollection<any>;
   months2025: Observable<any[]>;
   monthsArray2024: AngularFirestoreCollection<any>;
@@ -88,12 +87,11 @@ export class MinutesComponent {
       })
     );
 
-    // allows changes to every document in the minutes collection
     this.minutes.subscribe(minutes => {
       minutes.forEach(minute => {
-        // retrieve individual document from database
+
         const minuteRef = this.minutesArray.doc(minute.id);
-        // ensures minute.month values are converted to integer
+
         if (/January/.test(minute.fileName)) {
           minuteRef.update({'month': 1 });
         } else if (/February/.test(minute.fileName)) {
@@ -124,7 +122,6 @@ export class MinutesComponent {
       });
     });
 
-    // these populate the months arrays with actual documents
     this.monthsArray2025 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2025).orderBy('month', 'desc'));
     this.months2025 = this.monthsArray2025.valueChanges();
     this.monthsArray2024 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2024).orderBy('month', 'desc'));
@@ -165,7 +162,6 @@ export class MinutesComponent {
     this.months2007 = this.monthsArray2007.valueChanges();
     this.monthsArray2006 = afs.collection<any>('minutes', ref => ref.where('year', '==', 2006).orderBy('month', 'desc'));
     this.months2006 = this.monthsArray2006.valueChanges();
-
 
   }
 
