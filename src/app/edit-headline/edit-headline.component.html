@@ -1,78 +1,36 @@
-<!-- EXPERIMENTAL CODE -->
-<div class="card" style="height:500px;">
-  <ng-container *ngFor="let h of headlines | async">
-    <div class="columns">
-      <div class="column">
-
-        <form>
-          <input [(ngModel)]="h.headline" #newheadline type="text" name="headline">
-          <input [(ngModel)]="h.linkName" #newlinkurl type="text" name="urlname">
-          <input [(ngModel)]="h.linkURL" #newurl type="text" name="url  ">
-          <button (click)="updateNum(h.num); update(newheadline.value, newlinkurl.value, newurl.value)" class="button is-dark">UPDATE</button>
-        </form>
-
-      </div>
-
-      <div class="column">
-        {{h.headline}}
-        <br>
-        {{h.linkName}}
-        <br>
-        {{h.linkURL}}
-      </div>
-    </div>
-  </ng-container>
-</div>
-<!-- EXPERIMENTAL CODE -->
-
-<!-- admin edit-headlines -->
-<div class="card edit-headline-card" *ngIf="currentRoute === '/admin'">
+<div class="card edit-headline-card" >
   <header class="card-header">
     <p class="card-header-title is-centered">
       Write New Headlines
     </p>
   </header>
   <div class="card-content">
-    <form>
+    <ng-container *ngFor="let h of headlines | async">
       <div class="columns">
-        <div class="column is-10">
-          <input #headline1 placeholder='First headline goes here'>
-          <input #linkName1 placeholder='Name of URL'>
-          <input #linkURL1 placeholder='Actual URL, e.g. http://website.com'>
+        <div class="column">
+          <form>
+            <input [(ngModel)]="h.headline" #newheadline type="text" name="headline">
+            <input [(ngModel)]="h.linkName" #newlinkurl type="text" name="urlname">
+            <input [(ngModel)]="h.linkURL" #newurl type="text" name="url">
+            <button (click)="updateNum(h.num); update(newheadline.value, newlinkurl.value, newurl.value)" class="button is-dark">UPDATE</button>
+          </form>
         </div>
         <div class="column">
-          <button class="level-item" (click)="update1(headline1.value, linkName1.value, linkURL1.value)" class="button is-dark">UPDATE</button>
+          <span class="oldHeadline">
+            <p class="latoFont is-inline"><b>Headline:</b></p> <p class="latoFont is-inline">{{h.headline}}</p>
+          </span>
+          <br>
+          <span class="oldHeadline">
+            <p class="latoFont is-inline"><b>URL name:</b></p>
+            <p class="latoFont is-inline">{{h.linkName}}</p>
+          </span>
+          <br>
+          <span class="oldHeadline">
+            <p class="latoFont is-inline"><b>URL:</b></p>
+            <p class="latoFont is-inline">{{h.linkURL}}</p>
+          </span>
         </div>
       </div>
-    </form>
-
-    <!-- two -->
-    <form>
-      <div class="columns">
-        <div class="column is-10">
-          <input #headline2 placeholder='Second headline goes here'>
-          <input #linkName2 placeholder='Name of URL'>
-          <input #linkURL2 placeholder='Actual URL, e.g. http://website.com'>
-        </div>
-        <div class="column">
-          <button (click)="update2(headline2.value, linkName2.value, linkURL2.value)" class="button is-dark">UPDATE</button>
-        </div>
-      </div>
-    </form>
-
-    <!-- three -->
-    <form>
-      <div class="columns">
-        <div class="column is-10">
-          <input #headline3 placeholder='Third headline goes here'>
-          <input #linkName3 placeholder='Name of URL'>
-          <input #linkURL3 placeholder='Actual URL, e.g. http://website.com'>
-        </div>
-        <div class="column">
-          <button (click)="update3(headline3.value, linkName3.value, linkURL3.value)" class="button is-dark">UPDATE</button>
-        </div>
-      </div>
-    </form>
-
+    </ng-container>
   </div>
 </div>

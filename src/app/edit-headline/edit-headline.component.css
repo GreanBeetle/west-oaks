@@ -14,15 +14,6 @@
   }
 }
 
-.card {
-  height: 550px;
-  overflow: scroll;
-}
-
-form {
-  padding: 20px;
-}
-
 input {
   width: 100%;
   background-color: #E5E5E5;
@@ -30,7 +21,6 @@ input {
   margin: 5px;
   padding: 5px;
 }
-
 
 .card-header {
   background-color: #616161;
@@ -55,8 +45,11 @@ button {
   margin-top: 54px;
 }
 
-
-
 hr {
   margin: 10px !important;
+}
+
+.oldHeadline {
+  margin-top: 4px;
+  margin-left: 50px;
 }
