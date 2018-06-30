@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
@@ -18,11 +18,15 @@ import {MessageService} from 'primeng/components/common/messageservice';
   styleUrls: ['./admin.component.css'],
   providers: [ AuthenticationService, MessageService ]
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent {
   private isLoggedIn: boolean;
   msgs: Message[] = [];
 
-  constructor(private messageService: MessageService, private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
+  constructor(
+      private messageService: MessageService,
+      private afs: AngularFirestore,
+      public authService: AuthenticationService,
+      private router: Router) {
 
     this.authService.user.subscribe(user => {
       if (user == null) {
@@ -33,6 +37,5 @@ export class AdminComponent implements OnInit {
 
   }
 
-  ngOnInit() { }
 
 }

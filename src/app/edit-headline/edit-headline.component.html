@@ -7,7 +7,7 @@
         <form>
           <input [(ngModel)]="h.headline" #newheadline type="text" name="headline">
           <input [(ngModel)]="h.linkName" #newlinkurl type="text" name="urlname">
-          <input [(ngModel)]="h.linkURL" #newurl type="text" name="url">
+          <input [(ngModel)]="h.linkURL" #newurl type="text" name="url  ">
           <button (click)="updateNum(h.num); update(newheadline.value, newlinkurl.value, newurl.value)" class="button is-dark">UPDATE</button>
         </form>
 
