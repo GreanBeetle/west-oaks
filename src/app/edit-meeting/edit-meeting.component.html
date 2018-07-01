@@ -6,51 +6,51 @@
     </p>
   </header>
   <ng-container *ngFor="let m of meetings | async">
-    <div class="columns">
-      <div class="column">
-        <form>
-          <div class="card-content">
-            <input [(ngModel)]="m.time" #newTime type="text" name="time">
-            <input [(ngModel)]="m.date" #newDate type="text" name="date">
-            <input [(ngModel)]="m.placeName" #newPlace type="text" name="place">
-            <input [(ngModel)]="m.streetAddress" #newAddress type="text" name="address">
-            <input [(ngModel)]="m.cityState" #newCityState type="text" name="cityState">
-            <textarea [(ngModel)]="m.notes" #newNotes type="text" name="notes" class="textarea is-primary"></textarea>
-          </div>
-          <div class="foot" style="text-align:center;">
-            <button (click)="update(newTime.value, newDate.value, newPlace.value, newAddress.value, newCityState.value, newNotes.value)" class="button is-dark is-text-centered">UPDATE</button>
-          </div>
-        </form>
-      </div>
-      <div class="column">
-        <div class="subHeader">
-          <h3 class="latoFont"><b>Old Meeting</b></h3>
+    <div class="card-content">
+      <div class="columns">
+        <div class="column">
+          <form>
+              <input [(ngModel)]="m.time" #newTime type="text" name="time">
+              <input [(ngModel)]="m.date" #newDate type="text" name="date">
+              <input [(ngModel)]="m.placeName" #newPlace type="text" name="place">
+              <input [(ngModel)]="m.streetAddress" #newAddress type="text" name="address">
+              <input [(ngModel)]="m.cityState" #newCityState type="text" name="cityState">
+              <textarea [(ngModel)]="m.notes" #newNotes type="text" name="notes" class="textarea is-primary"></textarea>
+              <br>
+            <div class="foot" style="text-align:center;">
+              <button (click)="update(newTime.value, newDate.value, newPlace.value, newAddress.value, newCityState.value, newNotes.value)" class="button is-dark is-text-centered">UPDATE</button>
+            </div>
+          </form>
         </div>
+        <div class="column oldMeetingColumn">
+          <div class="subHeader">
+            <h3 class="latoFont"><b>Old Meeting</b></h3>
+          </div>
+          <span class="oldMeeting">
+            <p class="latoFont is-inline"><b>Time:  </b></p> <p class="latoFont is-inline">{{m.time}}</p>
+          </span><br><br>
+          <span class="oldMeeting">
+            <p class="latoFont is-inline"><b>Date:  </b></p>
+            <p class="latoFont is-inline">{{m.date}}</p>
+          </span><br><br>
 
-        <!-- see what class="oldHeadline is" -->
-        <span class="oldHeadline">
-          <p class="latoFont is-inline"><b>Time:  </b></p> <p class="latoFont is-inline">{{m.time}}</p>
-        </span><br><br>
-        <span class="oldHeadline">
-          <p class="latoFont is-inline"><b>Date:  </b></p>
-          <p class="latoFont is-inline">{{m.date}}</p>
-        </span><br><br>
-        <span class="oldHeadline">
-          <p class="latoFont is-inline"><b>Place:  </b></p>
-          <p class="latoFont is-inline">{{m.placeName}}</p>
-        </span><br><br>
-        <span class="oldHeadline">
-          <p class="latoFont is-inline"><b>Street Address:  </b></p>
-          <p class="latoFont is-inline">{{m.streetAddress}}</p>
-        </span><br><br>
-        <span class="oldHeadline">
-          <p class="latoFont is-inline"><b>City and State:  </b></p>
-          <p class="latoFont is-inline">{{m.cityState}}</p>
-        </span><br><br>
-        <span class="oldHeadline">
-          <p class="latoFont is-inline"><b>Notes:  </b></p>
-          <p class="latoFont is-inline">{{m.notes}}</p>
-        </span>
+          <span class="oldMeeting">
+            <p class="latoFont is-inline"><b>Place:  </b></p>
+            <p class="latoFont is-inline">{{m.placeName}}</p>
+          </span><br><br>
+          <span class="oldMeeting">
+            <p class="latoFont is-inline"><b>Street Address:  </b></p>
+            <p class="latoFont is-inline">{{m.streetAddress}}</p>
+          </span><br><br>
+          <span class="oldMeeting">
+            <p class="latoFont is-inline"><b>City and State:  </b></p>
+            <p class="latoFont is-inline">{{m.cityState}}</p>
+          </span><br><br>
+          <span class="oldMeeting">
+            <p class="latoFont is-inline"><b>Notes:  </b></p>
+            <p class="latoFont is-inline">{{m.notes}}</p>
+          </span>
+        </div>
       </div>
     </div>
   </ng-container>
