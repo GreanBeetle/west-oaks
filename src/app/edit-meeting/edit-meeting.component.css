@@ -12,15 +12,9 @@ input {
   border-radius: 3px;
   margin: 5px;
   padding: 5px;
+  width: 100%;
 }
 
-.smallInputs {
-  max-width: 150px !important;
-}
-
-#largeInputs {
-  max-width: 230px !important;
-}
 
 .card-header {
   background-color: #616161;
@@ -50,4 +44,10 @@ button {
 /* keep button at the bottom */
 .foot {
   vertical-align : bottom;
+}
+
+textarea {
+  margin: 5px;
+  padding: 5px;
+  width: 100%;
 }
