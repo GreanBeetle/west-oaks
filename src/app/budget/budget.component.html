@@ -25,19 +25,27 @@
         <h3 class="subtitles">What are the Reserves for?</h3>
         <br>
         <p class="latoFont justified">
-          The Board is required by Oregon state law to establish and fund a Reserve account. This "banks" money for the eventual replacement of Association property that is likely to wear out or require refurbishment: things like exterior paint, roofs, parking lot paving, sidewalks, etc. The original developers of the West Oaks Condos hired a consultant to create a Reserve Study document, determining which items should be included, what their projected lifespan is, and how much it will cost to replace/repair them. The amount required to be put into the Reserves every year is determined by dividing each items' replacement costs by their lifetimes. <a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/Reserve-Study-Document.pdf?alt=media&token=904c2d15-b696-4aff-845f-87c045ff731f">Read the Reserve Study document.</a> 
+          The Board is required by Oregon state law to establish and fund a Reserve account. This "banks" money for the eventual replacement of Association property that is likely to wear out or require refurbishment: things like exterior paint, roofs, parking lot paving, sidewalks, etc. The original developers of the West Oaks Condos hired a consultant to create a Reserve Study document, determining which items should be included, what their projected lifespan is, and how much it will cost to replace/repair them. The amount required to be put into the Reserves every year is determined by dividing each items' replacement costs by their lifetimes. <a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/Reserve-Study-Document.pdf?alt=media&token=904c2d15-b696-4aff-845f-87c045ff731f">Read the Reserve Study document.</a>
         </p>
         <br>
       </div>
-      <div class="column is-3 dark-gray">
-        <h3 class="subtitles detailBudgetsSubtitle">Budget PDFs</h3>
-        <br>
-        <ul>
-          <li *ngFor="let budget of budgets | async" class="noBullets">
-            <a href={{budget.url}}> {{ budget.fileName }}</a>
-          </li>
-        </ul>
+      <div class="column is-3">
+        <div class="w3-card-4">
+          <header class="w3-container w3-light-grey">
+            <h1 class="card-header-title is-centered raleway">Budget PDFs</h1>
+          </header>
+          <div class="card-content">
+            <div class="w3-container">
+              <ul>
+                <li *ngFor="let budget of budgets | async" class="noBullets">
+                  <a href={{budget.url}}> {{ budget.fileName }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>

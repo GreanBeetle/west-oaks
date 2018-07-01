@@ -93,6 +93,7 @@ progress::-webkit-progress-value {
   margin-left: 10px;
 }
 
+/* Alert styling */
 .ui-growl-message-error .ui-growl-item {
   background-color: #ff3860;
 }

@@ -1,24 +1,29 @@
 
-a {
-  color: #74b9ff;
-}
-
-/* sidebar */
-.noBullets {
-  list-style: none !important;
-  margin-left: 20px;
-
-}
-
-.detailBudgetsSubtitle {
-  margin-left: 20px;
-  color: #2d3436;
+.main-content {
+  padding-right: 50px;
 }
 
 .justified {
   text-align: justify;
 }
 
-.main-content {
-  padding-right: 50px;
+a {
+  color: #3273dc;
+  font-size: 1.2em;
+}
+
+li {
+  margin-bottom: 7px;
+}
+
+/* sidebar */
+.noBullets {
+  list-style: none !important;
+  margin-left: 10px;
+
+}
+
+.detailBudgetsSubtitle {
+  margin-left: 20px;
+  color: #2d3436;
 }

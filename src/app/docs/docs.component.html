@@ -63,12 +63,23 @@
         </p>
         <br>
       </div>
-      <div class="column is-3 dark-gray">
-        <h3 class="subtitles detailBudgetsSubtitle">Resolutions</h3>
-        <br>
-        <li *ngFor="let document of documents | async" class="noBullets">
-          <a href={{document.url}}> {{ document.fileName }} </a>
-        </li>
+      <div class="column is-3">
+
+        <div class="w3-card-4">
+          <header class="w3-container w3-light-grey">
+            <h1 class="card-header-title is-centered raleway">Resolutions PDFs</h1>
+          </header>
+          <div class="card-content">
+            <div class="w3-container">
+              <ul>
+                <li *ngFor="let document of documents | async" class="noBullets">
+                  <a href={{document.url}}> {{ document.fileName }} </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

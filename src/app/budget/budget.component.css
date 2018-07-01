@@ -8,13 +8,18 @@
 }
 
 a {
-  color: #74b9ff;
+  color: #3273dc;
+  font-size: 1.2em;
+}
+
+li {
+  margin-bottom: 7px;
 }
 
 /* sidebar */
 .noBullets {
   list-style: none !important;
-  margin-left: 20px;
+  margin-left: 10px;
 
 }
 
