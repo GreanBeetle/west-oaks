@@ -8,6 +8,9 @@
     <ng-container *ngFor="let h of headlines | async">
       <div class="columns">
         <div class="column">
+          <div class="subHeader">
+            <h3 class="latoFont"><b>Headline {{h.num}}</b></h3>
+          </div>
           <form>
             <input [(ngModel)]="h.headline" #newheadline type="text" name="headline">
             <input [(ngModel)]="h.linkName" #newlinkurl type="text" name="urlname">
@@ -15,22 +18,24 @@
             <button (click)="updateNum(h.num); update(newheadline.value, newlinkurl.value, newurl.value)" class="button is-dark">UPDATE</button>
           </form>
         </div>
-        <div class="column">
+        <div class="column oldHeadlineColumn">
+          <div class="subHeader">
+            <h3 class="latoFont"><b>Old Headline {{h.num}}</b> </h3>
+          </div>
           <span class="oldHeadline">
             <p class="latoFont is-inline"><b>Headline:</b></p> <p class="latoFont is-inline">{{h.headline}}</p>
-          </span>
-          <br>
+          </span><br><br>
           <span class="oldHeadline">
             <p class="latoFont is-inline"><b>URL name:</b></p>
             <p class="latoFont is-inline">{{h.linkName}}</p>
-          </span>
-          <br>
+          </span><br><br>
           <span class="oldHeadline">
             <p class="latoFont is-inline"><b>URL:</b></p>
             <p class="latoFont is-inline">{{h.linkURL}}</p>
           </span>
         </div>
       </div>
+      <hr>
     </ng-container>
   </div>
 </div>

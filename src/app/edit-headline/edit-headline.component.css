@@ -1,18 +1,3 @@
-/* john styling */
-
-/* media queries test code */
-
-@media screen and (min-width: 320px) and (max-width: 480px){
-  .headlineInput {
-    min-width: 100px !important;
-  }
-}
-
-@media screen and (min-width: 481px) and (max-width: 1024px){
-  .headlineInput {
-    min-width: 215px !important;
-  }
-}
 
 input {
   width: 100%;
@@ -40,9 +25,8 @@ input {
 
 button {
   width: 100%;
+  margin: 5px;
   background-color: #00CEA9 !important;
-  margin: 0 auto;
-  margin-top: 54px;
 }
 
 hr {
@@ -51,5 +35,21 @@ hr {
 
 .oldHeadline {
   margin-top: 4px;
-  margin-left: 50px;
+}
+
+h3 {
+  margin: 0 auto;
+}
+
+.subHeader {
+  text-align: center;
+}
+
+.oldHeadlineColumn {
+  padding: 15px;
+}
+
+p {
+  overflow: ellipsis;
+
 }
