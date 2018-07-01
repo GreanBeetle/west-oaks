@@ -9,19 +9,19 @@ import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Minute } from '../models/minute.model';
-import { Message } from 'primeng/components/common/api';
+import {MessageService} from 'primeng/components/common/messageservice';
+
 
 @Component({
   selector: 'app-minutes',
   templateUrl: './minutes.component.html',
   styleUrls: ['./minutes.component.css'],
-  providers: [ AuthenticationService ]
+  providers: [ AuthenticationService, MessageService ]
 })
 
 export class MinutesComponent {
 
   private isLoggedIn: boolean;
-  msgs: Message[] = [];
 
   minutesArray: AngularFirestoreCollection<Minute>;
   minutes: Observable<Minute[]>;
@@ -67,7 +67,7 @@ export class MinutesComponent {
   monthsArray2006: AngularFirestoreCollection<any>;
   months2006: Observable<any[]>;
 
-  constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
+  constructor(private messageService: MessageService, private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
 
     this.minutesArray = afs.collection<Minute>('minutes', ref => ref.orderBy('year', 'desc'));
 
@@ -165,20 +165,17 @@ export class MinutesComponent {
 
   }
 
+  showToast(name) {
+       this.messageService.add({severity:'error', summary:'File deleted', detail: name + ' deleted from minutes'});
+   }
+
   deleteMinute(month) {
     if (confirm('Are you sure you want to delete this?')) {
       const minuteId = month.id;
       const minute = this.minutesArray.doc(minuteId);
       minute.delete();
+      this.showToast(month.fileName);
     }
-  }
-
-  show() {
-    this.msgs.push({severity: 'info', summary: 'Success Message', detail: 'PrimeNG rocks'});
-  }
-
-  clear() {
-    this.msgs = [];
   }
 
 }

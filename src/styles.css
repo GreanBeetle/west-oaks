@@ -78,3 +78,25 @@ body {
 progress::-webkit-progress-value {
   transition: width 0.1s ease;
 }
+
+/* Admin upload blocks */
+.upload-bar {
+  display: inline-block;
+  width: 100%;
+  margin: 10px auto;
+  margin-bottom: 0px;
+  padding: 10px;
+  font-size: 12pt;
+}
+
+.upload-bar label {
+  margin-left: 10px;
+}
+
+.ui-growl-message-error .ui-growl-item {
+  background-color: #ff3860;
+}
+
+.ui-growl-message-success .ui-growl-item {
+  background-color: #00d1b2;
+}
