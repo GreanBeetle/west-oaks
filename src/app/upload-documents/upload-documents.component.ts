@@ -17,6 +17,7 @@ export class UploadDocumentsComponent implements OnInit {
   // state for dropzone CSS toggling
   isHovering: boolean;
   year: number = 2018;
+  type: string = "resolutions";
 
   constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
 
@@ -29,10 +30,19 @@ export class UploadDocumentsComponent implements OnInit {
     console.log("setYear function " + this.year);
   }
 
+  setType (event: any) {
+    this.type = event.target.value;
+    console.log("setType function " + this.type);
+  }
+
   startUpload(event: FileList, fileType) {
     const year = +this.year
+    const type = this.type
     const file = event.item(0)
-    const path = `documents/${new Date().getTime()}_${file.name}`;
+    let path = `documents/${new Date().getTime()}_${file.name}`;
+    if (type === "misc") {
+      path = `miscellaneous-documents/${new Date().getTime()}_${file.name}`;
+    }
     const fileName = file.name.slice(0, (file.name.length - 4));
     const uploadDate = new Date().getTime();
 
@@ -41,7 +51,11 @@ export class UploadDocumentsComponent implements OnInit {
       const downloadURL = ref.getDownloadURL().subscribe(url => {
         // const URL = url
         console.log(url)
-        this.db.collection('documents').add( { path, fileName, uploadDate, url, year })
+        if (type === "resolutions") {
+          this.db.collection('documents').add( { path, fileName, uploadDate, url, year })
+        } else {
+          this.db.collection('miscellaneous-documents').add( { path, fileName, uploadDate, url, year })
+        }
       });
     })
   }
