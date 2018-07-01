@@ -92,3 +92,11 @@ progress::-webkit-progress-value {
 .upload-bar label {
   margin-left: 10px;
 }
+
+.ui-growl-message-error .ui-growl-item {
+  background-color: #ff3860;
+}
+
+.ui-growl-message-success .ui-growl-item {
+  background-color: #00d1b2;
+}

@@ -4,6 +4,7 @@ import { AngularFirestore} from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { storage } from 'firebase/storage';
 import { tap } from 'rxjs/operators';
+import {MessageService} from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'upload-budget',
@@ -17,7 +18,7 @@ export class UploadBudgetComponent implements OnInit {
   isHovering: boolean;
   year: number = 2018;
 
-  constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
+  constructor(private messageService: MessageService, private storage: AngularFireStorage, private db: AngularFirestore) { }
 
   toggleHover(event: boolean) {
     this.isHovering = true;
@@ -27,6 +28,10 @@ export class UploadBudgetComponent implements OnInit {
     this.year = event.target.value;
     console.log("setYear function " + this.year);
   }
+
+  showToast(name) {
+       this.messageService.add({severity:'success', summary:'Success!', detail: name + ' uploaded to budgets'});
+   }
 
   startUpload(event: FileList, fileType) {
     const year = +this.year
@@ -40,6 +45,7 @@ export class UploadBudgetComponent implements OnInit {
         // const url = url
         console.log(url)
         this.db.collection('budget').add( { path, fileName, uploadDate, url, year })
+        this.showToast(fileName);
       });
     })
   }
