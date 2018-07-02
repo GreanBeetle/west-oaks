@@ -67,7 +67,11 @@ export class MinutesComponent {
   monthsArray2006: AngularFirestoreCollection<any>;
   months2006: Observable<any[]>;
 
-  constructor(private messageService: MessageService, private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
+  constructor(
+    private messageService: MessageService,
+    private afs: AngularFirestore,
+    public authService: AuthenticationService,
+    private router: Router) {
 
     this.minutesArray = afs.collection<Minute>('minutes', ref => ref.orderBy('year', 'desc'));
 
@@ -166,7 +170,7 @@ export class MinutesComponent {
   }
 
   showToast(name) {
-       this.messageService.add({severity:'error', summary:'File deleted', detail: name + ' deleted from minutes'});
+       this.messageService.add({severity: 'error', summary: 'File deleted', detail: name + ' deleted from minutes'});
    }
 
   deleteMinute(month) {

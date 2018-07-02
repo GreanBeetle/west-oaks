@@ -46,7 +46,6 @@ export class EditHeadlineComponent {
     } else {
       this.num = 3;
     }
-    console.log('num is ', num);
   }
 
   update(newheadline, linkname, url) {
@@ -69,30 +68,6 @@ export class EditHeadlineComponent {
         linkURL: url
       });
     }
-  }
-
-  update1(newHeadline, newLinkName, newLinkURL) {
-    this.headline1.update({
-      headline: newHeadline,
-      linkName: newLinkName,
-      linkURL: newLinkURL
-    });
-  }
-
-  update2(newHeadline, newLinkName, newLinkURL) {
-    this.headline2.update({
-      headline: newHeadline,
-      linkName: newLinkName,
-      linkURL: newLinkURL
-    });
-  }
-
-  update3(newHeadline, newLinkName, newLinkURL) {
-    this.headline3.update({
-      headline: newHeadline,
-      linkName: newLinkName,
-      linkURL: newLinkURL
-    });
   }
 
 }
