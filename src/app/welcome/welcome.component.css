@@ -57,14 +57,6 @@ section {
   font-weight: 400;
 }
 
-.iconFacebook {
-  filter: grayscale(100%);
-}
-
-.iconFacebook:hover {
-  filter: grayscale(0%);
-}
-
 .card-header {
   height: 56px;
   padding: 10px;
