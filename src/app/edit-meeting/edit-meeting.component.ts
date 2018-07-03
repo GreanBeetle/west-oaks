@@ -9,6 +9,7 @@ import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 import { Meeting } from '../models/meeting.model';
+import {MessageService} from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-edit-meeting',
@@ -23,7 +24,15 @@ export class EditMeetingComponent implements OnInit {
   meeting: AngularFirestoreDocument<Meeting>;
   currentRoute: string = this.router.url;
 
-  constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) { }
+  constructor(private messageService: MessageService, private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) { }
+
+  showToast() {
+       this.messageService.add({severity:'success', summary:'Success!', detail: 'Meeting details were updated.'});
+  }
+
+  clear() {
+       this.messageService.clear();
+  }
 
   update(newTime, newDate, newPlace, newAddress, newCityState, newNotes) {
     this.meeting.update({
@@ -34,6 +43,7 @@ export class EditMeetingComponent implements OnInit {
       cityState: newCityState,
       notes: newNotes
     }).then(() => {
+      this.showToast();
       this.router.navigate(['/']);
     });
   }
