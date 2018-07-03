@@ -46,10 +46,3 @@ textarea {
 .oldMeetingColumn {
   padding: 15px;
 }
-
-@media screen and (min-width: 0px) and (max-width: 1087px) {
-  .container.minutes-container {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-}
