@@ -52,3 +52,33 @@ section {
   margin-bottom: 15px;
   font-weight: 400;
 }
+
+.iconFacebook {
+  filter: grayscale(100%);
+}
+
+.iconFacebook:hover {
+  filter: grayscale(0%);
+}
+
+.card-header {
+  height: 56px;
+  padding: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 27px;
+  font-weight: 300;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.HOAbutton {
+  min-height: 75px;
+  width: 100%;
+  background-color: #00C295;
+}
