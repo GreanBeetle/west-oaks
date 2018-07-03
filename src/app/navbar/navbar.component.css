@@ -28,10 +28,21 @@ a:hover {
 /* display mobile menu */
 @media screen and (min-width: 0px) and (max-width: 1087px) {
   .anchor-logo { display: none; }
-  .mobile-menu { display: block; }
+  .mobile-menu { display: block; width: 100%; }
   .anchor-burger {
     margin-left: 15px;
     margin-top: 10px;
+  }
+  a {
+    text-align: center;
+  }
+  .closeNavMenu {
+    height: 40px;
+    background-color: #00CEA9;
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+    font-weight: bold;
   }
 }
 
@@ -47,9 +58,7 @@ a:hover {
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  .closeNavMenu {
-    margin-left: 15px;
-  }
+
 }
 
 @media screen and (min-width: 769px) {
