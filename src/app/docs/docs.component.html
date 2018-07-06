@@ -73,7 +73,7 @@
             <div class="w3-container">
               <ul>
                 <li *ngFor="let document of documents | async" class="noBullets">
-                  <a href={{document.url}}> {{ document.fileName }} </a>
+                  <a class docLinks href={{document.url}}> {{ document.fileName }} </a>
                 </li>
               </ul>
             </div>
