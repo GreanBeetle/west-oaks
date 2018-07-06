@@ -38,7 +38,7 @@
             <div class="w3-container">
               <ul>
                 <li *ngFor="let budget of budgets | async" class="noBullets">
-                  <a href={{budget.url}}> {{ budget.fileName }}</a>
+                  <a class="budgetLinks" href={{budget.url}}> {{ budget.fileName }}</a>
                 </li>
               </ul>
             </div>
