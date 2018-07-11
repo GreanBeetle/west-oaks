@@ -72,8 +72,8 @@
           <div class="card-content">
             <div class="w3-container">
               <ul>
-                <li *ngFor="let document of documents | async" class="noBullets">
-                  <a class docLinks href={{document.url}}> {{ document.fileName }} </a>
+                <li *ngFor="let document of documents | async" class="noBullets docLinks">
+                  <a class href={{document.url}}> {{ document.fileName }} </a>
                 </li>
               </ul>
             </div>
