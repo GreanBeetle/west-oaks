@@ -3,4 +3,10 @@
     <p>You are logged in as <b>{{user?.email}}</b></p>
     <a (click)="signOut()" class="button is-primary is-inverted">Log Out</a>
   </div>
+  <div class="has-text-centered">
+    <a *ngIf="!isLoggedIn" routerLink="admin">
+      ADMIN
+    </a>
+  </div>
+
 </footer>

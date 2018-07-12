@@ -55,6 +55,8 @@ a:hover {
 /* mobile menu */
 .mini-menu {
   margin-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {

@@ -7,3 +7,8 @@ footer {
 p {
   margin-bottom: 10px;
 }
+
+a {
+  font-size: 15px;
+  color: #fff;
+}
