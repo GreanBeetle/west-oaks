@@ -19,6 +19,7 @@ export class DocsComponent implements OnInit {
   documents: Observable<any[]>;
   miscDocsArray: AngularFirestoreCollection<any>;
   miscDocs: Observable<any[]>;
+  docToDelete;
 
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
     this.documentsArray = afs.collection<any>('documents', ref => ref.orderBy('uploadDate', 'desc'));
@@ -26,6 +27,13 @@ export class DocsComponent implements OnInit {
     this.miscDocsArray = afs.collection<any>('miscellaneous-documents', ref =>
       ref.orderBy('uploadDate', 'desc'));
     this.miscDocs = this.miscDocsArray.valueChanges();
+  }
+
+  deleteDoc(doc) {
+    if (confirm('Are you want to delete this?')) {
+      const document = this.miscDocsArray.doc(doc.id);
+      document.delete();
+    }
   }
 
   ngOnInit() {

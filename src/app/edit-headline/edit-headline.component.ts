@@ -45,8 +45,7 @@ export class EditHeadlineComponent {
   }
 
   showToast() {
-       this.messageService.add({severity:'success', summary:'Success!', detail: 'Headline was updated.'});
-       console.log("fire");
+       this.messageService.add({severity: 'success', summary: 'Success!', detail: 'Headline was updated.'});
   }
 
   clear() {

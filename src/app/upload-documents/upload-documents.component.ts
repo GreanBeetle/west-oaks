@@ -44,7 +44,6 @@ export class UploadDocumentsComponent implements OnInit {
     let showType = 'documents';
     const file = event.item(0);
     let path = `documents/${new Date().getTime()}_${file.name}`;
-    const idBefore = this.db.createId();
     if (type === 'misc') {
       path = `miscellaneous-documents/${new Date().getTime()}_${file.name}`;
       showType = 'miscellaneous documents';
@@ -58,7 +57,9 @@ export class UploadDocumentsComponent implements OnInit {
         if (type === 'resolutions') {
           this.db.collection('documents').add( { path, fileName, uploadDate, url, year });
         } else {
-          this.db.collection('miscellaneous-documents').add( { path, fileName, uploadDate, url, year, idBefore });
+          const idBefore = this.db.createId();
+          const id = idBefore;
+          this.db.collection('miscellaneous-documents').doc(idBefore).set( { id, path, fileName, uploadDate, url, year });
         }
         this.showToast(fileName, showType);
       });

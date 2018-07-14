@@ -67,9 +67,17 @@
         <h3 class="subtitles">Other Documents</h3>
         <br>
         <li *ngFor="let misc of miscDocs | async" class="noBullets docLinks">
-          <a href={{misc.url}}> {{ misc.fileName }} </a>
+          <div class="columns">
+            <div class="column">
+              <a href={{misc.url}}> {{ misc.fileName }} </a>
+            </div>
+            <div class="column">
+              <a (click)="deleteDoc(misc)">delete</a> 
+            </div>
+          </div>
         </li>
       </div>
+
       <div class="column is-3">
 
         <div class="w3-card-4">
