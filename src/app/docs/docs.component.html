@@ -62,6 +62,13 @@
           The HOA also requires Directors and Officers (D&O) insurance for the Board of Directors. Owners wishing to review this policy should <a href="mailto:liz@sterlingmanagement.net">contact Sterling Management Group</a>. A photocopy charge may be assessed for any hard copies.
         </p>
         <br>
+
+        <!-- other documents -->
+        <h3 class="subtitles">Other Documents</h3>
+        <br>
+        <li *ngFor="let misc of miscDocs | async" class="noBullets docLinks">
+          <a href={{misc.url}}> {{ misc.fileName }} </a>
+        </li>
       </div>
       <div class="column is-3">
 

@@ -17,10 +17,15 @@ import { Router } from '@angular/router';
 export class DocsComponent implements OnInit {
   documentsArray: AngularFirestoreCollection<any>;
   documents: Observable<any[]>;
+  miscDocsArray: AngularFirestoreCollection<any>;
+  miscDocs: Observable<any[]>;
 
   constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
     this.documentsArray = afs.collection<any>('documents', ref => ref.orderBy('uploadDate', 'desc'));
     this.documents = this.documentsArray.valueChanges();
+    this.miscDocsArray = afs.collection<any>('miscellaneous-documents', ref =>
+      ref.orderBy('uploadDate', 'desc'));
+    this.miscDocs = this.miscDocsArray.valueChanges();
   }
 
   ngOnInit() {
