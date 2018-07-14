@@ -13,12 +13,10 @@ import {MessageService} from 'primeng/components/common/messageservice';
   styleUrls: ['./upload-documents.component.css']
 })
 export class UploadDocumentsComponent implements OnInit {
-  // Main Task
   task: AngularFireUploadTask;
-  // state for dropzone CSS toggling
   isHovering: boolean;
-  year: number = 2018;
-  type: string = "resolutions";
+  year = 2018;
+  type = 'resolutions';
 
   constructor(private messageService: MessageService, private storage: AngularFireStorage, private db: AngularFirestore) { }
 
@@ -28,27 +26,28 @@ export class UploadDocumentsComponent implements OnInit {
 
   setYear (event: any) {
     this.year = event.target.value;
-    console.log("setYear function " + this.year);
+    console.log('setYear function ' + this.year);
   }
 
   setType (event: any) {
     this.type = event.target.value;
-    console.log("setType function " + this.type);
+    console.log('setType function ' + this.type);
   }
 
   showToast(name, type) {
-       this.messageService.add({severity:'success', summary:'Success!', detail: name + ' uploaded to ' + type });
+       this.messageService.add({severity: 'success', summary: 'Success!', detail: name + ' uploaded to ' + type });
    }
 
   startUpload(event: FileList, fileType) {
-    const year = +this.year
-    const type = this.type
-    let showType = "documents"
-    const file = event.item(0)
+    const year = +this.year;
+    const type = this.type;
+    let showType = 'documents';
+    const file = event.item(0);
     let path = `documents/${new Date().getTime()}_${file.name}`;
-    if (type === "misc") {
+    const idBefore = this.db.createId();
+    if (type === 'misc') {
       path = `miscellaneous-documents/${new Date().getTime()}_${file.name}`;
-      showType = "miscellaneous documents"
+      showType = 'miscellaneous documents';
     }
     const fileName = file.name.slice(0, (file.name.length - 4));
     const uploadDate = new Date().getTime();
@@ -56,16 +55,14 @@ export class UploadDocumentsComponent implements OnInit {
     const task = this.storage.upload(path, file).then(() => {
       const ref = this.storage.ref(path);
       const downloadURL = ref.getDownloadURL().subscribe(url => {
-        // const URL = url
-        console.log(url)
-        if (type === "resolutions") {
-          this.db.collection('documents').add( { path, fileName, uploadDate, url, year })
+        if (type === 'resolutions') {
+          this.db.collection('documents').add( { path, fileName, uploadDate, url, year });
         } else {
-          this.db.collection('miscellaneous-documents').add( { path, fileName, uploadDate, url, year })
+          this.db.collection('miscellaneous-documents').add( { path, fileName, uploadDate, url, year, idBefore });
         }
         this.showToast(fileName, showType);
       });
-    })
+    });
   }
 
   ngOnInit() {

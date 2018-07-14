@@ -30,7 +30,11 @@ export class EditHeadlineComponent {
   currentRoute: string = this.router.url;
   num;
 
-  constructor(private messageService: MessageService, private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
+  constructor(
+    private messageService: MessageService,
+    private afs: AngularFirestore,
+    public authService: AuthenticationService,
+    private router: Router) {
 
     this.headlineCollection = this.afs.collection('headlines');
     this.headlines = this.headlineCollection.valueChanges();
