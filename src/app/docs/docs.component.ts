@@ -7,32 +7,57 @@ import {
 import { Observable } from 'rxjs/Observable';
 import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-docs',
   templateUrl: './docs.component.html',
   styleUrls: ['./docs.component.css'],
-  providers: [ AuthenticationService ]
+  providers: [ AuthenticationService, MessageService ]
 })
 export class DocsComponent implements OnInit {
+  private isLoggedIn;
   documentsArray: AngularFirestoreCollection<any>;
   documents: Observable<any[]>;
   miscDocsArray: AngularFirestoreCollection<any>;
   miscDocs: Observable<any[]>;
   docToDelete;
 
-  constructor(private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) {
+  constructor(
+    private afs: AngularFirestore,
+    public authService: AuthenticationService,
+    private router: Router,
+    private messageService: MessageService) {
+
     this.documentsArray = afs.collection<any>('documents', ref => ref.orderBy('uploadDate', 'desc'));
     this.documents = this.documentsArray.valueChanges();
     this.miscDocsArray = afs.collection<any>('miscellaneous-documents', ref =>
       ref.orderBy('uploadDate', 'desc'));
     this.miscDocs = this.miscDocsArray.valueChanges();
+
+    this.authService.user.subscribe(theUser => {
+      if (theUser == null) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = true;
+      }
+    });
+
   }
+
+  showToast() {
+     this.messageService.add({
+       severity: 'error',
+       summary: 'File deleted',
+       detail: 'Your document has been deleted'
+     });
+   }
 
   deleteDoc(doc) {
     if (confirm('Are you want to delete this?')) {
       const document = this.miscDocsArray.doc(doc.id);
       document.delete();
+      this.showToast();
     }
   }
 

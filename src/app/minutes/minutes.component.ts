@@ -9,7 +9,7 @@ import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Minute } from '../models/minute.model';
-import {MessageService} from 'primeng/components/common/messageservice';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 
 @Component({

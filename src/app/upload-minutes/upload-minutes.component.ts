@@ -37,12 +37,12 @@ export class UploadMinutesComponent implements OnInit {
   }
 
   showToast(name) {
-       this.messageService.add({severity:'success', summary:'Success!', detail: name + ' uploaded to Minutes'});
-   }
+    this.messageService.add({severity:'success', summary:'Success!', detail: name + ' uploaded to Minutes'});
+  }
 
-   clear() {
-       this.messageService.clear();
-   }
+  clear() {
+    this.messageService.clear();
+  }
 
   startUpload(event: FileList, fileType) {
     const month = this.month;
