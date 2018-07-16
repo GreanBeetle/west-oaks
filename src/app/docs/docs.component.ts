@@ -45,11 +45,11 @@ export class DocsComponent implements OnInit {
 
   }
 
-  showToast() {
+  showToast(name) {
      this.messageService.add({
        severity: 'error',
        summary: 'File deleted',
-       detail: 'Your document has been deleted'
+       detail: name + ' has been deleted'
      });
    }
 
@@ -57,7 +57,7 @@ export class DocsComponent implements OnInit {
     if (confirm('Are you want to delete this?')) {
       const document = this.miscDocsArray.doc(doc.id);
       document.delete();
-      this.showToast();
+      this.showToast(doc.fileName);
     }
   }
 
