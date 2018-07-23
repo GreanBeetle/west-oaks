@@ -83,3 +83,10 @@ hr {
   background-color: #00C295;
   color: #fff;
 }
+
+.suggestionButton {
+  min-height: 75px;
+  width: 100%;
+  background-color: #616161;
+  color: #fff;
+}

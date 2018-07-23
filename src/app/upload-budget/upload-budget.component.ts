@@ -26,16 +26,16 @@ export class UploadBudgetComponent implements OnInit {
 
   setYear (event: any) {
     this.year = event.target.value;
-    console.log("setYear function " + this.year);
+    console.log('setYear function ' + this.year);
   }
 
   showToast(name) {
-       this.messageService.add({severity:'success', summary:'Success!', detail: name + ' uploaded to budgets'});
+       this.messageService.add({severity: 'success', summary: 'Success!', detail: name + ' uploaded to budgets'});
    }
 
   startUpload(event: FileList, fileType) {
-    const year = +this.year
-    const file = event.item(0)
+    const year = +this.year;
+    const file = event.item(0);
     const path = `budget/${new Date().getTime()}_${file.name}`;
     const fileName = file.name.slice(0, (file.name.length - 4));
     const uploadDate = new Date().getTime();

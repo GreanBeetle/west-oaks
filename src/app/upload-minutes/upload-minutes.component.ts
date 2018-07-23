@@ -18,8 +18,8 @@ export class UploadMinutesComponent implements OnInit {
   // Main Task
   task: AngularFireUploadTask;
   isHovering: boolean;
-  year: number = 2018;
-  month: string = 'jan';
+  year = 2018;
+  month = 1;
 
   constructor(private messageService: MessageService, private storage: AngularFireStorage, private db: AngularFirestore) { }
 
@@ -37,7 +37,7 @@ export class UploadMinutesComponent implements OnInit {
   }
 
   showToast(name) {
-    this.messageService.add({severity:'success', summary:'Success!', detail: name + ' uploaded to Minutes'});
+    this.messageService.add({severity: 'success', summary: 'Success!', detail: name + ' uploaded to Minutes'});
   }
 
   clear() {
@@ -47,7 +47,6 @@ export class UploadMinutesComponent implements OnInit {
   startUpload(event: FileList, fileType) {
     const month = this.month;
     const year = +this.year;
-    console.log(year + 'Uploadevent');
     const file = event.item(0);
     const path = `minutes/${new Date().getTime()}_${file.name}`;
     const fileName = file.name.slice(0, (file.name.length - 4));
@@ -56,11 +55,8 @@ export class UploadMinutesComponent implements OnInit {
     const task = this.storage.upload(path, file).then(() => {
       const ref = this.storage.ref(path);
       const downloadURL = ref.getDownloadURL().subscribe(url => {
-        // const url = url;
-        console.log(url);
-        let idBefore = this.db.createId();
-        console.log(idBefore);
-        let id = idBefore;
+        const idBefore = this.db.createId();
+        const id = idBefore;
         this.db.collection('minutes').doc(idBefore).set( { id, path, fileName, uploadDate, url, month, year });
         this.showToast(fileName);
       });
