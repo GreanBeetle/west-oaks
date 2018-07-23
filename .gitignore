@@ -5,6 +5,7 @@
 /dist-server
 /tmp
 /out-tsc
+.invoices
 
 # dependencies
 /node_modules
