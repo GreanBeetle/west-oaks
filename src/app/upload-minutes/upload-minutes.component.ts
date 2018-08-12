@@ -5,8 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import { storage } from 'firebase/storage';
 import { tap } from 'rxjs/operators';
 import { finalize } from 'rxjs/operators';
-import {Message} from 'primeng/components/common/api';
-import {MessageService} from 'primeng/components/common/messageservice';
+import { Message } from 'primeng/components/common/api';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'upload-minutes',
