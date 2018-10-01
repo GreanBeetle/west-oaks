@@ -16,7 +16,7 @@ import {
 })
 
 export class DirectorsComponent {
-  contentsArray: AngularFirestoreCollection<Content>
+  contentsArray: AngularFirestoreCollection<Content>;
   contents: Observable<any[]>;
 
   constructor(private afs: AngularFirestore) {
