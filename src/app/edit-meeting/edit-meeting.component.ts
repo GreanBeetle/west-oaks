@@ -24,10 +24,15 @@ export class EditMeetingComponent implements OnInit {
   meeting: AngularFirestoreDocument<Meeting>;
   currentRoute: string = this.router.url;
 
-  constructor(private messageService: MessageService, private afs: AngularFirestore, public authService: AuthenticationService, private router: Router) { }
+  constructor(private messageService: MessageService,
+              private afs: AngularFirestore,
+              public authService: AuthenticationService,
+              private router: Router) { }
 
   showToast() {
-       this.messageService.add({severity:'success', summary:'Success!', detail: 'Meeting details were updated.'});
+       this.messageService.add({severity: 'success',
+                                summary: 'Success!',
+                                detail: 'Meeting details were updated.'});
   }
 
   clear() {
