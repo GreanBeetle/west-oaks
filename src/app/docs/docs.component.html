@@ -83,10 +83,10 @@
         <ng-container *ngFor="let resolution of resolutions | async">
           <span>
             <span *ngIf="isLoggedIn" class="inlineBlock">
-              <a (click)="deleteDoc(resolution)" class="deleteLink latoFont">Delete</a>
+              <a (click)="deleteDoc(resolution, 'resolutions')" class="deleteLink latoFont">Delete</a>
             </span>
             &nbsp;&nbsp;&nbsp;
-            <a class="latoFont inlineBlock" href={{resolution.url}}> {{ resolution.fileName }}</a>
+            <a class="latoFont inlineBlock" href={{resolution.url}}> {{ resolution.fileName }} {{ resolution.id }}</a>
           </span>
           <br>
         </ng-container>

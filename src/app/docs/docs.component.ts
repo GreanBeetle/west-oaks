@@ -78,7 +78,7 @@ export class DocsComponent implements OnInit {
      });
    }
 
-  deleteDoc(doc) {
+  deleteDoc(doc, collection) {
     if (confirm('Are you want to delete this?')) {
       const document = this.miscDocsArray.doc(doc.id);
       document.delete();
