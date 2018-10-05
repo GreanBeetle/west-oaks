@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { AngularFirestore} from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
@@ -13,7 +13,7 @@ import { ViewChild } from '@angular/core';
   styleUrls: ['./upload-documents.component.css']
 })
 
-export class UploadDocumentsComponent implements OnInit {
+export class UploadDocumentsComponent {
   @ViewChild('myInput')
   inputVar: ElementRef;
   task: AngularFireUploadTask;
@@ -69,7 +69,4 @@ export class UploadDocumentsComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-  }
-
-  }
+}

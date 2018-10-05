@@ -21,6 +21,16 @@ export class DocsComponent implements OnInit {
   documents: Observable<any[]>;
   miscDocsArray: AngularFirestoreCollection<any>;
   miscDocs: Observable<any[]>;
+  declarationsArray: AngularFirestoreCollection<any>;
+  declarations: Observable<any[]>;
+  bylawsArray: AngularFirestoreCollection<any>;
+  bylaws: Observable<any[]>;
+  houserulesArray: AngularFirestoreCollection<any>;
+  houserules: Observable<any[]>;
+  insuranceArray: AngularFirestoreCollection<any>;
+  insurance: Observable<any[]>;
+  otherArray: AngularFirestoreCollection<any>;
+  other: Observable<any[]>;
   docToDelete;
 
   constructor(
