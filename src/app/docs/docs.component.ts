@@ -31,6 +31,8 @@ export class DocsComponent implements OnInit {
   insurance: Observable<any[]>;
   otherArray: AngularFirestoreCollection<any>;
   other: Observable<any[]>;
+  resolutionsArray: AngularFirestoreCollection<any>;
+  resolutions: Observable<any[]>;
   docToDelete;
 
   constructor(
@@ -44,6 +46,19 @@ export class DocsComponent implements OnInit {
     this.miscDocsArray = afs.collection<any>('miscellaneous-documents', ref =>
       ref.orderBy('uploadDate', 'desc'));
     this.miscDocs = this.miscDocsArray.valueChanges();
+
+    this.declarationsArray = afs.collection<any>('declarations', ref => ref.orderBy('uploadDate', 'desc'));
+    this.declarations = this.declarationsArray.valueChanges();
+    this.bylawsArray = afs.collection<any>('bylaws', ref => ref.orderBy('uploadDate', 'desc'));
+    this.bylaws = this.bylawsArray.valueChanges();
+    this.houserulesArray = afs.collection<any>('houserules', ref => ref.orderBy('uploadDate', 'desc'));
+    this.houserules = this.houserulesArray.valueChanges();
+    this.insuranceArray = afs.collection<any>('insurance', ref => ref.orderBy('uploadDate', 'desc'));
+    this.insurance = this.insuranceArray.valueChanges();
+    this.otherArray = afs.collection<any>('other', ref => ref.orderBy('uploadDate', 'desc'));
+    this.other = this.otherArray.valueChanges();
+    this.resolutionsArray = afs.collection<any>('resolutions', ref => ref.orderBy('uploadDate', 'desc'));
+    this.resolutions = this.resolutionsArray.valueChanges();
 
     this.authService.user.subscribe(theUser => {
       if (theUser == null) {
