@@ -4,25 +4,26 @@ import { AngularFirestore} from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { storage } from 'firebase/storage';
 import { tap } from 'rxjs/operators';
-import {MessageService} from 'primeng/components/common/messageservice';
-
+import { MessageService } from 'primeng/components/common/messageservice';
+import { ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'upload-documents',
+  selector: 'app-upload-documents',
   templateUrl: './upload-documents.component.html',
   styleUrls: ['./upload-documents.component.css']
 })
+
 export class UploadDocumentsComponent implements OnInit {
+  @ViewChild('myInput')
+  inputVar: ElementRef;
   task: AngularFireUploadTask;
-  isHovering: boolean;
   year = 2018;
-  type = 'resolutions';
+  type = null;
 
-  constructor(private messageService: MessageService, private storage: AngularFireStorage, private db: AngularFirestore) { }
-
-  toggleHover(event: boolean) {
-    this.isHovering = true;
-  }
+  constructor(
+    private messageService: MessageService,
+    private storage: AngularFireStorage,
+    private db: AngularFirestore) { }
 
   setYear (event: any) {
     this.year = event.target.value;
@@ -38,32 +39,34 @@ export class UploadDocumentsComponent implements OnInit {
        this.messageService.add({severity: 'success', summary: 'Success!', detail: name + ' uploaded to ' + type });
    }
 
-  startUpload(event: FileList, fileType) {
-    const year = +this.year;
-    const type = this.type;
-    let showType = 'documents';
-    const file = event.item(0);
-    let path = `documents/${new Date().getTime()}_${file.name}`;
-    if (type === 'misc') {
-      path = `miscellaneous-documents/${new Date().getTime()}_${file.name}`;
-      showType = 'miscellaneous documents';
-    }
-    const fileName = file.name.slice(0, (file.name.length - 4));
-    const uploadDate = new Date().getTime();
+   reset() {
+    console.log(this.inputVar.nativeElement.files);
+    this.inputVar.nativeElement.value = '';
+    console.log(this.inputVar.nativeElement.files);
+  }
 
-    const task = this.storage.upload(path, file).then(() => {
-      const ref = this.storage.ref(path);
-      const downloadURL = ref.getDownloadURL().subscribe(url => {
-        if (type === 'resolutions') {
-          this.db.collection('documents').add( { path, fileName, uploadDate, url, year });
-        } else {
-          const idBefore = this.db.createId();
-          const id = idBefore;
-          this.db.collection('miscellaneous-documents').doc(idBefore).set( { id, path, fileName, uploadDate, url, year });
-        }
-        this.showToast(fileName, showType);
+  startUpload(event: FileList, fileType) {
+    console.log(event: FileList);
+    if (this.type === null || this.type === 'null') {
+      alert('Please select a document type');
+    } else {
+      const year = +this.year;
+      const file = event.item(0);
+      const path = `${this.type}/${new Date().getTime()}_${file.name}`;
+      const fileName = file.name.slice(0, (file.name.length - 4));
+      const uploadDate = new Date().getTime();
+      const task = this.storage.upload(path, file).then(() => {
+        const ref = this.storage.ref(path);
+        const downloadURL = ref.getDownloadURL().subscribe(url => {
+          const id = this.db.createId();
+          this.db.collection(`${this.type}`).doc(id).set({
+            id, path, fileName, uploadDate, url, year
+          });
+          this.showToast(fileName, `${this.type}`);
+          this.reset();
+        });
       });
-    });
+    }
   }
 
   ngOnInit() {
