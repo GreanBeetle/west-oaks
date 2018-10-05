@@ -1,6 +1,6 @@
-ul {
-  margin-left: 10px;
-  margin-right: 10px;
+.governingDocsList {
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .justified {
@@ -10,7 +10,6 @@ ul {
 .linkGroup {
   margin-top: 10px;
 }
-
 
 .smallSubtitles {
   margin-bottom: 10px;
@@ -25,7 +24,7 @@ ul {
   background-color: #FF0052;
   color: #fff;
   padding-left: 5px;
-  padding-right: 5px; 
+  padding-right: 5px;
 }
 
 .inlineBlock {
