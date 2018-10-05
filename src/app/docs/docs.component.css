@@ -11,17 +11,23 @@ ul {
   margin-top: 10px;
 }
 
-.docLinks {
-  color: #3273dc;
-  font-size: 1.2em;
-}
 
 .smallSubtitles {
   margin-bottom: 10px;
 }
 
+.deleteLink {
+  color: #FF0052;
+}
 
-/* .detailBudgetsSubtitle {
-  margin-left: 20px;
-  color: #2d3436;
-} */
+.deleteLink:hover {
+  border-radius: 3px;
+  background-color: #FF0052;
+  color: #fff;
+  padding-left: 5px;
+  padding-right: 5px; 
+}
+
+.inlineBlock {
+  display: inline-block;
+}

@@ -14,8 +14,7 @@
 </section>
 <section class="section">
   <div class="container">
-    <div class="columns">
-      <div class="column main-content">
+      <div class="main-content">
 
         <!-- Governing Documents -->
         <h3 class="subtitles">Governing Documents</h3>
@@ -69,6 +68,20 @@
         </p>
         <br>
 
+        <h3 class="subtitles">Resolutions</h3>
+        <br>
+        <ng-container *ngFor="let document of documents | async">
+          <span>
+            <span *ngIf="isLoggedIn" class="inlineBlock">
+              <a (click)="deleteDoc(document)" class="deleteLink latoFont">Delete</a>
+            </span>
+            &nbsp;&nbsp;&nbsp;
+            <a class="latoFont inlineBlock" href={{document.url}}> {{ document.fileName }}</a>
+          </span>
+          <br>
+        </ng-container>
+        <br>
+
         <!-- other documents -->
         <h3 class="subtitles">Other Documents</h3>
         <br>
@@ -89,24 +102,27 @@
         </li>
       </div>
 
-      <div class="column is-3">
 
-        <div class="w3-card-4">
-          <header class="w3-container w3-light-grey">
-            <h1 class="card-header-title is-centered raleway">Resolutions PDFs</h1>
-          </header>
-          <div class="card-content">
-            <div class="w3-container">
-              <ul>
-                <li *ngFor="let document of documents | async" class="noBullets docLinks">
-                  <a class href={{document.url}}> {{ document.fileName }} </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
   </div>
 </section>
+
+
+
+
+
+
+
+<!-- <div class="column is-3">
+<div class="w3-card-4">
+<header class="w3-container w3-light-grey">
+<h1 class="card-header-title is-centered raleway">Resolutions PDFs</h1>
+</header>
+<div class="card-content">
+<div class="w3-container">
+<ul>
+
+</ul>
+</div>
+</div>
+</div>
+</div> -->
