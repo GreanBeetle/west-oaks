@@ -48,8 +48,8 @@ Thumbs.db
 /src/app/api-keys.ts
 
 # firebase API keys
-/src/app/environments/environments
-/src/app/environments/environments.prod.ts
-/src/app/environments/environments.ts
+/src/environments
+/src/environments/environments.prod.ts
+/src/environments/environments.ts
 environment.ts
 environment.prod.ts
