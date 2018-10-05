@@ -85,7 +85,7 @@ export class MinutesComponent {
 
     this.minutes = this.minutesArray.snapshotChanges().pipe(
       map(actions => actions.map(a => {
-        const data = a.payload.doc.data();
+        const data = a.payload.doc.data() as Minute;
         const id = a.payload.doc.id;
         return { id, ...data };
       }))
