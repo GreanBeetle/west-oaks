@@ -86,8 +86,8 @@ export class MinutesComponent {
     this.minutes = this.minutesArray.snapshotChanges().map(actions =>
       actions.map(a => {
         const data = a.payload.doc.data();
-        // const id = a.payload.doc.id;
-        return { ...data };
+        const id = a.payload.doc.id;
+        return { id, ...data };
       })
     );
 
