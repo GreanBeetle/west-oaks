@@ -8,10 +8,10 @@
 
 ## Setup
 
-_`$ git clone https://github.com/GreanBeetle/west-oaks.git`_
-_`$ cd west-oaks`_
-_`$ npm install`_
-_`$ ng serve`_
+* _`$ git clone https://github.com/GreanBeetle/west-oaks.git`_
+* _`$ cd west-oaks`_
+* _`$ npm install`_
+* _`$ ng serve`_
 
 ## Specifications
 
