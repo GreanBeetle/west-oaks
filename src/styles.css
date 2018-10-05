@@ -43,6 +43,13 @@
   color: #03A678;
 }
 
+.smallSubtitles {
+  font-family: 'Raleway', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #000;
+}
+
 /* hero panel on every page except home page */
 .pageHero {
   background-color: #fff !important;

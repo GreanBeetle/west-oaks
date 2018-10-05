@@ -1,8 +1,4 @@
 
-.main-content {
-  padding-right: 50px;
-}
-
 .justified {
   text-align: justify;
 }
@@ -20,7 +16,6 @@ li {
 .noBullets {
   list-style: none !important;
   margin-left: 10px;
-
 }
 
 .detailBudgetsSubtitle {
