@@ -35,8 +35,6 @@ import { DisplayMeetingComponent } from './display-meeting/display-meeting.compo
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { GrowlModule } from 'primeng/primeng';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +64,6 @@ import { GrowlModule } from 'primeng/primeng';
     FormsModule,
     Ng4TwitterTimelineModule,
     AngularFireModule.initializeApp(environment.firebase),
-    // AngularFirestoreModule.enablePersistence(),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
