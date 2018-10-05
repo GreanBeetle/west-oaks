@@ -46,8 +46,8 @@
 .smallSubtitles {
   font-family: 'Raleway', sans-serif;
   font-size: 22px;
-  font-weight: 500;
-  color: #000;
+  font-weight: normal;
+  color: #000
 }
 
 /* hero panel on every page except home page */

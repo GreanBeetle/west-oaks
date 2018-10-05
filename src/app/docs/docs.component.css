@@ -1,6 +1,14 @@
+ul {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 .justified {
   text-align: justify;
+}
+
+.linkGroup {
+  margin-top: 10px;
 }
 
 .docLinks {
@@ -8,17 +16,12 @@
   font-size: 1.2em;
 }
 
-li {
-  margin-bottom: 7px;
+.smallSubtitles {
+  margin-bottom: 10px;
 }
 
-/* sidebar */
-.noBullets {
-  list-style: none !important;
-  margin-left: 10px;
-}
 
-.detailBudgetsSubtitle {
+/* .detailBudgetsSubtitle {
   margin-left: 20px;
   color: #2d3436;
-}
+} */
