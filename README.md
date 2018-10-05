@@ -8,14 +8,9 @@
 
 ## Setup
 
-* Clone https://github.com/GreanBeetle/west-oaks to your desktop.
-
-
-
+_`$ git clone https://github.com/GreanBeetle/west-oaks.git`_
+_`$ cd west-oaks`_
 _`$ npm install`_
-
-* Then:
-
 _`$ ng serve`_
 
 ## Specifications
