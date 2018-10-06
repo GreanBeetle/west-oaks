@@ -27,9 +27,6 @@
               These documents were filed with the State when West Oaks Condos were first proposed. In addition to describing the project, both documents set out the rules under which WOC runs. This document is equivalent to the "Conditions, Covenents, and Restrictions," i.e. CC&Rs, that govern planned communities.
             </p>
             <div class="linkGroup">
-              <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/WOC%20Declaration.pdf?alt=media&token=d9dc8ccd-d222-4944-a6bf-0c89b7722cc8">Declaration</a></p>
-              <!-- <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/WOC%20Supplemental%20Declaration.pdf?alt=media&token=eb8a0bc6-c225-4eb2-9175-5e3b8df0faf9">WOC Supplemental Declaration</a></p> -->
-              <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/documents%2FSecond%20Amendment%20to%20the%20Declaration.pdf?alt=media&token=ad7e9f66-4788-4637-b41d-c2f8f196f929">Second Amendment to Declaration</a></p>
               <ng-container *ngFor="let declaration of declarations | async">
                 <span>
                   <span *ngIf="isLoggedIn" class="inlineBlock">
@@ -51,7 +48,6 @@
               The Bylaws govern the operation of the West Oaks Condos Owners Association. Topics include elections, meetings, budgeting, reporting requirements, and so on.
             </p>
             <div class="linkGroup">
-              <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/WOC%20Bylaws.pdf?alt=media&token=0587cf35-40bd-40ac-8ed7-bca280ecaea9">WOC Bylaws</a></p>
               <ng-container *ngFor="let bylaw of bylaws | async">
                 <span>
                   <span *ngIf="isLoggedIn" class="inlineBlock">
@@ -73,7 +69,6 @@
               The WOC board has adopted a set of "house rules". These are interpretations and clarifications of the more formal governing documents, and also add some additional points intended to make living at West Oaks Condos even more enjoyable for all. (The provisions in the House Rules are just as enforceable as the more formal conditions.)
             </p>
             <div class="linkGroup">
-              <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/WOC%20House%20Rules.pdf?alt=media&token=f8b9efb5-d2f4-4e2f-8994-334dd82ba448">House Rules</a></p>
               <ng-container *ngFor="let house of houserules | async">
                 <span>
                   <span *ngIf="isLoggedIn" class="inlineBlock">
@@ -88,6 +83,7 @@
           </li>
         </ul>
         <br>
+
         <!-- insurance policies for WOC -->
         <h3 class="subtitles">Insurance Policies for WOC</h3>
         <br>
@@ -109,19 +105,11 @@
           </span>
           <br>
         </ng-container>
+        <br>
 
+        <!-- resolutions -->
         <h3 class="subtitles">Resolutions</h3>
         <br>
-        <ng-container *ngFor="let document of documents | async">
-          <span>
-            <span *ngIf="isLoggedIn" class="inlineBlock">
-              <a (click)="deleteDoc(document)" class="deleteLink latoFont">Delete</a>
-            </span>
-            &nbsp;&nbsp;&nbsp;
-            <a class="latoFont inlineBlock" href={{document.url}}> {{ document.fileName }}</a>
-          </span>
-          <br>
-        </ng-container>
         <ng-container *ngFor="let resolution of resolutions | async">
           <span>
             <span *ngIf="isLoggedIn" class="inlineBlock">
@@ -147,21 +135,6 @@
           </span>
           <br>
         </ng-container>
-        <li *ngFor="let misc of miscDocs | async" class="noBullets docLinks">
-          <div class="columns">
-            <div class="column">
-              <a href={{misc.url}}> {{ misc.fileName }} </a>
-            </div>
-            <div *ngIf="isLoggedIn" class="column">
-              <a class="button is-danger is-outlined" (click)="deleteDoc(misc)">
-                <span>Delete</span>
-                <span class="icon is-small">
-                  <i class="fas fa-times"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-        </li>
       </div>
 
   </div>

@@ -17,19 +17,12 @@ export class UploadDocumentsComponent {
   @ViewChild('myInput')
   inputVar: ElementRef;
   task: AngularFireUploadTask;
-  // date = new Date();
-  // year = date.getFullYear();
-  type;
+  type = null;
 
   constructor(
     private messageService: MessageService,
     private storage: AngularFireStorage,
     private db: AngularFirestore) { }
-
-  // setYear (event: any) {
-  //   this.year = event.target.value;
-  //   console.log('setYear function ' + this.year);
-  // }
 
   setType (event: any) {
     this.type = event.target.value;
@@ -37,17 +30,19 @@ export class UploadDocumentsComponent {
   }
 
   showToast(name, type) {
-       this.messageService.add({
-         severity: 'success',
-         summary: 'Success!',
-         detail: name + ' uploaded to ' + type });
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Success!',
+      detail: name + ' uploaded to ' + type
+    });
    }
 
+   // clears DOM fileList input array when uploading same file twice
    reset() {
-    console.log(this.inputVar.nativeElement.files);
-    this.inputVar.nativeElement.value = '';
-    console.log(this.inputVar.nativeElement.files);
-  }
+     console.log(this.inputVar.nativeElement.files);
+     this.inputVar.nativeElement.value = '';
+     console.log(this.inputVar.nativeElement.files);
+   }
 
   startUpload(event: FileList, fileType) {
     if (this.type === null || this.type === 'null') {
