@@ -18,10 +18,6 @@ import { MessageService } from 'primeng/components/common/messageservice';
 
 export class DocsComponent {
   private isLoggedIn;
-  documentsArray: AngularFirestoreCollection<any>;
-  documents: Observable<any[]>;
-  miscDocsArray: AngularFirestoreCollection<any>;
-  miscDocs: Observable<any[]>;
   declarationsArray: AngularFirestoreCollection<any>;
   declarations: Observable<any[]>;
   bylawsArray: AngularFirestoreCollection<any>;
@@ -40,46 +36,37 @@ export class DocsComponent {
     public authService: AuthenticationService,
     private router: Router,
     private messageService: MessageService) {
+      this.declarationsArray = afs.collection<any>('declarations', ref => ref.orderBy('uploadDate', 'desc'));
+      this.declarations = this.declarationsArray.valueChanges();
+      this.bylawsArray = afs.collection<any>('bylaws', ref => ref.orderBy('uploadDate', 'desc'));
+      this.bylaws = this.bylawsArray.valueChanges();
+      this.houserulesArray = afs.collection<any>('houserules', ref => ref.orderBy('uploadDate', 'desc'));
+      this.houserules = this.houserulesArray.valueChanges();
+      this.insuranceArray = afs.collection<any>('insurance', ref => ref.orderBy('uploadDate', 'desc'));
+      this.insurance = this.insuranceArray.valueChanges();
+      this.otherArray = afs.collection<any>('other', ref => ref.orderBy('uploadDate', 'desc'));
+      this.other = this.otherArray.valueChanges();
+      this.resolutionsArray = afs.collection<any>('resolutions', ref => ref.orderBy('uploadDate', 'desc'));
+      this.resolutions = this.resolutionsArray.valueChanges();
 
-    this.documentsArray = afs.collection<any>('documents', ref => ref.orderBy('uploadDate', 'desc'));
-    this.documents = this.documentsArray.valueChanges();
-    this.miscDocsArray = afs.collection<any>('miscellaneous-documents', ref =>
-      ref.orderBy('uploadDate', 'desc'));
-    this.miscDocs = this.miscDocsArray.valueChanges();
+      this.authService.user.subscribe(theUser => {
+        if (theUser == null) {
+          this.isLoggedIn = false;
+        } else {
+          this.isLoggedIn = true;
+        }
+      });
+    }
 
-    this.declarationsArray = afs.collection<any>('declarations', ref => ref.orderBy('uploadDate', 'desc'));
-    this.declarations = this.declarationsArray.valueChanges();
-    this.bylawsArray = afs.collection<any>('bylaws', ref => ref.orderBy('uploadDate', 'desc'));
-    this.bylaws = this.bylawsArray.valueChanges();
-    this.houserulesArray = afs.collection<any>('houserules', ref => ref.orderBy('uploadDate', 'desc'));
-    this.houserules = this.houserulesArray.valueChanges();
-    this.insuranceArray = afs.collection<any>('insurance', ref => ref.orderBy('uploadDate', 'desc'));
-    this.insurance = this.insuranceArray.valueChanges();
-    this.otherArray = afs.collection<any>('other', ref => ref.orderBy('uploadDate', 'desc'));
-    this.other = this.otherArray.valueChanges();
-    this.resolutionsArray = afs.collection<any>('resolutions', ref => ref.orderBy('uploadDate', 'desc'));
-    this.resolutions = this.resolutionsArray.valueChanges();
+    showToast(name, collection) {
+       this.messageService.add({
+         severity: 'error',
+         summary: 'File deleted',
+         detail: name + ' has been deleted from ' + collection
+       });
+     }
 
-    this.authService.user.subscribe(theUser => {
-      if (theUser == null) {
-        this.isLoggedIn = false;
-      } else {
-        this.isLoggedIn = true;
-      }
-    });
-
-  }
-
-  showToast(name, collection) {
-     this.messageService.add({
-       severity: 'error',
-       summary: 'File deleted',
-       detail: name + ' has been deleted from ' + collection
-     });
-   }
-
-  // hackery! clean this up, remove elseif branch, use interpolation
-  deleteDoc(doc, collection) {
+    deleteDoc(doc, collection) {
     if (confirm('Are you want to delete this?')) {
       let document;
       if ( collection === 'resolutions') {

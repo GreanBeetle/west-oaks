@@ -49,7 +49,6 @@ export class UploadDocumentsComponent {
       alert('Please select a document type');
     } else {
       const year = new Date().getFullYear();
-      alert(year);
       const file = event.item(0);
       const path = `${this.type}/${new Date().getTime()}_${file.name}`;
       const fileName = file.name.slice(0, (file.name.length - 4));
