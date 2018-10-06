@@ -70,19 +70,35 @@ export class DocsComponent implements OnInit {
 
   }
 
-  showToast(name) {
+  showToast(name, collection) {
      this.messageService.add({
        severity: 'error',
        summary: 'File deleted',
-       detail: name + ' has been deleted'
+       detail: name + ' has been deleted from ' + collection
      });
    }
 
+  // hackery! clean this up, remove elseif branch, use interpolation
   deleteDoc(doc, collection) {
     if (confirm('Are you want to delete this?')) {
-      const document = this.miscDocsArray.doc(doc.id);
+      let document;
+      if ( collection === 'resolutions') {
+        document = this.resolutionsArray.doc(doc.id);
+      } else if ( collection === 'other' ) {
+        document = this.otherArray.doc(doc.id);
+      } else if ( collection === 'insurance' ) {
+        document = this.insuranceArray.doc(doc.id);
+      } else if ( collection === 'houserules' ) {
+        document = this.houserulesArray.doc(doc.id);
+      } else if ( collection === 'bylaws' ) {
+        document = this.bylawsArray.doc(doc.id);
+      } else if ( collection === 'declarations' ) {
+        document = this.declarationsArray.doc(doc.id);
+      } else {
+        alert('An error has occurred. If it occurs again, please contact John.');
+      }
       document.delete();
-      this.showToast(doc.fileName);
+      this.showToast(doc.fileName, collection);
     }
   }
 

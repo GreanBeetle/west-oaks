@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { storage } from 'firebase/storage';
 import { tap } from 'rxjs/operators';
 import { MessageService } from 'primeng/components/common/messageservice';
-import { ViewChild } from '@angular/core';
+import { ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-upload-documents',
@@ -46,7 +46,6 @@ export class UploadDocumentsComponent {
   }
 
   startUpload(event: FileList, fileType) {
-    console.log(event: FileList);
     if (this.type === null || this.type === 'null') {
       alert('Please select a document type');
     } else {
