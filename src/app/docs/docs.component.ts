@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -15,7 +15,8 @@ import { MessageService } from 'primeng/components/common/messageservice';
   styleUrls: ['./docs.component.css'],
   providers: [ AuthenticationService, MessageService ]
 })
-export class DocsComponent implements OnInit {
+
+export class DocsComponent {
   private isLoggedIn;
   documentsArray: AngularFirestoreCollection<any>;
   documents: Observable<any[]>;
@@ -33,7 +34,6 @@ export class DocsComponent implements OnInit {
   other: Observable<any[]>;
   resolutionsArray: AngularFirestoreCollection<any>;
   resolutions: Observable<any[]>;
-  docToDelete;
 
   constructor(
     private afs: AngularFirestore,
@@ -101,8 +101,4 @@ export class DocsComponent implements OnInit {
       this.showToast(doc.fileName, collection);
     }
   }
-
-  ngOnInit() {
-  }
-
 }

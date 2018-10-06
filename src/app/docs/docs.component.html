@@ -33,6 +33,7 @@
             </div>
           </li>
           <br>
+
           <!-- bylaws -->
           <li>
             <h5 class="smallSubtitles">Bylaws</h5>
@@ -41,9 +42,20 @@
             </p>
             <div class="linkGroup">
               <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/WOC%20Bylaws.pdf?alt=media&token=0587cf35-40bd-40ac-8ed7-bca280ecaea9">WOC Bylaws</a></p>
+              <ng-container *ngFor="let bylaw of bylaws | async">
+                <span>
+                  <span *ngIf="isLoggedIn" class="inlineBlock">
+                    <a (click)="deleteDoc(bylaw, 'bylaws')" class="deleteLink latoFont">Delete</a>
+                  </span>
+                  &nbsp;&nbsp;&nbsp;
+                  <a class="latoFont inlineBlock" href={{bylaw.url}}> {{ bylaw.fileName }}</a>
+                </span>
+                <br>
+              </ng-container>
             </div>
           </li>
           <br>
+
           <!-- house rules -->
           <li>
             <h5 class="smallSubtitles">House Rules</h5>
@@ -52,6 +64,16 @@
             </p>
             <div class="linkGroup">
               <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/WOC%20House%20Rules.pdf?alt=media&token=f8b9efb5-d2f4-4e2f-8994-334dd82ba448">House Rules</a></p>
+              <ng-container *ngFor="let house of houserules | async">
+                <span>
+                  <span *ngIf="isLoggedIn" class="inlineBlock">
+                    <a (click)="deleteDoc(house, 'houserules')" class="deleteLink latoFont">Delete</a>
+                  </span>
+                  &nbsp;&nbsp;&nbsp;
+                  <a class="latoFont inlineBlock" href={{house.url}}> {{ house.fileName }}</a>
+                </span>
+                <br>
+              </ng-container>
             </div>
           </li>
         </ul>
@@ -67,6 +89,16 @@
           The HOA also requires Directors and Officers (D&O) insurance for the Board of Directors. Owners wishing to review this policy should <a href="mailto:liz@sterlingmanagement.net">contact Sterling Management Group</a>. A photocopy charge may be assessed for any hard copies.
         </p>
         <br>
+        <ng-container *ngFor="let i of insurance | async">
+          <span>
+            <span *ngIf="isLoggedIn" class="inlineBlock">
+              <a (click)="deleteDoc(i, 'insurance')" class="deleteLink latoFont">Delete</a>
+            </span>
+            &nbsp;&nbsp;&nbsp;
+            <a class="latoFont inlineBlock" href={{i.url}}> {{ i.fileName }}</a>
+          </span>
+          <br>
+        </ng-container>
 
         <h3 class="subtitles">Resolutions</h3>
         <br>
@@ -86,7 +118,7 @@
               <a (click)="deleteDoc(resolution, 'resolutions')" class="deleteLink latoFont">Delete</a>
             </span>
             &nbsp;&nbsp;&nbsp;
-            <a class="latoFont inlineBlock" href={{resolution.url}}> {{ resolution.fileName }} {{ resolution.id }}</a>
+            <a class="latoFont inlineBlock" href={{resolution.url}}> {{ resolution.fileName }}</a>
           </span>
           <br>
         </ng-container>
@@ -95,6 +127,16 @@
         <!-- other documents -->
         <h3 class="subtitles">Other Documents</h3>
         <br>
+        <ng-container *ngFor="let o of other | async">
+          <span>
+            <span *ngIf="isLoggedIn" class="inlineBlock">
+              <a (click)="deleteDoc(o, 'other')" class="deleteLink latoFont">Delete</a>
+            </span>
+            &nbsp;&nbsp;&nbsp;
+            <a class="latoFont inlineBlock" href={{o.url}}> {{ o.fileName }}</a>
+          </span>
+          <br>
+        </ng-container>
         <li *ngFor="let misc of miscDocs | async" class="noBullets docLinks">
           <div class="columns">
             <div class="column">
