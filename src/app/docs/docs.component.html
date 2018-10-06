@@ -30,6 +30,16 @@
               <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/WOC%20Declaration.pdf?alt=media&token=d9dc8ccd-d222-4944-a6bf-0c89b7722cc8">Declaration</a></p>
               <!-- <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/WOC%20Supplemental%20Declaration.pdf?alt=media&token=eb8a0bc6-c225-4eb2-9175-5e3b8df0faf9">WOC Supplemental Declaration</a></p> -->
               <p class="latoFont"><a href="https://firebasestorage.googleapis.com/v0/b/west-oaks-fe502.appspot.com/o/documents%2FSecond%20Amendment%20to%20the%20Declaration.pdf?alt=media&token=ad7e9f66-4788-4637-b41d-c2f8f196f929">Second Amendment to Declaration</a></p>
+              <ng-container *ngFor="let declaration of declarations | async">
+                <span>
+                  <span *ngIf="isLoggedIn" class="inlineBlock">
+                    <a (click)="deleteDoc(declaration, 'declarations')" class="deleteLink latoFont">Delete</a>
+                  </span>
+                  &nbsp;&nbsp;&nbsp;
+                  <a class="latoFont inlineBlock" href={{declaration.url}}> {{ declaration.fileName }}</a>
+                </span>
+                <br>
+              </ng-container>
             </div>
           </li>
           <br>
