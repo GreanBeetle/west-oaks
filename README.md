@@ -15,7 +15,7 @@
 
 ## Specifications
 
-* Build the following pages. (1) Welcome page (2) Board of directors page (3) Minutes and resolutions page (4) Community management page (5) Budget page (6) Documents and insurance page (7) W.O.C. Encyclopedia page  
+* Build: (1) Welcome page (2) Board of directors page (3) Minutes and resolutions page (4) Community management page (5) Budget page (6) Documents and insurance page (7) W.O.C. Encyclopedia page  
 * Link app with Firestore database.
 * Admin login, logout  functionality.
 * Allow admin to upload PDFs.
