@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Message} from 'primeng/api';
 import {MessageService} from 'primeng/components/common/messageservice';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,16 @@ import {MessageService} from 'primeng/components/common/messageservice';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private router: Router) { }
   title = 'app';
+
+  ngOnInit() {
+    this.router.events.subscribe((evt) => {
+            if (!(evt instanceof NavigationEnd)) {
+                return;
+            }
+            window.scrollTo(0, 0);
+        });
+  }
 }
