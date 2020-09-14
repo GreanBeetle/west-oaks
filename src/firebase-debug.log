@@ -1,0 +1,72 @@
+[debug] [2020-06-18T07:06:35.953Z] ----------------------------------------------------------------------
+[debug] [2020-06-18T07:06:35.955Z] Command:       /usr/local/bin/firebase /Users/trevor/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy -m update phone number
+[debug] [2020-06-18T07:06:35.955Z] CLI Version:   7.10.0
+[debug] [2020-06-18T07:06:35.955Z] Platform:      darwin
+[debug] [2020-06-18T07:06:35.955Z] Node Version:  v10.17.0
+[debug] [2020-06-18T07:06:35.956Z] Time:          Thu Jun 18 2020 00:06:35 GMT-0700 (Pacific Daylight Time)
+[debug] [2020-06-18T07:06:35.956Z] ----------------------------------------------------------------------
+[debug] [2020-06-18T07:06:35.956Z] 
+[debug] [2020-06-18T07:06:35.963Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-06-18T07:06:35.964Z] > authorizing via signed-in user
+[debug] [2020-06-18T07:06:35.964Z] [iam] checking project west-oaks-fe502 for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2020-06-18T07:06:35.965Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-06-18T07:06:35.965Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-06-18T07:06:36.129Z] <<< HTTP RESPONSE 400
+[debug] [2020-06-18T07:06:36.130Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/west-oaks-fe502:testIamPermissions  
+
+[debug] [2020-06-18T07:06:36.241Z] <<< HTTP RESPONSE 401
+[debug] [2020-06-18T07:06:36.241Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2020-06-18T07:06:36.245Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 401,
+      "message": "Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+      "status": "UNAUTHENTICATED"
+    }
+  },
+  "response": {
+    "statusCode": 401,
+    "body": {
+      "error": {
+        "code": 401,
+        "message": "Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+        "status": "UNAUTHENTICATED"
+      }
+    },
+    "headers": {
+      "www-authenticate": "Bearer realm=\"https://accounts.google.com/\", error=\"invalid_token\"",
+      "vary": "X-Origin, Referer, Origin,Accept-Encoding",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Thu, 18 Jun 2020 07:06:36 GMT",
+      "server": "ESF",
+      "cache-control": "private",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "server-timing": "gfet4t7; dur=11",
+      "alt-svc": "h3-28=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"",
+      "accept-ranges": "none",
+      "transfer-encoding": "chunked"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "cloudresourcemanager.googleapis.com",
+        "port": 443,
+        "hostname": "cloudresourcemanager.googleapis.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1/projects/west-oaks-fe502:testIamPermissions",
+        "path": "/v1/projects/west-oaks-fe502:testIamPermissions",
+        "href": "https://cloudresourcemanager.googleapis.com/v1/projects/west-oaks-fe502:testIamPermissions"
+      },
+      "method": "POST"
+    }
+  }
+}
