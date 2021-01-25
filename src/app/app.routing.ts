@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DirectorsComponent } from './directors/directors.component';
 import { MinutesComponent } from './minutes/minutes.component';
-import { ManagementComponent } from './management/management.component';
+// import { ManagementComponent } from './management/management.component';
 import { BudgetComponent } from './budget/budget.component';
 import { DocsComponent } from './docs/docs.component';
 import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component';
@@ -23,10 +23,10 @@ const appRoutes: Routes = [
     path: 'minutes',
     component: MinutesComponent
   },
-  {
-    path: 'management',
-    component: ManagementComponent
-  },
+//  {
+//    path: 'management',
+//    component: ManagementComponent
+//  },
   {
     path: 'budget',
     component: BudgetComponent

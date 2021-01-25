@@ -70,3 +70,37 @@
     }
   }
 }
+[debug] [2020-11-11T09:06:00.168Z] ----------------------------------------------------------------------
+[debug] [2020-11-11T09:06:00.169Z] Command:       /usr/local/bin/firebase /Users/trevor/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy -m add new reserve study to budget page and change language
+[debug] [2020-11-11T09:06:00.169Z] CLI Version:   7.10.0
+[debug] [2020-11-11T09:06:00.169Z] Platform:      darwin
+[debug] [2020-11-11T09:06:00.169Z] Node Version:  v10.17.0
+[debug] [2020-11-11T09:06:00.175Z] Time:          Wed Nov 11 2020 01:06:00 GMT-0800 (Pacific Standard Time)
+[debug] [2020-11-11T09:06:00.175Z] ----------------------------------------------------------------------
+[debug] [2020-11-11T09:06:00.175Z] 
+[debug] [2020-11-11T09:06:00.188Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-11T09:06:00.188Z] > authorizing via signed-in user
+[debug] [2020-11-11T09:06:00.188Z] [iam] checking project west-oaks-fe502 for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2020-11-11T09:06:00.190Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-11-11T09:06:00.190Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-11-11T09:06:00.459Z] <<< HTTP RESPONSE 200
+[debug] [2020-11-11T09:06:00.485Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/west-oaks-fe502:testIamPermissions  
+
+[debug] [2020-11-11T09:06:00.679Z] <<< HTTP RESPONSE 200
+[debug] [2020-11-11T09:06:00.681Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/west-oaks-fe502  
+ 
+[debug] [2020-11-11T09:06:00.966Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'west-oaks-fe502'...
+[info] 
+[info] i  deploying database, storage, firestore, hosting
+[info] i  database: checking rules syntax...
+[debug] [2020-11-11T09:06:00.977Z] >>> HTTP REQUEST PUT https://west-oaks-fe502.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+
